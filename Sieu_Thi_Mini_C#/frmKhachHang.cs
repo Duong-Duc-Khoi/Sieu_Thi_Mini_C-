@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sieu_Thi_Mini_C_
 {
-    public partial class Form1 : Form
+    public partial class frmKhachHang : Form
     {
-        public Form1()
+        public frmKhachHang()
         {
             InitializeComponent();
+        }
+
+        private void frmKhachHang_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
