@@ -57,13 +57,7 @@ namespace Sieu_Thi_Mini_C_
             else
 //kiem tra xem phải là tk admin ko?
             {
-                if (txtTaikhoan.Text != "admin" || txtMatkhau.Text != "123")
-                {
-                    string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
-                    MessageBox.Show((t), "thong báo", MessageBoxButtons.OK);
-                }
-                else
-                {
+               
                     if (txtTaikhoan.Text == "admin" && txtMatkhau.Text == "123")
                     {
                         MessageBox.Show("Ban dang nhap vao tai khoan Admin", "Thong bao ", MessageBoxButtons.OK);
@@ -106,4 +100,4 @@ namespace Sieu_Thi_Mini_C_
                 }
                 }
             }
-}
+
