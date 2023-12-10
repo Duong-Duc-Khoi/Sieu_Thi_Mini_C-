@@ -39,7 +39,8 @@ namespace Sieu_Thi_Mini_C_
         {
             //kết nối sql và lấy quyền 
             string taikhoan = txtTaikhoan.Text.Trim();
-            string sql = "Select MaQuyen from NhanVien where UserName='" + taikhoan + "'";//lệnh sql lấy dữ liệu về quyền tk trong sql
+            string password = txtMatkhau.Text.Trim();
+            string sql = "Select count(*) from NhanVien where UserName='" + taikhoan + "' and Password='" + password + "'";//lệnh sql lấy dữ liệu về quyền tk trong sql
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
