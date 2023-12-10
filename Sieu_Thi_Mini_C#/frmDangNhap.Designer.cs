@@ -32,7 +32,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.txtTaikhoan = new System.Windows.Forms.TextBox();
             this.txtMatkhau = new System.Windows.Forms.TextBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btn_dangnhap = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
@@ -80,23 +80,24 @@
             this.txtMatkhau.TabIndex = 3;
             this.txtMatkhau.TextChanged += new System.EventHandler(this.txtMatkhau_TextChanged);
             // 
-            // button1
+            // btn_dangnhap
             // 
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.button1.Location = new System.Drawing.Point(157, 168);
-            this.button1.Margin = new System.Windows.Forms.Padding(4);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(139, 36);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Đăng Nhập";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btn_dangnhap.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btn_dangnhap.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btn_dangnhap.Location = new System.Drawing.Point(157, 168);
+            this.btn_dangnhap.Margin = new System.Windows.Forms.Padding(4);
+            this.btn_dangnhap.Name = "btn_dangnhap";
+            this.btn_dangnhap.Size = new System.Drawing.Size(139, 36);
+            this.btn_dangnhap.TabIndex = 4;
+            this.btn_dangnhap.Text = "Đăng Nhập";
+            this.btn_dangnhap.UseVisualStyleBackColor = true;
+            this.btn_dangnhap.Click += new System.EventHandler(this.button1_Click);
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.SystemColors.HighlightText;
             this.groupBox1.Controls.Add(this.label1);
-            this.groupBox1.Controls.Add(this.button1);
+            this.groupBox1.Controls.Add(this.btn_dangnhap);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMatkhau);
             this.groupBox1.Controls.Add(this.txtTaikhoan);
@@ -142,7 +143,7 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox txtTaikhoan;
         private System.Windows.Forms.TextBox txtMatkhau;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btn_dangnhap;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Label label3;
     }
