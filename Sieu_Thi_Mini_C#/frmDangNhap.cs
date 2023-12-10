@@ -45,8 +45,8 @@ namespace Sieu_Thi_Mini_C_
                 con.Open();
             }
 
-            SqlCommand nv = new SqlCommand(sql, con);//khai bao biến lệnh sql(sql command)
-            int getRole = (int)nv.ExecuteScalar();
+           
+
             //kiem tra xem nhap thong tin chua
             if (txtTaikhoan.Text == "" || txtMatkhau.Text == "")
             {
@@ -72,20 +72,26 @@ namespace Sieu_Thi_Mini_C_
                     }
                     //kiem tra tk nhan vien
 
+                else
+                    {
+                        SqlCommand nv = new SqlCommand(sql, con);//khai bao biến lệnh sql(sql command)
+                        int getRole = (int)nv.ExecuteScalar();
+                        if (getRole == 1) {
+                            MessageBox.Show("Ban dang nhap vao tai khoan Nhân Vien", "Thong bao ", MessageBoxButtons.OK);
 
-                                     else if(getRole==1)
-                                     {
-                                        MessageBox.Show("Ban dang nhap vao tai khoan Nhân Vien", "Thong bao ", MessageBoxButtons.OK);
+                            frmBanHang bh = new frmBanHang();//khai báo biến bh là frmBanHang                     
+                            bh.Show();
+                            this.Hide();//ẩn form này đi
 
-                                        frmBanHang bh = new frmBanHang();//khai báo biến bh là frmBanHang                     
-                                         bh.Show();
-                                        this.Hide();//ẩn form này đi
+                        }
+                        else
+                        {
+                            string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
+                            MessageBox.Show((t), "thong báo", MessageBoxButtons.OK);
+                        }
 
-                                     }
-                                     else {
-                                         string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
-                                         MessageBox.Show((t), "thong báo", MessageBoxButtons.OK);
-                                     }
+                    }
+                
 
                                   
 
