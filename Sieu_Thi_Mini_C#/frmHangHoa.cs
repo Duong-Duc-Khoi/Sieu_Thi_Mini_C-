@@ -10,11 +10,16 @@ using System.Windows.Forms;
 
 namespace Sieu_Thi_Mini_C_
 {
-    public partial class frmMavach : Form
+    public partial class frmHangHoa : Form
     {
-        public frmMavach()
+        public frmHangHoa()
         {
             InitializeComponent();
+        }
+
+        private void textVat_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

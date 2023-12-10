@@ -22,6 +22,9 @@ namespace Sieu_Thi_Mini_C_
 
         }
 
-        
+        private void pictureBox6_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

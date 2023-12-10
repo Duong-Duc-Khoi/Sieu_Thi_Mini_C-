@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sieu_Thi_Mini_C_
 {
-    public partial class Form1 : Form
+    public partial class frmNhaCungCap : Form
     {
-        public Form1()
+        public frmNhaCungCap()
         {
             InitializeComponent();
         }

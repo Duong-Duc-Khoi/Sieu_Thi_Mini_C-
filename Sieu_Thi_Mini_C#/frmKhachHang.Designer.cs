@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmKhachHang));
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnThongke = new System.Windows.Forms.Button();
             this.btnLammoi = new System.Windows.Forms.Button();
@@ -65,8 +66,10 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(815, 30);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(101, 44);
             this.btnThoat.TabIndex = 3;
@@ -76,30 +79,38 @@
             // btnThongke
             // 
             this.btnThongke.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnThongke.Location = new System.Drawing.Point(668, 30);
-            this.btnThongke.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThongke.Image = ((System.Drawing.Image)(resources.GetObject("btnThongke.Image")));
+            this.btnThongke.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnThongke.Location = new System.Drawing.Point(663, 30);
+            this.btnThongke.Margin = new System.Windows.Forms.Padding(4);
             this.btnThongke.Name = "btnThongke";
-            this.btnThongke.Size = new System.Drawing.Size(101, 44);
+            this.btnThongke.Size = new System.Drawing.Size(125, 44);
             this.btnThongke.TabIndex = 4;
             this.btnThongke.Text = "Thống Kê";
+            this.btnThongke.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnThongke.UseVisualStyleBackColor = true;
             // 
             // btnLammoi
             // 
             this.btnLammoi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLammoi.Image = ((System.Drawing.Image)(resources.GetObject("btnLammoi.Image")));
+            this.btnLammoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLammoi.Location = new System.Drawing.Point(515, 30);
-            this.btnLammoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLammoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLammoi.Name = "btnLammoi";
-            this.btnLammoi.Size = new System.Drawing.Size(101, 44);
+            this.btnLammoi.Size = new System.Drawing.Size(109, 44);
             this.btnLammoi.TabIndex = 5;
             this.btnLammoi.Text = "Làm Mới";
+            this.btnLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLammoi.UseVisualStyleBackColor = true;
             // 
             // btnXoa
             // 
             this.btnXoa.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
+            this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnXoa.Location = new System.Drawing.Point(361, 30);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(101, 44);
             this.btnXoa.TabIndex = 6;
@@ -109,8 +120,10 @@
             // btnSua
             // 
             this.btnSua.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSua.Location = new System.Drawing.Point(212, 30);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(101, 44);
             this.btnSua.TabIndex = 7;
@@ -120,8 +133,10 @@
             // btnThem
             // 
             this.btnThem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
+            this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThem.Location = new System.Drawing.Point(72, 30);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(101, 44);
             this.btnThem.TabIndex = 8;
@@ -143,7 +158,7 @@
             // 
             this.txtMakh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtMakh.Location = new System.Drawing.Point(379, 164);
-            this.txtMakh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtMakh.Margin = new System.Windows.Forms.Padding(4);
             this.txtMakh.Name = "txtMakh";
             this.txtMakh.Size = new System.Drawing.Size(221, 26);
             this.txtMakh.TabIndex = 10;
@@ -163,7 +178,7 @@
             // 
             this.txtTenkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTenkh.Location = new System.Drawing.Point(379, 234);
-            this.txtTenkh.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenkh.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenkh.Name = "txtTenkh";
             this.txtTenkh.Size = new System.Drawing.Size(221, 26);
             this.txtTenkh.TabIndex = 10;
@@ -183,7 +198,7 @@
             // 
             this.txtCccd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtCccd.Location = new System.Drawing.Point(379, 300);
-            this.txtCccd.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtCccd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCccd.Name = "txtCccd";
             this.txtCccd.Size = new System.Drawing.Size(221, 26);
             this.txtCccd.TabIndex = 10;
@@ -203,7 +218,7 @@
             // 
             this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtSdt.Location = new System.Drawing.Point(815, 167);
-            this.txtSdt.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(243, 26);
             this.txtSdt.TabIndex = 10;
@@ -223,7 +238,7 @@
             // 
             this.txtDiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiachi.Location = new System.Drawing.Point(815, 241);
-            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(243, 26);
             this.txtDiachi.TabIndex = 10;
@@ -243,7 +258,7 @@
             // 
             this.txtDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtDiem.Location = new System.Drawing.Point(815, 311);
-            this.txtDiem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(243, 26);
             this.txtDiem.TabIndex = 10;
@@ -263,7 +278,7 @@
             // 
             this.txtNamganbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtNamganbo.Location = new System.Drawing.Point(1361, 171);
-            this.txtNamganbo.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtNamganbo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamganbo.Name = "txtNamganbo";
             this.txtNamganbo.Size = new System.Drawing.Size(221, 26);
             this.txtNamganbo.TabIndex = 10;
@@ -272,11 +287,11 @@
             // 
             this.groupBox1.Controls.Add(this.dataGridView1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(95, 378);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.groupBox1.Location = new System.Drawing.Point(85, 378);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.groupBox1.Size = new System.Drawing.Size(1723, 335);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
+            this.groupBox1.Size = new System.Drawing.Size(1733, 335);
             this.groupBox1.TabIndex = 11;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh Sách Khách Hàng";
@@ -293,11 +308,11 @@
             this.Column6,
             this.Column7,
             this.Column8});
-            this.dataGridView1.Location = new System.Drawing.Point(-92, 18);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dataGridView1.Location = new System.Drawing.Point(8, 27);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(4);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.Size = new System.Drawing.Size(1723, 309);
+            this.dataGridView1.Size = new System.Drawing.Size(1623, 300);
             this.dataGridView1.TabIndex = 0;
             // 
             // Column1
@@ -360,7 +375,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1935, 761);
+            this.ClientSize = new System.Drawing.Size(1924, 761);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.txtNamganbo);
             this.Controls.Add(this.txtDiem);
@@ -382,9 +397,9 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "frmKhachHang";
-            this.Text = "frmKhachHang";
+            this.Text = "Khach Hang";
             this.Load += new System.EventHandler(this.frmKhachHang_Load);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();

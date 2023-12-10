@@ -1,6 +1,6 @@
 ﻿namespace Sieu_Thi_Mini_C_
 {
-    partial class frmLoaiHang
+    partial class frmNhapHang
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmNhapHang));
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.btnT = new System.Windows.Forms.Button();
             this.btnXuatHang = new System.Windows.Forms.Button();
@@ -133,6 +134,8 @@
             // btnThoat
             // 
             this.btnThoat.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
+            this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(597, 25);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
@@ -144,23 +147,29 @@
             // btnHuyphieu
             // 
             this.btnHuyphieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnHuyphieu.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyphieu.Image")));
+            this.btnHuyphieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuyphieu.Location = new System.Drawing.Point(448, 25);
             this.btnHuyphieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyphieu.Name = "btnHuyphieu";
-            this.btnHuyphieu.Size = new System.Drawing.Size(101, 44);
+            this.btnHuyphieu.Size = new System.Drawing.Size(123, 44);
             this.btnHuyphieu.TabIndex = 44;
             this.btnHuyphieu.Text = "Hủy Phiếu";
+            this.btnHuyphieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnHuyphieu.UseVisualStyleBackColor = true;
             // 
             // btnLuuphieu
             // 
             this.btnLuuphieu.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLuuphieu.Location = new System.Drawing.Point(308, 25);
+            this.btnLuuphieu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuphieu.Image")));
+            this.btnLuuphieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnLuuphieu.Location = new System.Drawing.Point(306, 25);
             this.btnLuuphieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuphieu.Name = "btnLuuphieu";
-            this.btnLuuphieu.Size = new System.Drawing.Size(101, 44);
+            this.btnLuuphieu.Size = new System.Drawing.Size(119, 44);
             this.btnLuuphieu.TabIndex = 45;
             this.btnLuuphieu.Text = "Lưu Phiếu";
+            this.btnLuuphieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuuphieu.UseVisualStyleBackColor = true;
             // 
             // groupBox1
@@ -295,7 +304,7 @@
             this.txtDshanghoa.TabIndex = 0;
             this.txtDshanghoa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
             // 
-            // frmLoaiHang
+            // frmNhapHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -307,8 +316,8 @@
             this.Controls.Add(this.btnHuyphieu);
             this.Controls.Add(this.btnLuuphieu);
             this.Controls.Add(this.grb1);
-            this.Name = "frmLoaiHang";
-            this.Text = "frmNhapHang";
+            this.Name = "frmNhapHang";
+            this.Text = "Nhap Hang";
             this.grb1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangnhap)).EndInit();

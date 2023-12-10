@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace Sieu_Thi_Mini_C_
 {
-    public partial class frmLoaiHang : Form
+    public partial class frmNhapHang : Form
     {
-        public frmLoaiHang()
+        public frmNhapHang()
         {
             InitializeComponent();
         }

@@ -21,5 +21,10 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void btnTimkiemkh_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
