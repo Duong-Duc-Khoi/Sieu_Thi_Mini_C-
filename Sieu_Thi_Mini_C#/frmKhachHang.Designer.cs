@@ -147,7 +147,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(285, 164);
+            this.label1.Location = new System.Drawing.Point(93, 156);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(56, 20);
@@ -157,7 +157,7 @@
             // txtMakh
             // 
             this.txtMakh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtMakh.Location = new System.Drawing.Point(379, 164);
+            this.txtMakh.Location = new System.Drawing.Point(187, 156);
             this.txtMakh.Margin = new System.Windows.Forms.Padding(4);
             this.txtMakh.Name = "txtMakh";
             this.txtMakh.Size = new System.Drawing.Size(221, 26);
@@ -167,7 +167,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(283, 234);
+            this.label2.Location = new System.Drawing.Point(91, 226);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 20);
@@ -177,7 +177,7 @@
             // txtTenkh
             // 
             this.txtTenkh.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTenkh.Location = new System.Drawing.Point(379, 234);
+            this.txtTenkh.Location = new System.Drawing.Point(187, 226);
             this.txtTenkh.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenkh.Name = "txtTenkh";
             this.txtTenkh.Size = new System.Drawing.Size(221, 26);
@@ -187,7 +187,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(285, 304);
+            this.label3.Location = new System.Drawing.Point(93, 296);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(58, 20);
@@ -197,7 +197,7 @@
             // txtCccd
             // 
             this.txtCccd.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCccd.Location = new System.Drawing.Point(379, 300);
+            this.txtCccd.Location = new System.Drawing.Point(187, 292);
             this.txtCccd.Margin = new System.Windows.Forms.Padding(4);
             this.txtCccd.Name = "txtCccd";
             this.txtCccd.Size = new System.Drawing.Size(221, 26);
@@ -207,7 +207,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(728, 171);
+            this.label4.Location = new System.Drawing.Point(536, 163);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(43, 20);
@@ -217,7 +217,7 @@
             // txtSdt
             // 
             this.txtSdt.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtSdt.Location = new System.Drawing.Point(815, 167);
+            this.txtSdt.Location = new System.Drawing.Point(623, 159);
             this.txtSdt.Margin = new System.Windows.Forms.Padding(4);
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(243, 26);
@@ -227,7 +227,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.Location = new System.Drawing.Point(728, 241);
+            this.label5.Location = new System.Drawing.Point(536, 233);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(60, 20);
@@ -237,7 +237,7 @@
             // txtDiachi
             // 
             this.txtDiachi.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiachi.Location = new System.Drawing.Point(815, 241);
+            this.txtDiachi.Location = new System.Drawing.Point(623, 233);
             this.txtDiachi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiachi.Name = "txtDiachi";
             this.txtDiachi.Size = new System.Drawing.Size(243, 26);
@@ -247,7 +247,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(728, 308);
+            this.label6.Location = new System.Drawing.Point(536, 300);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(49, 20);
@@ -257,27 +257,29 @@
             // txtDiem
             // 
             this.txtDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtDiem.Location = new System.Drawing.Point(815, 311);
+            this.txtDiem.Location = new System.Drawing.Point(623, 296);
             this.txtDiem.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiem.Name = "txtDiem";
             this.txtDiem.Size = new System.Drawing.Size(243, 26);
             this.txtDiem.TabIndex = 10;
+            this.txtDiem.TextChanged += new System.EventHandler(this.txtDiem_TextChanged);
             // 
             // label7
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(1203, 175);
+            this.label7.Location = new System.Drawing.Point(950, 159);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(96, 20);
             this.label7.TabIndex = 9;
             this.label7.Text = "NamGanBo";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // txtNamganbo
             // 
             this.txtNamganbo.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtNamganbo.Location = new System.Drawing.Point(1361, 171);
+            this.txtNamganbo.Location = new System.Drawing.Point(1092, 156);
             this.txtNamganbo.Margin = new System.Windows.Forms.Padding(4);
             this.txtNamganbo.Name = "txtNamganbo";
             this.txtNamganbo.Size = new System.Drawing.Size(221, 26);

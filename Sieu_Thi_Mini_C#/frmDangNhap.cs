@@ -14,7 +14,7 @@ namespace Sieu_Thi_Mini_C_
 {
     public partial class frmDangNhap : Form
     {
-        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["con"].ConnectionString);//khai báo biến kết nối con
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);//khai báo biến kết nối con
         public frmDangNhap()
         {
             InitializeComponent();
@@ -82,7 +82,7 @@ namespace Sieu_Thi_Mini_C_
                         else
                         {
                             string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
-                            MessageBox.Show((t), "thong báo", MessageBoxButtons.OK);
+                            MessageBox.Show((t), "Thông báo", MessageBoxButtons.OK);
                         }
 
                     }

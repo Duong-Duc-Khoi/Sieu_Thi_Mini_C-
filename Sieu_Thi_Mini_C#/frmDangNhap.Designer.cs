@@ -101,7 +101,7 @@
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.txtMatkhau);
             this.groupBox1.Controls.Add(this.txtTaikhoan);
-            this.groupBox1.Location = new System.Drawing.Point(70, 49);
+            this.groupBox1.Location = new System.Drawing.Point(305, 122);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(467, 234);
             this.groupBox1.TabIndex = 5;
@@ -111,7 +111,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Times New Roman", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(149, 14);
+            this.label3.Location = new System.Drawing.Point(389, 55);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(294, 32);
             this.label3.TabIndex = 6;
@@ -123,7 +123,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.LightSteelBlue;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
-            this.ClientSize = new System.Drawing.Size(590, 319);
+            this.ClientSize = new System.Drawing.Size(1082, 467);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.groupBox1);
             this.Margin = new System.Windows.Forms.Padding(4);

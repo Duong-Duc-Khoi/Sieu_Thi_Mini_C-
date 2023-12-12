@@ -26,5 +26,10 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -21,5 +21,15 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void txtDiem_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
