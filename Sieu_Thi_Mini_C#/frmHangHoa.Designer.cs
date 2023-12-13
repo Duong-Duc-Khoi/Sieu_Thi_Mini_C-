@@ -396,9 +396,9 @@
             this.label11.Location = new System.Drawing.Point(1058, 307);
             this.label11.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label11.Name = "label11";
-            this.label11.Size = new System.Drawing.Size(75, 20);
+            this.label11.Size = new System.Drawing.Size(74, 20);
             this.label11.TabIndex = 38;
-            this.label11.Text = "SoLuong";
+            this.label11.Text = "Số lượng";
             // 
             // txtDinhmuc
             // 

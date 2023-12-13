@@ -52,15 +52,15 @@ namespace Sieu_Thi_Mini_C_
             txtManv.Text = dgv_thongtin.Rows[i].Cells[0].Value.ToString();
             txtTennv.Text = dgv_thongtin.Rows[i].Cells[1].Value.ToString();
             cboGIoitinh.Text = dgv_thongtin.Rows[i].Cells[2].Value.ToString();
-            txtNgaysinh.Text = dgv_thongtin.Rows[i].Cells[3].Value.ToString();
+            date_ngaysinh.Text = dgv_thongtin.Rows[i].Cells[3].Value.ToString();
             txtSdt.Text = dgv_thongtin.Rows[i].Cells[4].Value.ToString();
             txtDiachi.Text = dgv_thongtin.Rows[i].Cells[5].Value.ToString();
             txtEmail.Text = dgv_thongtin.Rows[i].Cells[6].Value.ToString();
             txtUsername.Text = dgv_thongtin.Rows[i].Cells[7].Value.ToString();
             txtPassword.Text = dgv_thongtin.Rows[i].Cells[8].Value.ToString();
             cboQuyen.Text = dgv_thongtin.Rows[i].Cells[9].Value.ToString();
-            txtngayvaolam.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
-            txtngaynghiviec.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();
+            date_ngaybd.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
+            date_ngaykt.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();
             txtTrangthai.Text = dgv_thongtin.Rows[i].Cells[12].Value.ToString();
             txtLuong.Text = dgv_thongtin.Rows[i].Cells[13].Value.ToString();
             txtManv.Enabled = false;
@@ -86,15 +86,15 @@ namespace Sieu_Thi_Mini_C_
             string p_mnv=txtManv.Text.Trim();
             string p_tennv=txtTennv.Text.Trim();
             string p_gioitinh=cboGIoitinh.Text.Trim();
-            string p_ngaysinh=txtNgaysinh.Text.Trim();
+            string p_ngaysinh=date_ngaysinh.Text.Trim();
             string p_sdt=txtSdt.Text.Trim();
             string p_diachi=txtDiachi.Text.Trim();
             string p_email=txtEmail.Text.Trim();
             string p_username=txtUsername.Text.Trim();
             string p_password=txtPassword.Text.Trim();
             string p_cboquyen=cboQuyen.Text.Trim();
-            string p_ngaybd=txtngayvaolam.Text.Trim();
-            string p_ngaynv=txtngaynghiviec.Text.Trim();
+            string p_ngaybd=date_ngaybd.Text.Trim();
+            string p_ngaynv=date_ngaykt.Text.Trim();
             string p_trangthai=txtTrangthai.Text.Trim();
             int p_luong=int.Parse(txtLuong.Text.Trim());
 
@@ -318,15 +318,15 @@ namespace Sieu_Thi_Mini_C_
             string p_mnv = txtManv.Text.Trim();
             string p_tennv = txtTennv.Text.Trim();
             string p_gioitinh = cboGIoitinh.Text.Trim();
-            string p_ngaysinh = txtNgaysinh.Text.Trim();
+            string p_ngaysinh = date_ngaysinh.Text.Trim();
             string p_sdt = txtSdt.Text.Trim();
             string p_diachi = txtDiachi.Text.Trim();
             string p_email = txtEmail.Text.Trim();
             string p_username = txtUsername.Text.Trim();
             string p_password = txtPassword.Text.Trim();
             string p_cboquyen = cboQuyen.Text.Trim();
-            string p_ngaybd = txtngayvaolam.Text.Trim();
-            string p_ngaynv = txtngaynghiviec.Text.Trim();
+            string p_ngaybd = date_ngaybd.Text.Trim();
+            string p_ngaynv = date_ngaykt.Text.Trim();
             string p_trangthai = txtTrangthai.Text.Trim();
             int p_luong = int.Parse(txtLuong.Text.Trim());
 
@@ -337,12 +337,12 @@ namespace Sieu_Thi_Mini_C_
             }
 
             //b3 tao doi tuong cmd de thuc hien sua du lieu
-            string sql = "Update bangthongtinnhanvien set manv= @manv,tennv=@tennv,gioitinh=@gioitinh,ngaysinh=@ngaysinh,sdt=@sdt,diachi=@diachi,email=@email,username=@username,password=@password,maquyen=@maquyen,ngayvaolam=@ngayvaolam,ngaynghiviec=@ngaynghiviec,trangthaitaikhoan=@trangthaitaikhoan,luong=@luong";
+            string sql = "Update bangthongtinnhanvien set tennv=@tennv,gioitinh=@gioitinh,ngaysinh=@ngaysinh,sdt=@sdt,diachi=@diachi,email=@email,username=@username,password=@password,maquyen=@maquyen,ngayvaolam=@ngayvaolam,ngaynghiviec=@ngaynghiviec,trangthaitaikhoan=@trangthaitaikhoan,luong=@luong where manv=@manv";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@manv", SqlDbType.NVarChar, 50).Value = p_mnv;
             cmd.Parameters.Add("@tennv", SqlDbType.NVarChar, 50).Value = p_tennv;
             cmd.Parameters.Add("@gioitinh", SqlDbType.NVarChar, 50).Value = p_gioitinh;
-            cmd.Parameters.Add("@ngaysinh", SqlDbType.NVarChar, 50).Value = p_ngaysinh;
+            cmd.Parameters.Add("@ngaysinh", SqlDbType.Date).Value = p_ngaysinh;
 
             cmd.Parameters.Add("@sdt", SqlDbType.NVarChar, 50).Value = p_sdt;
             cmd.Parameters.Add("@diachi", SqlDbType.NVarChar, 50).Value = p_diachi;
@@ -351,10 +351,10 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = p_password;
             cmd.Parameters.Add("@maquyen", SqlDbType.NVarChar, 50).Value = p_cboquyen;
 
-            cmd.Parameters.Add("@ngayvaolam", SqlDbType.NVarChar, 50).Value = p_ngaybd;
-            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.NVarChar, 50).Value = p_ngaynv;
+            cmd.Parameters.Add("@ngayvaolam", SqlDbType.Date).Value = p_ngaybd;
+            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.Date).Value = p_ngaynv;
             cmd.Parameters.Add("@trangthaitaikhoan", SqlDbType.NVarChar, 50).Value = p_trangthai;
-            cmd.Parameters.Add("@luong", SqlDbType.Int).Value = p_luong;
+            cmd.Parameters.Add("@luong",SqlDbType.Int).Value = p_luong;
 
 
             //
