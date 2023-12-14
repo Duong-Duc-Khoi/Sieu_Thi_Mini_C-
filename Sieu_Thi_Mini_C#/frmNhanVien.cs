@@ -163,7 +163,7 @@ namespace Sieu_Thi_Mini_C_
             oSheet.Name = sheetname;
             // Tạo phần đầu nếu muốn
 
-            e_excel.Range head = oSheet.get_Range("A1", "F1");
+            e_excel.Range head = oSheet.get_Range("A1", "N1");
             head.MergeCells = true;//trộn nhiều ô thành 1 ô
             head.Value2 = "DANH SÁCH THÔNG TIN NHÂN VIÊN";
             head.Font.Bold = true;//chữ đậm
@@ -199,6 +199,7 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
             cl7.Value2 = "EMAIL";//TÊN CỘT
             cl7.ColumnWidth = 40;//ĐỘ RỘNG CỘT
+
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "USERNAME";
             cl8.ColumnWidth = 25.0;
@@ -209,13 +210,20 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range cl10 = oSheet.get_Range("J3", "J3");
             cl10.Value2 = "CHỨC VỤ";
             cl10.ColumnWidth = 25.0;
-            e_excel.Range cl11 = oSheet.get_Range("K3", "K3");
-            cl11.Value2 = "NGÀY VÀO LÀM";
-            cl11.ColumnWidth = 40.0;
-            e_excel.Range cl12 = oSheet.get_Range("L3", "L3");
+            //
+            Microsoft.Office.Interop.Excel.Range cl11 = oSheet.get_Range("K3", "K3");
+            cl11.Value2 = "NGÀY VÀO LÀM ";
+            cl11.ColumnWidth = 30.0;
+            Microsoft.Office.Interop.Excel.Range cl11_1 = oSheet.get_Range("K4", "K1000");
+            cl11_1.Columns.NumberFormat = "dd/mm/yyyy";
+            //
+            Microsoft.Office.Interop.Excel.Range cl12= oSheet.get_Range("L3", "L3");
             cl12.Value2 = "NGÀY NGHỈ VIỆC";
-            cl12.ColumnWidth = 40.0;
+            cl12.ColumnWidth = 30.0;
+            Microsoft.Office.Interop.Excel.Range cl12_1 = oSheet.get_Range("L4", "L1000");
+            cl12_1.Columns.NumberFormat = "dd/mm/yyyy";
 
+            //
             e_excel.Range cl13 = oSheet.get_Range("M3", "M3");
             cl13.Value2 = "TRẠNG THÁI TÀI KHOẢN";
             cl13.ColumnWidth = 60.0;
@@ -332,8 +340,8 @@ namespace Sieu_Thi_Mini_C_
             string p_username = txtUsername.Text.Trim();
             string p_password = txtPassword.Text.Trim();
             string p_cboquyen = cboQuyen.Text.Trim();
-            string p_ngaybd = date_ngaybd.Text.Trim();
-            string p_ngaynv = date_ngaykt.Text.Trim();
+            DateTime p_ngaybatdau =date_ngaybd.Value;
+            DateTime p_ngayketthuc = date_ngaykt.Value;
             string p_trangthai = cbotrangthai.Text.Trim();
             int p_luong = int.Parse(txtLuong.Text.Trim());
 
@@ -358,14 +366,11 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = p_password;
             cmd.Parameters.Add("@maquyen", SqlDbType.NVarChar, 50).Value = p_cboquyen;
 
-            cmd.Parameters.Add("@ngayvaolam", SqlDbType.Date).Value = p_ngaybd;
-            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.Date).Value = p_ngaynv;
+            cmd.Parameters.Add("@ngayvaolam", SqlDbType.Date).Value = p_ngaybatdau;
+            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.Date).Value = p_ngayketthuc;
             cmd.Parameters.Add("@trangthaitaikhoan", SqlDbType.NVarChar, 50).Value = p_trangthai;
             cmd.Parameters.Add("@luong",SqlDbType.Int).Value = p_luong;
-
-
             //
-            
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();

@@ -200,7 +200,7 @@ namespace Sieu_Thi_Mini_C_
 
 
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
-            int p_trangthaiban = int.Parse(txtTrangthai.Text.Trim());
+            bool p_trangthaiban = bool.Parse(txtTrangthai.Text.Trim());
             int p_vat = int.Parse(txtVAT.Text.Trim());
 
             //b2 ket noi den database
@@ -210,7 +210,7 @@ namespace Sieu_Thi_Mini_C_
             }
 
             //b3 tao doi tuong cmd de thuc hien sua du lieu
-            string sql = "Update banghanghoa set mahh=@mahh,tenhang=@tenhang,nhomhang=@nhomhang,xuatxu=@xuatxu,gianhap=@gianhap,giaban=@giaban,donvitinh=@donvitinh,nhacungcap=@nhacungcap,mavach=@mavach,soluong=@soluong,trangthaiban=@trangthaiban,vat=@vat";
+            string sql = "Update banghanghoa set tenhang=@tenhang,nhomhang=@nhomhang,xuatxu=@xuatxu,gianhap=@gianhap,giaban=@giaban,donvitinh=@donvitinh,nhacungcap=@nhacungcap,mavach=@mavach,soluong=@soluong,trangthaiban=@trangthaiban,vat=@vat where mahh='"+p_mahh+"'";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@mahh", SqlDbType.NVarChar, 50).Value = p_mahh;
             cmd.Parameters.Add("@tenhang", SqlDbType.NVarChar, 50).Value = p_tenhh;
@@ -416,6 +416,16 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range c3 = (e_excel.Range)oSheet.Cells[rowEnd, columnStart];
             e_excel.Range c4 = oSheet.get_Range(c1, c3);
             oSheet.get_Range(c3, c4).HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;
+
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHangHoa_Click(object sender, EventArgs e)
+        {
 
         }
     }

@@ -31,5 +31,10 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void groupBox2_Enter(object sender, EventArgs e)
+        {
+
+        }
     }
 }

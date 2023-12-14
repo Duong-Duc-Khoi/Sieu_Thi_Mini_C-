@@ -46,19 +46,22 @@
             this.tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.xuatxu = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgv_nhacc = new System.Windows.Forms.DataGridView();
             this.mancc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.tenncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
-            this.txtDshanghoa = new System.Windows.Forms.TextBox();
+            this.cbo_nhomhang = new System.Windows.Forms.ComboBox();
+            this.lst_dshh = new System.Windows.Forms.ListBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.grb1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangnhap)).BeginInit();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacc)).BeginInit();
             this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -143,6 +146,7 @@
             this.btnThoat.TabIndex = 43;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
             // 
             // btnHuyphieu
             // 
@@ -177,7 +181,7 @@
             this.groupBox1.Controls.Add(this.dgvHangnhap);
             this.groupBox1.Location = new System.Drawing.Point(286, 89);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(785, 688);
+            this.groupBox1.Size = new System.Drawing.Size(776, 688);
             this.groupBox1.TabIndex = 46;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Danh sách hàng nhập";
@@ -190,12 +194,13 @@
             this.mahh,
             this.tenhh,
             this.xuatxu,
-            this.soluong});
+            this.soluong,
+            this.dongia});
             this.dgvHangnhap.Location = new System.Drawing.Point(3, 18);
             this.dgvHangnhap.Name = "dgvHangnhap";
             this.dgvHangnhap.RowHeadersWidth = 51;
             this.dgvHangnhap.RowTemplate.Height = 24;
-            this.dgvHangnhap.Size = new System.Drawing.Size(776, 670);
+            this.dgvHangnhap.Size = new System.Drawing.Size(749, 670);
             this.dgvHangnhap.TabIndex = 0;
             // 
             // stt
@@ -203,10 +208,11 @@
             this.stt.HeaderText = "STT";
             this.stt.MinimumWidth = 6;
             this.stt.Name = "stt";
-            this.stt.Width = 125;
+            this.stt.Width = 50;
             // 
             // mahh
             // 
+            this.mahh.DataPropertyName = "mahh";
             this.mahh.HeaderText = "MaHH";
             this.mahh.MinimumWidth = 6;
             this.mahh.Name = "mahh";
@@ -214,6 +220,7 @@
             // 
             // tenhh
             // 
+            this.tenhh.DataPropertyName = "tenhang";
             this.tenhh.HeaderText = "Ten Hang Hoa";
             this.tenhh.MinimumWidth = 6;
             this.tenhh.Name = "tenhh";
@@ -221,6 +228,7 @@
             // 
             // xuatxu
             // 
+            this.xuatxu.DataPropertyName = "xuatxu";
             this.xuatxu.HeaderText = "Xuat Xu";
             this.xuatxu.MinimumWidth = 6;
             this.xuatxu.Name = "xuatxu";
@@ -228,35 +236,44 @@
             // 
             // soluong
             // 
+            this.soluong.DataPropertyName = "soluong";
             this.soluong.HeaderText = "So Luong";
             this.soluong.MinimumWidth = 6;
             this.soluong.Name = "soluong";
             this.soluong.Width = 125;
             // 
+            // dongia
+            // 
+            this.dongia.DataPropertyName = "gianhap";
+            this.dongia.HeaderText = "Đơn giá";
+            this.dongia.MinimumWidth = 6;
+            this.dongia.Name = "dongia";
+            this.dongia.Width = 125;
+            // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.dataGridView1);
-            this.groupBox2.Location = new System.Drawing.Point(1118, 89);
+            this.groupBox2.Controls.Add(this.dgv_nhacc);
+            this.groupBox2.Location = new System.Drawing.Point(1092, 75);
             this.groupBox2.Name = "groupBox2";
             this.groupBox2.Size = new System.Drawing.Size(532, 252);
             this.groupBox2.TabIndex = 47;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Nhà cung cấp";
             // 
-            // dataGridView1
+            // dgv_nhacc
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dgv_nhacc.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgv_nhacc.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.mancc,
             this.tenncc,
             this.diachi,
             this.sdt});
-            this.dataGridView1.Location = new System.Drawing.Point(3, 18);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.RowHeadersWidth = 51;
-            this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(529, 228);
-            this.dataGridView1.TabIndex = 0;
+            this.dgv_nhacc.Location = new System.Drawing.Point(0, 21);
+            this.dgv_nhacc.Name = "dgv_nhacc";
+            this.dgv_nhacc.RowHeadersWidth = 51;
+            this.dgv_nhacc.RowTemplate.Height = 24;
+            this.dgv_nhacc.Size = new System.Drawing.Size(529, 228);
+            this.dgv_nhacc.TabIndex = 0;
             // 
             // mancc
             // 
@@ -288,21 +305,42 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.txtDshanghoa);
-            this.groupBox3.Location = new System.Drawing.Point(1121, 347);
+            this.groupBox3.Controls.Add(this.label1);
+            this.groupBox3.Controls.Add(this.cbo_nhomhang);
+            this.groupBox3.Controls.Add(this.lst_dshh);
+            this.groupBox3.Location = new System.Drawing.Point(1095, 347);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(529, 430);
             this.groupBox3.TabIndex = 48;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Danh sách hàng hóa";
             // 
-            // txtDshanghoa
+            // cbo_nhomhang
             // 
-            this.txtDshanghoa.Location = new System.Drawing.Point(3, 18);
-            this.txtDshanghoa.Name = "txtDshanghoa";
-            this.txtDshanghoa.Size = new System.Drawing.Size(526, 22);
-            this.txtDshanghoa.TabIndex = 0;
-            this.txtDshanghoa.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.cbo_nhomhang.FormattingEnabled = true;
+            this.cbo_nhomhang.Location = new System.Drawing.Point(170, 36);
+            this.cbo_nhomhang.Name = "cbo_nhomhang";
+            this.cbo_nhomhang.Size = new System.Drawing.Size(224, 24);
+            this.cbo_nhomhang.TabIndex = 49;
+            this.cbo_nhomhang.SelectedIndexChanged += new System.EventHandler(this.cbo_nhomhang_SelectedIndexChanged);
+            // 
+            // lst_dshh
+            // 
+            this.lst_dshh.FormattingEnabled = true;
+            this.lst_dshh.ItemHeight = 16;
+            this.lst_dshh.Location = new System.Drawing.Point(18, 83);
+            this.lst_dshh.Name = "lst_dshh";
+            this.lst_dshh.Size = new System.Drawing.Size(485, 324);
+            this.lst_dshh.TabIndex = 0;
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Location = new System.Drawing.Point(27, 39);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(107, 16);
+            this.label1.TabIndex = 50;
+            this.label1.Text = "Chọn nhóm hàng";
             // 
             // frmNhapHang
             // 
@@ -318,11 +356,12 @@
             this.Controls.Add(this.grb1);
             this.Name = "frmNhapHang";
             this.Text = "Nhap Hang";
+            this.Load += new System.EventHandler(this.frmNhapHang_Load);
             this.grb1.ResumeLayout(false);
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangnhap)).EndInit();
             this.groupBox2.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacc)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
@@ -343,18 +382,21 @@
         private System.Windows.Forms.Button btnLuuphieu;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.DataGridView dgvHangnhap;
-        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
-        private System.Windows.Forms.DataGridViewTextBoxColumn mahh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn tenhh;
-        private System.Windows.Forms.DataGridViewTextBoxColumn xuatxu;
-        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgv_nhacc;
         private System.Windows.Forms.DataGridViewTextBoxColumn mancc;
         private System.Windows.Forms.DataGridViewTextBoxColumn tenncc;
         private System.Windows.Forms.DataGridViewTextBoxColumn diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn sdt;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox txtDshanghoa;
+        private System.Windows.Forms.DataGridViewTextBoxColumn stt;
+        private System.Windows.Forms.DataGridViewTextBoxColumn mahh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn tenhh;
+        private System.Windows.Forms.DataGridViewTextBoxColumn xuatxu;
+        private System.Windows.Forms.DataGridViewTextBoxColumn soluong;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dongia;
+        private System.Windows.Forms.ListBox lst_dshh;
+        private System.Windows.Forms.ComboBox cbo_nhomhang;
+        private System.Windows.Forms.Label label1;
     }
 }
