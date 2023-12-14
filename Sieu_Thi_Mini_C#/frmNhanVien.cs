@@ -15,6 +15,7 @@ using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
 
+
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmNhanVien : Form
@@ -61,7 +62,7 @@ namespace Sieu_Thi_Mini_C_
             cboQuyen.Text = dgv_thongtin.Rows[i].Cells[9].Value.ToString();
             date_ngaybd.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
             date_ngaykt.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();
-            txtTrangthai.Text = dgv_thongtin.Rows[i].Cells[12].Value.ToString();
+            cbotrangthai.Text = dgv_thongtin.Rows[i].Cells[12].Value.ToString();
             txtLuong.Text = dgv_thongtin.Rows[i].Cells[13].Value.ToString();
             txtManv.Enabled = false;
         }
@@ -95,7 +96,7 @@ namespace Sieu_Thi_Mini_C_
             string p_cboquyen=cboQuyen.Text.Trim();
             string p_ngaybd=date_ngaybd.Text.Trim();
             string p_ngaynv=date_ngaykt.Text.Trim();
-            string p_trangthai=txtTrangthai.Text.Trim();
+            string p_trangthai=cbotrangthai.Text.Trim();
             int p_luong=int.Parse(txtLuong.Text.Trim());
 
             //
@@ -116,7 +117,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@manv", SqlDbType.NVarChar, 50).Value = p_mnv;
             cmd.Parameters.Add("@tennv", SqlDbType.NVarChar, 50).Value = p_tennv;
             cmd.Parameters.Add("@gioitinh", SqlDbType.NVarChar, 50).Value = p_gioitinh;
-            cmd.Parameters.Add("@ngaysinh", SqlDbType.NVarChar, 50).Value = p_ngaysinh;
+            cmd.Parameters.Add("@ngaysinh", SqlDbType.Date).Value = p_ngaysinh;
 
             cmd.Parameters.Add("@sdt", SqlDbType.NVarChar, 50).Value = p_sdt;
             cmd.Parameters.Add("@diachi", SqlDbType.NVarChar, 50).Value = p_diachi;
@@ -179,8 +180,14 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range cl3 = oSheet.get_Range("C3", "C3");
             cl3.Value2 = "GIỚI TÍNH";
             cl3.ColumnWidth = 20.0;
-            e_excel.Range cl4 = oSheet.get_Range("D3", "D3");
+
+            Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
             cl4.Value2 = "NGÀY SINH";
+            cl4.ColumnWidth = 15.0;
+            Microsoft.Office.Interop.Excel.Range cl4_1 = oSheet.get_Range("D4", "D1000");
+            cl4_1.Columns.NumberFormat = "dd/mm/yyyy";
+
+
             cl4.ColumnWidth = 25.0;
             e_excel.Range cl5 = oSheet.get_Range("E3", "E3");
             cl5.Value2 = "SĐT";
@@ -191,7 +198,7 @@ namespace Sieu_Thi_Mini_C_
 
             e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
             cl7.Value2 = "EMAIL";//TÊN CỘT
-            cl7.ColumnWidth = 15;//ĐỘ RỘNG CỘT
+            cl7.ColumnWidth = 40;//ĐỘ RỘNG CỘT
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "USERNAME";
             cl8.ColumnWidth = 25.0;
@@ -238,7 +245,7 @@ namespace Sieu_Thi_Mini_C_
                 DataRow dr = tb.Rows[r];
                 for (int c = 0; c < tb.Columns.Count; c++)//CHẠY CỘT
                 {
-                    if (c == 2)
+                    if (c == 4)
                         arr[r, c] = "'" + dr[c].ToString();
                     else
                         arr[r, c] = dr[c];
@@ -318,7 +325,7 @@ namespace Sieu_Thi_Mini_C_
             string p_mnv = txtManv.Text.Trim();
             string p_tennv = txtTennv.Text.Trim();
             string p_gioitinh = cboGIoitinh.Text.Trim();
-            string p_ngaysinh = date_ngaysinh.Text.Trim();
+            DateTime p_ngaysinh = date_ngaysinh.Value;
             string p_sdt = txtSdt.Text.Trim();
             string p_diachi = txtDiachi.Text.Trim();
             string p_email = txtEmail.Text.Trim();
@@ -327,7 +334,7 @@ namespace Sieu_Thi_Mini_C_
             string p_cboquyen = cboQuyen.Text.Trim();
             string p_ngaybd = date_ngaybd.Text.Trim();
             string p_ngaynv = date_ngaykt.Text.Trim();
-            string p_trangthai = txtTrangthai.Text.Trim();
+            string p_trangthai = cbotrangthai.Text.Trim();
             int p_luong = int.Parse(txtLuong.Text.Trim());
 
             //b2 ket noi den database

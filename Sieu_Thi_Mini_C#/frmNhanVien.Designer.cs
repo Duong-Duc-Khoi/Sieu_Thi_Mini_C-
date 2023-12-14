@@ -59,7 +59,6 @@
             this.txtUsername = new System.Windows.Forms.TextBox();
             this.txtPassword = new System.Windows.Forms.TextBox();
             this.cboQuyen = new System.Windows.Forms.ComboBox();
-            this.txtTrangthai = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
             this.Column1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Column2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -79,6 +78,7 @@
             this.date_ngaysinh = new System.Windows.Forms.DateTimePicker();
             this.date_ngaybd = new System.Windows.Forms.DateTimePicker();
             this.date_ngaykt = new System.Windows.Forms.DateTimePicker();
+            this.cbotrangthai = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
             this.SuspendLayout();
             // 
@@ -421,15 +421,6 @@
             this.cboQuyen.Size = new System.Drawing.Size(163, 28);
             this.cboQuyen.TabIndex = 3;
             // 
-            // txtTrangthai
-            // 
-            this.txtTrangthai.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTrangthai.Location = new System.Drawing.Point(1107, 243);
-            this.txtTrangthai.Margin = new System.Windows.Forms.Padding(4);
-            this.txtTrangthai.Name = "txtTrangthai";
-            this.txtTrangthai.Size = new System.Drawing.Size(189, 26);
-            this.txtTrangthai.TabIndex = 1;
-            // 
             // dgv_thongtin
             // 
             this.dgv_thongtin.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
@@ -609,11 +600,23 @@
             this.date_ngaykt.Size = new System.Drawing.Size(189, 27);
             this.date_ngaykt.TabIndex = 4;
             // 
+            // cbotrangthai
+            // 
+            this.cbotrangthai.FormattingEnabled = true;
+            this.cbotrangthai.Items.AddRange(new object[] {
+            "ON",
+            "OFF"});
+            this.cbotrangthai.Location = new System.Drawing.Point(1107, 242);
+            this.cbotrangthai.Name = "cbotrangthai";
+            this.cbotrangthai.Size = new System.Drawing.Size(189, 24);
+            this.cbotrangthai.TabIndex = 5;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 783);
+            this.Controls.Add(this.cbotrangthai);
             this.Controls.Add(this.date_ngaykt);
             this.Controls.Add(this.date_ngaybd);
             this.Controls.Add(this.date_ngaysinh);
@@ -627,7 +630,6 @@
             this.Controls.Add(this.btnSua);
             this.Controls.Add(this.btnThem);
             this.Controls.Add(this.txtLuong);
-            this.Controls.Add(this.txtTrangthai);
             this.Controls.Add(this.txtEmail);
             this.Controls.Add(this.txtDiachi);
             this.Controls.Add(this.txtSdt);
@@ -692,7 +694,6 @@
         private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.TextBox txtPassword;
         private System.Windows.Forms.ComboBox cboQuyen;
-        private System.Windows.Forms.TextBox txtTrangthai;
         private System.Windows.Forms.DataGridView dgv_thongtin;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column1;
         private System.Windows.Forms.DataGridViewTextBoxColumn Column2;
@@ -712,5 +713,6 @@
         private System.Windows.Forms.DateTimePicker date_ngaysinh;
         private System.Windows.Forms.DateTimePicker date_ngaybd;
         private System.Windows.Forms.DateTimePicker date_ngaykt;
+        private System.Windows.Forms.ComboBox cbotrangthai;
     }
 }
