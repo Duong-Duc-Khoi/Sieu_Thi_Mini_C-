@@ -187,6 +187,7 @@
             this.txtGiaban.Name = "txtGiaban";
             this.txtGiaban.Size = new System.Drawing.Size(198, 26);
             this.txtGiaban.TabIndex = 23;
+            this.txtGiaban.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGiaban_KeyPress);
             // 
             // txtGianhap
             // 
@@ -196,6 +197,7 @@
             this.txtGianhap.Name = "txtGianhap";
             this.txtGianhap.Size = new System.Drawing.Size(198, 26);
             this.txtGianhap.TabIndex = 24;
+            this.txtGianhap.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtGianhap_KeyPress);
             // 
             // txtXuatxu
             // 
@@ -332,6 +334,7 @@
             this.txtVAT.Size = new System.Drawing.Size(154, 26);
             this.txtVAT.TabIndex = 30;
             this.txtVAT.TextChanged += new System.EventHandler(this.textVat_TextChanged);
+            this.txtVAT.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtVAT_KeyPress);
             // 
             // txt_mavach
             // 
@@ -391,6 +394,7 @@
             this.txtSoluong.Name = "txtSoluong";
             this.txtSoluong.Size = new System.Drawing.Size(154, 26);
             this.txtSoluong.TabIndex = 40;
+            this.txtSoluong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSoluong_KeyPress);
             // 
             // label10
             // 

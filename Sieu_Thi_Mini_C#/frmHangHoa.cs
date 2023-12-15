@@ -428,6 +428,57 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void txtGianhap_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar)) 
+            {
+            e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtGiaban_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtSoluong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtVAT_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
     }
 
 }

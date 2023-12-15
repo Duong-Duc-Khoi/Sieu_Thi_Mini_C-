@@ -361,6 +361,7 @@
             this.txtSdt.Name = "txtSdt";
             this.txtSdt.Size = new System.Drawing.Size(163, 26);
             this.txtSdt.TabIndex = 1;
+            this.txtSdt.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtSdt_KeyPress);
             // 
             // txtDiachi
             // 
@@ -379,6 +380,7 @@
             this.txtLuong.Name = "txtLuong";
             this.txtLuong.Size = new System.Drawing.Size(163, 26);
             this.txtLuong.TabIndex = 1;
+            this.txtLuong.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtLuong_KeyPress);
             // 
             // txtEmail
             // 

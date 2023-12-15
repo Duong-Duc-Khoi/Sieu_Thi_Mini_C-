@@ -399,5 +399,29 @@ namespace Sieu_Thi_Mini_C_
             MessageBox.Show("Xoa thanh cong !");
             load_dgv();
         }
+
+        private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
+
+        private void txtLuong_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
     }
 }

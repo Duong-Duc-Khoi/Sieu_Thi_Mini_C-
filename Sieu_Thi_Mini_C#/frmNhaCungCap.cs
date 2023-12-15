@@ -202,5 +202,17 @@ namespace Sieu_Thi_Mini_C_
             txtSdt.Clear();
             dgv_thongtin.Refresh();
         }
+
+        private void txtSdt_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
     }
 }
