@@ -73,6 +73,7 @@ namespace Sieu_Thi_Mini_C_
         private void frmHangHoa_Load(object sender, EventArgs e)
         {
             load_dgv();
+            
         }
 
         private void txtTrangthai_TextChanged(object sender, EventArgs e)
@@ -479,6 +480,7 @@ namespace Sieu_Thi_Mini_C_
                 e.Handled = false;
             }
         }
+
     }
 
 }
