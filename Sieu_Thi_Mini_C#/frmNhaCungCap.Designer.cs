@@ -54,12 +54,15 @@
             this.Tenncc = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Diachi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Sdt = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grb1
             // 
+            this.grb1.Controls.Add(this.pictureBox1);
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
@@ -330,6 +333,16 @@
             this.Sdt.Name = "Sdt";
             this.Sdt.Width = 175;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 62);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(252, 101);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 57;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -355,6 +368,7 @@
             this.Load += new System.EventHandler(this.frmNhaCungCap_Load);
             this.grb1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -387,5 +401,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn Tenncc;
         private System.Windows.Forms.DataGridViewTextBoxColumn Diachi;
         private System.Windows.Forms.DataGridViewTextBoxColumn Sdt;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

@@ -57,16 +57,19 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuyphieu = new System.Windows.Forms.Button();
             this.btnLuuphieu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grb1.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvHangnhap)).BeginInit();
             this.groupBox2.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacc)).BeginInit();
             this.groupBox3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // grb1
             // 
+            this.grb1.Controls.Add(this.pictureBox1);
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
@@ -321,7 +324,7 @@
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnThoat.Location = new System.Drawing.Point(597, 25);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(101, 44);
             this.btnThoat.TabIndex = 43;
@@ -335,7 +338,7 @@
             this.btnHuyphieu.Image = ((System.Drawing.Image)(resources.GetObject("btnHuyphieu.Image")));
             this.btnHuyphieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHuyphieu.Location = new System.Drawing.Point(448, 25);
-            this.btnHuyphieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnHuyphieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnHuyphieu.Name = "btnHuyphieu";
             this.btnHuyphieu.Size = new System.Drawing.Size(123, 44);
             this.btnHuyphieu.TabIndex = 44;
@@ -349,13 +352,23 @@
             this.btnLuuphieu.Image = ((System.Drawing.Image)(resources.GetObject("btnLuuphieu.Image")));
             this.btnLuuphieu.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnLuuphieu.Location = new System.Drawing.Point(305, 25);
-            this.btnLuuphieu.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnLuuphieu.Margin = new System.Windows.Forms.Padding(4);
             this.btnLuuphieu.Name = "btnLuuphieu";
             this.btnLuuphieu.Size = new System.Drawing.Size(119, 44);
             this.btnLuuphieu.TabIndex = 45;
             this.btnLuuphieu.Text = "Lưu Phiếu";
             this.btnLuuphieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLuuphieu.UseVisualStyleBackColor = true;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(6, 64);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(256, 91);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
             // 
             // frmNhapHang
             // 
@@ -379,6 +392,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgv_nhacc)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -413,5 +427,6 @@
         private System.Windows.Forms.ListBox lst_dshh;
         private System.Windows.Forms.ComboBox cbo_nhomhang;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

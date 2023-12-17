@@ -121,6 +121,11 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+
+        private void btnT_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 
 

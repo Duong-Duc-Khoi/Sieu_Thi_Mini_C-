@@ -80,8 +80,10 @@
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnSua = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // txtDvt
@@ -335,6 +337,7 @@
             // 
             // grb1
             // 
+            this.grb1.Controls.Add(this.pictureBox1);
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
@@ -350,7 +353,7 @@
             // 
             // btnT
             // 
-            this.btnT.Location = new System.Drawing.Point(43, 496);
+            this.btnT.Location = new System.Drawing.Point(44, 541);
             this.btnT.Name = "btnT";
             this.btnT.Size = new System.Drawing.Size(176, 54);
             this.btnT.TabIndex = 47;
@@ -360,7 +363,7 @@
             // 
             // btnXuatHang
             // 
-            this.btnXuatHang.Location = new System.Drawing.Point(43, 415);
+            this.btnXuatHang.Location = new System.Drawing.Point(44, 460);
             this.btnXuatHang.Name = "btnXuatHang";
             this.btnXuatHang.Size = new System.Drawing.Size(176, 54);
             this.btnXuatHang.TabIndex = 46;
@@ -369,7 +372,7 @@
             // 
             // btnNhapHang
             // 
-            this.btnNhapHang.Location = new System.Drawing.Point(43, 332);
+            this.btnNhapHang.Location = new System.Drawing.Point(44, 377);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(176, 54);
             this.btnNhapHang.TabIndex = 45;
@@ -378,7 +381,7 @@
             // 
             // btnLoaiHang
             // 
-            this.btnLoaiHang.Location = new System.Drawing.Point(43, 253);
+            this.btnLoaiHang.Location = new System.Drawing.Point(44, 298);
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(176, 54);
             this.btnLoaiHang.TabIndex = 44;
@@ -387,7 +390,7 @@
             // 
             // btnNhaCungCap
             // 
-            this.btnNhaCungCap.Location = new System.Drawing.Point(43, 177);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(44, 222);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(176, 54);
             this.btnNhaCungCap.TabIndex = 43;
@@ -397,7 +400,7 @@
             // 
             // btnHangHoa
             // 
-            this.btnHangHoa.Location = new System.Drawing.Point(43, 100);
+            this.btnHangHoa.Location = new System.Drawing.Point(44, 145);
             this.btnHangHoa.Name = "btnHangHoa";
             this.btnHangHoa.Size = new System.Drawing.Size(176, 54);
             this.btnHangHoa.TabIndex = 42;
@@ -611,6 +614,16 @@
             this.btnThem.UseVisualStyleBackColor = true;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 36);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(246, 84);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -653,6 +666,7 @@
             this.Load += new System.EventHandler(this.frmHangHoa_Load);
             this.grb1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -711,5 +725,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dinhmuc;
         private System.Windows.Forms.DataGridViewTextBoxColumn trangthaiban;
         private System.Windows.Forms.DataGridViewTextBoxColumn vat;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

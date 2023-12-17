@@ -63,6 +63,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _081219469dc9f4d880e5126bfdccd755 {
+            get {
+                object obj = ResourceManager.GetObject("081219469dc9f4d880e5126bfdccd755", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap analytics_2 {
             get {
                 object obj = ResourceManager.GetObject("analytics-2", resourceCulture);
@@ -73,9 +83,69 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap background_don_gian_dep_110637684 {
+            get {
+                object obj = ResourceManager.GetObject("background-don-gian-dep_110637684", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x1024 {
+            get {
+                object obj = ResourceManager.GetObject("cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x1024", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x10241 {
+            get {
+                object obj = ResourceManager.GetObject("cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x10241", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap hinhnen {
+            get {
+                object obj = ResourceManager.GetObject("hinhnen", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap logo {
             get {
                 object obj = ResourceManager.GetObject("logo", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nenbanhang {
+            get {
+                object obj = ResourceManager.GetObject("nenbanhang", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap network {
+            get {
+                object obj = ResourceManager.GetObject("network", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -103,6 +173,46 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OIP__2_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP__3_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (3)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP__4_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (4)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap OIP__5_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (5)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OIP1 {
             get {
                 object obj = ResourceManager.GetObject("OIP1", resourceCulture);
@@ -116,6 +226,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         internal static System.Drawing.Bitmap OIP2 {
             get {
                 object obj = ResourceManager.GetObject("OIP2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap op_top_mv_2 {
+            get {
+                object obj = ResourceManager.GetObject("op_top_mv_2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

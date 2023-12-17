@@ -79,7 +79,9 @@
             this.date_ngaybd = new System.Windows.Forms.DateTimePicker();
             this.date_ngaykt = new System.Windows.Forms.DateTimePicker();
             this.cbotrangthai = new System.Windows.Forms.ComboBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // label1
@@ -205,7 +207,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(25, 178);
+            this.label2.Location = new System.Drawing.Point(8, 177);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(113, 20);
@@ -216,7 +218,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(25, 242);
+            this.label3.Location = new System.Drawing.Point(13, 241);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(71, 20);
@@ -227,7 +229,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(25, 314);
+            this.label4.Location = new System.Drawing.Point(13, 320);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(83, 20);
@@ -347,7 +349,7 @@
             // txtTennv
             // 
             this.txtTennv.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtTennv.Location = new System.Drawing.Point(134, 178);
+            this.txtTennv.Location = new System.Drawing.Point(134, 174);
             this.txtTennv.Margin = new System.Windows.Forms.Padding(4);
             this.txtTennv.Name = "txtTennv";
             this.txtTennv.Size = new System.Drawing.Size(163, 26);
@@ -613,11 +615,22 @@
             this.cbotrangthai.Size = new System.Drawing.Size(189, 24);
             this.cbotrangthai.TabIndex = 5;
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
+            this.pictureBox1.Location = new System.Drawing.Point(983, 12);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(313, 88);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 51;
+            this.pictureBox1.TabStop = false;
+            // 
             // frmNhanVien
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1924, 783);
+            this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.cbotrangthai);
             this.Controls.Add(this.date_ngaykt);
             this.Controls.Add(this.date_ngaybd);
@@ -659,6 +672,7 @@
             this.Text = "Quản Lý Nhân Viên";
             this.Load += new System.EventHandler(this.frmNhanVien_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -716,5 +730,6 @@
         private System.Windows.Forms.DateTimePicker date_ngaybd;
         private System.Windows.Forms.DateTimePicker date_ngaykt;
         private System.Windows.Forms.ComboBox cbotrangthai;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }

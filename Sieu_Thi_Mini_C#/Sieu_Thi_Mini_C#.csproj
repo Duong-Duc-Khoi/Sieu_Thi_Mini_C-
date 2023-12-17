@@ -178,5 +178,41 @@
   <ItemGroup>
     <None Include="Resources\analytics-2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\081219469dc9f4d880e5126bfdccd755.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\nenbanhang.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %282%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\network.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %283%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\background-don-gian-dep_110637684.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x1024.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cp7a9435_46737a610db14db7aa9da065fbea6bd6_1024x10241.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %284%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hinhnen.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\op_top_mv_2.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
