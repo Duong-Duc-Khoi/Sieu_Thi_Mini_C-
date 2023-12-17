@@ -29,8 +29,8 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnBanhang_Click(object sender, EventArgs e)
         {
-            frmBanHang banhang = new frmBanHang();
-            banhang.ShowDialog();
+            formBanhang formBanhang = new formBanhang();
+            formBanhang.ShowDialog();
           
         }
 

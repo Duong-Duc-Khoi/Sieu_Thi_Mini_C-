@@ -29,9 +29,11 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBanhang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
             this.label1 = new System.Windows.Forms.Label();
@@ -223,9 +225,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
-            this.pictureBox1.Location = new System.Drawing.Point(88, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(74, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(271, 62);
+            this.pictureBox1.Size = new System.Drawing.Size(285, 69);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
@@ -342,9 +344,9 @@
             // 
             // dgv_xoahang
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_xoahang.HeaderText = "Xóa";
             this.dgv_xoahang.MinimumWidth = 6;
             this.dgv_xoahang.Name = "dgv_xoahang";
@@ -363,9 +365,9 @@
             // 
             // dgv_giamsl
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_giamsl.HeaderText = "(-)";
             this.dgv_giamsl.MinimumWidth = 6;
             this.dgv_giamsl.Name = "dgv_giamsl";
@@ -378,6 +380,9 @@
             // 
             // dgv_soluong
             // 
+            this.dgv_soluong.DataPropertyName = "p_soluong";
+            dataGridViewCellStyle8.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_soluong.HeaderText = "SL";
             this.dgv_soluong.MinimumWidth = 6;
             this.dgv_soluong.Name = "dgv_soluong";
@@ -385,9 +390,9 @@
             // 
             // dgv_tangsl
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_tangsl.HeaderText = "(+)";
             this.dgv_tangsl.MinimumWidth = 6;
             this.dgv_tangsl.Name = "dgv_tangsl";
@@ -397,6 +402,8 @@
             // dgv_dongia
             // 
             this.dgv_dongia.DataPropertyName = "giaban";
+            dataGridViewCellStyle10.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_dongia.HeaderText = "Đơn giá";
             this.dgv_dongia.MinimumWidth = 6;
             this.dgv_dongia.Name = "dgv_dongia";

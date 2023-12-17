@@ -56,25 +56,58 @@ namespace Sieu_Thi_Mini_C_
             da.Fill(tb);
             cmd.Dispose();
             con.Close();
-           
-            dgv_thongtin.Rows[0].Cells[3].Value = "1";
             dgv_thongtin.DataSource = tb;
         }
 
         private void dgv_thongtin_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if(e.ColumnIndex == dgv_thongtin.Columns["dgv_xoahang"].Index && e.RowIndex >=0 )
+
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            if (e.ColumnIndex == dgv_thongtin.Columns["dgv_xoahang"].Index && e.RowIndex >=0 )
             {
                 dgv_thongtin.Rows.RemoveAt(dgv_thongtin.CurrentRow.Index);
-            }
-
-            
+            }       
             if (e.ColumnIndex == dgv_thongtin.Columns["dgv_tangsl"].Index && e.RowIndex >= 0)
             {
-              int p_soluong = int.Parse(dgv_thongtin.Rows[0].Cells[3].Value.ToString());
-              p_soluong++;
-              dgv_thongtin.CurrentRow.Cells[3].Value = p_soluong;   
+                int p_soluong = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells[2].Value);
+                
+                
+                string p_tenhang = dgv_thongtin.CurrentRow.Cells["dgv_tenhh"].Value.ToString();
+
+                string sql = "Select soluong from banghanghoa where tenhang='"+p_tenhang+"'";
+
+                SqlCommand cmd = new SqlCommand(sql, con);      
+                int p_soluongmax = (int)cmd.ExecuteScalar();
+                if (p_soluong == p_soluongmax)
+                {
+                    return;
+                }
+                p_soluong++;
+                
+                dgv_thongtin.CurrentRow.Cells[2].Value = p_soluong;
+                dgv_thongtin.Refresh();
             }
+
+            if (e.ColumnIndex == dgv_thongtin.Columns["dgv_giamsl"].Index && e.RowIndex >= 0)
+            {
+                int p_soluong = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells[2].Value);
+                p_soluong--;
+                if (p_soluong == 0)
+                {
+                    return;
+                }
+                dgv_thongtin.CurrentRow.Cells[2].Value = p_soluong;
+                dgv_thongtin.Refresh();
+                
+            }
+            int p_dongia = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells["dgv_dongia"].Value);
+            int p_soluongg = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells["dgv_soluong"].Value);
+            int p_thanhtien = p_dongia * p_soluongg;
+            dgv_thongtin.CurrentRow.Cells["dgv_thanhtien"].Value = p_thanhtien;
+
 
         }
     }
