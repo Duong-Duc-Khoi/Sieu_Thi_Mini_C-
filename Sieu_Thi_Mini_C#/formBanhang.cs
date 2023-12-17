@@ -73,7 +73,7 @@ namespace Sieu_Thi_Mini_C_
             {
               int p_soluong = int.Parse(dgv_thongtin.Rows[0].Cells[3].Value.ToString());
               p_soluong++;
-              dgv_thongtin.Rows[0].Cells[3].Value = p_soluong;   
+              dgv_thongtin.CurrentRow.Cells[3].Value = p_soluong;   
             }
 
         }
