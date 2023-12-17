@@ -150,7 +150,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@trangthaiban", SqlDbType.Bit).Value = p_trangthaiban;
             cmd.Parameters.Add("@vat", SqlDbType.Int).Value = p_vat;
            
-
+            
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();

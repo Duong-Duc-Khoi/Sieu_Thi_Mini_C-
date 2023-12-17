@@ -50,13 +50,19 @@ namespace Sieu_Thi_Mini_C_
             SqlConnection con= new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
             string p_mavach=txt_mahh.Text.Trim();
             string tenhang="Select tenhang,giaban from banghanghoa where mavach=N'"+p_mavach+"'";
+            DataTable current_data = (DataTable)dgv_thongtin.DataSource;
             SqlCommand cmd= new SqlCommand(tenhang, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
             DataTable tb = new DataTable();
             da.Fill(tb);
             cmd.Dispose();
             con.Close();
-            dgv_thongtin.DataSource = tb;
+            if(current_data == null)
+            {
+                current_data = new DataTable();
+            }
+            current_data.Merge(tb);
+            dgv_thongtin.DataSource = current_data;
         }
 
         private void dgv_thongtin_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -108,6 +114,11 @@ namespace Sieu_Thi_Mini_C_
             int p_thanhtien = p_dongia * p_soluongg;
             dgv_thongtin.CurrentRow.Cells["dgv_thanhtien"].Value = p_thanhtien;
 
+
+        }
+
+        private void txt_mahh_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }
