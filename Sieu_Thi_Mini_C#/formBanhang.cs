@@ -126,6 +126,40 @@ namespace Sieu_Thi_Mini_C_
         {
             this.Close();
         }
+
+        private void formBanhang_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+
+        }
+
+        private void btnHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoa frmHangHoa = new frmHangHoa();
+            frmHangHoa.ShowDialog();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap frmncc= new frmNhaCungCap(); 
+            frmncc.ShowDialog();
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            frmNhapHang frmnhaphang= new frmNhapHang();
+            frmnhaphang.ShowDialog();
+        }
+
+        private void btnLammoiphieu_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void btnXuatHang_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 
 

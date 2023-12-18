@@ -199,12 +199,12 @@
             // 
             // btn_dangxuat
             // 
-            this.btn_dangxuat.BackColor = System.Drawing.Color.Honeydew;
+            this.btn_dangxuat.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_dangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_dangxuat.Location = new System.Drawing.Point(621, 740);
+            this.btn_dangxuat.Location = new System.Drawing.Point(1090, 723);
             this.btn_dangxuat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_dangxuat.Name = "btn_dangxuat";
-            this.btn_dangxuat.Size = new System.Drawing.Size(124, 36);
+            this.btn_dangxuat.Size = new System.Drawing.Size(156, 55);
             this.btn_dangxuat.TabIndex = 2;
             this.btn_dangxuat.Text = "Đăng xuất";
             this.btn_dangxuat.UseVisualStyleBackColor = false;
@@ -225,7 +225,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = global::Sieu_Thi_Mini_C_.Properties.Resources.op_top_mv_2;
+            this.BackgroundImage = global::Sieu_Thi_Mini_C_.Properties.Resources.hinhnen;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1267, 782);
             this.Controls.Add(this.pictureBox3);

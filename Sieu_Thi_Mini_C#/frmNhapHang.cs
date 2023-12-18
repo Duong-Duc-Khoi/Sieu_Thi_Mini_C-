@@ -38,7 +38,8 @@ namespace Sieu_Thi_Mini_C_
 
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
-           
+            this.WindowState = FormWindowState.Maximized;
+
             string nhomhang = "Select distinct nhomhang from banghanghoa";
             SqlCommand cmd = new SqlCommand(nhomhang, con);
             SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
@@ -66,6 +67,23 @@ namespace Sieu_Thi_Mini_C_
             
 
 
+        }
+
+        private void btnHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoa frmHangHoa = new frmHangHoa();
+            frmHangHoa.ShowDialog();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap frmNhaCungCap = new frmNhaCungCap();  
+            frmNhaCungCap.ShowDialog();
+        }
+
+        private void btnT_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
 }

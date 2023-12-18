@@ -73,7 +73,9 @@ namespace Sieu_Thi_Mini_C_
         private void frmHangHoa_Load(object sender, EventArgs e)
         {
             load_dgv();
-            
+            this.WindowState = FormWindowState.Maximized;
+
+
         }
 
         private void txtTrangthai_TextChanged(object sender, EventArgs e)
@@ -376,7 +378,7 @@ namespace Sieu_Thi_Mini_C_
             //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
             //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
 
-            e_excel.Range rowHead = oSheet.get_Range("A3", "F3");
+            e_excel.Range rowHead = oSheet.get_Range("A3", "L3");
             rowHead.Font.Bold = true;
             // Kẻ viền
             rowHead.Borders.LineStyle = e_excel.Constants.xlSolid;
@@ -422,7 +424,8 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
-
+            frmNhaCungCap frm  =new frmNhaCungCap();
+            frm.ShowDialog();
         }
 
         private void btnHangHoa_Click(object sender, EventArgs e)
@@ -481,6 +484,11 @@ namespace Sieu_Thi_Mini_C_
             }
         }
 
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            frmNhapHang frmNhapHang = new frmNhapHang();
+                frmNhapHang.ShowDialog();
+        }
     }
 
 }

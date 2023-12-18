@@ -158,6 +158,8 @@ namespace Sieu_Thi_Mini_C_
         {
             load_dgv();
             txtMancc.Enabled = true;
+            this.WindowState = FormWindowState.Maximized;
+
         }
 
         private void btnThoat_Click(object sender, EventArgs e)

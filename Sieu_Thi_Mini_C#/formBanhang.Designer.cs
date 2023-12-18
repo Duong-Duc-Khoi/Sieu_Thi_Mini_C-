@@ -332,6 +332,7 @@
             this.btnXuatHang.TabIndex = 46;
             this.btnXuatHang.Text = "Xuất Hàng";
             this.btnXuatHang.UseVisualStyleBackColor = true;
+            this.btnXuatHang.Click += new System.EventHandler(this.btnXuatHang_Click);
             // 
             // btnNhapHang
             // 
@@ -341,6 +342,7 @@
             this.btnNhapHang.TabIndex = 45;
             this.btnNhapHang.Text = "Nhập Hàng";
             this.btnNhapHang.UseVisualStyleBackColor = true;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // btnLoaiHang
             // 
@@ -359,6 +361,7 @@
             this.btnNhaCungCap.TabIndex = 43;
             this.btnNhaCungCap.Text = "Nhà Cung Cấp";
             this.btnNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // btnHangHoa
             // 
@@ -368,13 +371,14 @@
             this.btnHangHoa.TabIndex = 42;
             this.btnHangHoa.Text = "Hàng Hóa";
             this.btnHangHoa.UseVisualStyleBackColor = true;
+            this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
             // 
             // button1
             // 
             this.button1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.Location = new System.Drawing.Point(832, 670);
+            this.button1.Location = new System.Drawing.Point(779, 670);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(168, 87);
+            this.button1.Size = new System.Drawing.Size(221, 87);
             this.button1.TabIndex = 53;
             this.button1.Text = "F8-IN HÓA ĐƠN";
             this.button1.UseVisualStyleBackColor = true;
@@ -392,6 +396,7 @@
             this.btnLammoiphieu.Text = "Làm Mới Phiếu";
             this.btnLammoiphieu.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnLammoiphieu.UseVisualStyleBackColor = true;
+            this.btnLammoiphieu.Click += new System.EventHandler(this.btnLammoiphieu_Click);
             // 
             // pictureBox1
             // 
@@ -446,6 +451,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formBanhang";
+            this.Load += new System.EventHandler(this.formBanhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();
             this.grb1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
