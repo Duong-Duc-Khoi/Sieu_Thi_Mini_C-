@@ -28,11 +28,11 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBanhang));
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
@@ -52,7 +52,6 @@
             this.txt_vat = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
             this.txt_thanhtoan = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.btnT = new System.Windows.Forms.Button();
             this.btnXuatHang = new System.Windows.Forms.Button();
@@ -64,6 +63,7 @@
             this.btnLammoiphieu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnkiemtra = new System.Windows.Forms.Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -103,9 +103,9 @@
             // 
             // dgv_xoahang
             // 
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle6.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_xoahang.HeaderText = "Xóa";
             this.dgv_xoahang.MinimumWidth = 6;
             this.dgv_xoahang.Name = "dgv_xoahang";
@@ -124,9 +124,9 @@
             // 
             // dgv_giamsl
             // 
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_giamsl.HeaderText = "(-)";
             this.dgv_giamsl.MinimumWidth = 6;
             this.dgv_giamsl.Name = "dgv_giamsl";
@@ -140,8 +140,8 @@
             // dgv_soluong
             // 
             this.dgv_soluong.DataPropertyName = "p_soluong";
-            dataGridViewCellStyle8.NullValue = "1";
-            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_soluong.HeaderText = "SL";
             this.dgv_soluong.MinimumWidth = 6;
             this.dgv_soluong.Name = "dgv_soluong";
@@ -149,9 +149,9 @@
             // 
             // dgv_tangsl
             // 
-            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle9.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tangsl.HeaderText = "(+)";
             this.dgv_tangsl.MinimumWidth = 6;
             this.dgv_tangsl.Name = "dgv_tangsl";
@@ -161,8 +161,8 @@
             // dgv_dongia
             // 
             this.dgv_dongia.DataPropertyName = "giaban";
-            dataGridViewCellStyle10.NullValue = "0";
-            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle10;
+            dataGridViewCellStyle5.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_dongia.HeaderText = "Đơn giá";
             this.dgv_dongia.MinimumWidth = 6;
             this.dgv_dongia.Name = "dgv_dongia";
@@ -280,24 +280,6 @@
             this.txt_thanhtoan.ReadOnly = true;
             this.txt_thanhtoan.Size = new System.Drawing.Size(200, 30);
             this.txt_thanhtoan.TabIndex = 48;
-            // 
-            // textBox5
-            // 
-            this.textBox5.AllowDrop = true;
-            this.textBox5.BackColor = System.Drawing.Color.Lavender;
-            this.textBox5.Cursor = System.Windows.Forms.Cursors.Arrow;
-            this.textBox5.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox5.Location = new System.Drawing.Point(365, 32);
-            this.textBox5.MaximumSize = new System.Drawing.Size(500, 62);
-            this.textBox5.MinimumSize = new System.Drawing.Size(200, 62);
-            this.textBox5.Multiline = true;
-            this.textBox5.Name = "textBox5";
-            this.textBox5.ReadOnly = true;
-            this.textBox5.ShortcutsEnabled = false;
-            this.textBox5.Size = new System.Drawing.Size(500, 62);
-            this.textBox5.TabIndex = 51;
-            this.textBox5.Text = "QUẦY THU NGÂN 1\r\n---------------------";
-            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // grb1
             // 
@@ -425,16 +407,28 @@
             this.btnkiemtra.UseVisualStyleBackColor = false;
             this.btnkiemtra.Click += new System.EventHandler(this.btnkiemtra_Click);
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Lavender;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(439, 25);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(477, 76);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "QUẦY THU NGÂN 1\n ------------------------";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // formBanhang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 22F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1423, 993);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.btnLammoiphieu);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.grb1);
-            this.Controls.Add(this.textBox5);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.txt_thanhtoan);
@@ -474,7 +468,6 @@
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txt_thanhtoan;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.TextBox textBox5;
         private System.Windows.Forms.Button btnkiemtra;
         private System.Windows.Forms.GroupBox grb1;
         private System.Windows.Forms.Button btnT;
@@ -492,5 +485,6 @@
         private System.Windows.Forms.DataGridViewButtonColumn dgv_tangsl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_thanhtien;
+        private System.Windows.Forms.Label label12;
     }
 }

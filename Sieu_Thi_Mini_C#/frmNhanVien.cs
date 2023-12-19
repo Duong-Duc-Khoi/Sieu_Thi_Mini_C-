@@ -83,6 +83,17 @@ namespace Sieu_Thi_Mini_C_
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+
+            //kiem tra xem da nhap du du lieu vao chua
+            if (string.IsNullOrEmpty(txtManv.Text) || string.IsNullOrEmpty(txtTennv.Text) || string.IsNullOrEmpty(cboGIoitinh.Text)
+               || string.IsNullOrEmpty(date_ngaysinh.Text) || string.IsNullOrEmpty(txtSdt.Text) || string.IsNullOrEmpty(txtDiachi.Text)
+               || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text)
+               || string.IsNullOrEmpty(cboQuyen.Text) || string.IsNullOrEmpty(date_ngaybd.Text) || string.IsNullOrEmpty(date_ngaykt.Text)
+               || string.IsNullOrEmpty(cbotrangthai.Text) || string.IsNullOrEmpty(txtLuong.Text))
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
             //lay du lieu tu control dua vao bien
             string p_mnv=txtManv.Text.Trim();
             string p_tennv=txtTennv.Text.Trim();
@@ -134,7 +145,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Thêm mới thành công!");
+            MessageBox.Show("Thêm mới thành công!","Thông báo");
             load_dgv();
             txtManv.Enabled = true;
         }
@@ -331,6 +342,15 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtManv.Text) || string.IsNullOrEmpty(txtTennv.Text) || string.IsNullOrEmpty(cboGIoitinh.Text)
+               || string.IsNullOrEmpty(date_ngaysinh.Text) || string.IsNullOrEmpty(txtSdt.Text) || string.IsNullOrEmpty(txtDiachi.Text)
+               || string.IsNullOrEmpty(txtEmail.Text) || string.IsNullOrEmpty(txtUsername.Text) || string.IsNullOrEmpty(txtPassword.Text)
+               || string.IsNullOrEmpty(cboQuyen.Text) || string.IsNullOrEmpty(date_ngaybd.Text) || string.IsNullOrEmpty(date_ngaykt.Text)
+               || string.IsNullOrEmpty(cbotrangthai.Text) || string.IsNullOrEmpty(txtLuong.Text))
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
             //b1 lay du lieu tu cac control dua vao bien
             string p_mnv = txtManv.Text.Trim();
             string p_tennv = txtTennv.Text.Trim();
@@ -376,7 +396,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Sửa hoàn tất !");
+            MessageBox.Show("Sửa hoàn tất !","Thông báo");
             txtManv.Enabled = false;
             load_dgv();
         }
@@ -398,7 +418,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();//giaiphong bo nho
             con.Close();//ngatketnoi
-            MessageBox.Show("Xoa thanh cong !");
+            MessageBox.Show("Xoa thanh cong !", "Thông báo");
             load_dgv();
         }
 

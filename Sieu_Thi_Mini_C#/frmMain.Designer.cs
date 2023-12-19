@@ -55,7 +55,7 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(288, 146);
+            this.pictureBox1.Location = new System.Drawing.Point(704, 122);
             this.pictureBox1.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(181, 184);
@@ -66,7 +66,7 @@
             // pictureBox2
             // 
             this.pictureBox2.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox2.Image")));
-            this.pictureBox2.Location = new System.Drawing.Point(584, 464);
+            this.pictureBox2.Location = new System.Drawing.Point(1000, 440);
             this.pictureBox2.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(181, 184);
@@ -77,7 +77,7 @@
             // pictureBox4
             // 
             this.pictureBox4.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox4.Image")));
-            this.pictureBox4.Location = new System.Drawing.Point(288, 464);
+            this.pictureBox4.Location = new System.Drawing.Point(704, 440);
             this.pictureBox4.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(181, 184);
@@ -88,7 +88,7 @@
             // pictureBox5
             // 
             this.pictureBox5.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox5.Image")));
-            this.pictureBox5.Location = new System.Drawing.Point(873, 146);
+            this.pictureBox5.Location = new System.Drawing.Point(1289, 122);
             this.pictureBox5.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(181, 184);
@@ -99,7 +99,7 @@
             // pictureBox6
             // 
             this.pictureBox6.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox6.Image")));
-            this.pictureBox6.Location = new System.Drawing.Point(584, 146);
+            this.pictureBox6.Location = new System.Drawing.Point(1000, 122);
             this.pictureBox6.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(186, 184);
@@ -111,7 +111,7 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox7.Image")));
-            this.pictureBox7.Location = new System.Drawing.Point(873, 464);
+            this.pictureBox7.Location = new System.Drawing.Point(1289, 440);
             this.pictureBox7.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(180, 184);
@@ -123,7 +123,7 @@
             // 
             this.btnBanhang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnBanhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBanhang.Location = new System.Drawing.Point(288, 356);
+            this.btnBanhang.Location = new System.Drawing.Point(704, 332);
             this.btnBanhang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBanhang.Name = "btnBanhang";
             this.btnBanhang.Size = new System.Drawing.Size(181, 58);
@@ -136,7 +136,7 @@
             // 
             this.btnNhanvien.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnNhanvien.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnNhanvien.Location = new System.Drawing.Point(587, 356);
+            this.btnNhanvien.Location = new System.Drawing.Point(1003, 332);
             this.btnNhanvien.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnNhanvien.Name = "btnNhanvien";
             this.btnNhanvien.Size = new System.Drawing.Size(181, 58);
@@ -149,7 +149,7 @@
             // 
             this.btnKhachhang.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnKhachhang.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnKhachhang.Location = new System.Drawing.Point(875, 356);
+            this.btnKhachhang.Location = new System.Drawing.Point(1291, 332);
             this.btnKhachhang.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKhachhang.Name = "btnKhachhang";
             this.btnKhachhang.Size = new System.Drawing.Size(181, 58);
@@ -162,7 +162,7 @@
             // 
             this.btnKho.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnKho.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnKho.Location = new System.Drawing.Point(288, 673);
+            this.btnKho.Location = new System.Drawing.Point(704, 649);
             this.btnKho.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnKho.Name = "btnKho";
             this.btnKho.Size = new System.Drawing.Size(181, 58);
@@ -175,7 +175,7 @@
             // 
             this.btnBaocao.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnBaocao.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBaocao.Location = new System.Drawing.Point(875, 673);
+            this.btnBaocao.Location = new System.Drawing.Point(1291, 649);
             this.btnBaocao.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnBaocao.Name = "btnBaocao";
             this.btnBaocao.Size = new System.Drawing.Size(181, 58);
@@ -188,7 +188,7 @@
             // 
             this.btnDoanhthu.BackColor = System.Drawing.SystemColors.GradientActiveCaption;
             this.btnDoanhthu.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnDoanhthu.Location = new System.Drawing.Point(587, 673);
+            this.btnDoanhthu.Location = new System.Drawing.Point(1003, 649);
             this.btnDoanhthu.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.btnDoanhthu.Name = "btnDoanhthu";
             this.btnDoanhthu.Size = new System.Drawing.Size(181, 58);
@@ -201,10 +201,10 @@
             // 
             this.btn_dangxuat.BackColor = System.Drawing.SystemColors.InactiveBorder;
             this.btn_dangxuat.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_dangxuat.Location = new System.Drawing.Point(1090, 723);
+            this.btn_dangxuat.Location = new System.Drawing.Point(1038, 733);
             this.btn_dangxuat.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btn_dangxuat.Name = "btn_dangxuat";
-            this.btn_dangxuat.Size = new System.Drawing.Size(156, 55);
+            this.btn_dangxuat.Size = new System.Drawing.Size(118, 36);
             this.btn_dangxuat.TabIndex = 2;
             this.btn_dangxuat.Text = "Đăng xuất";
             this.btn_dangxuat.UseVisualStyleBackColor = false;
@@ -213,9 +213,9 @@
             // pictureBox3
             // 
             this.pictureBox3.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.logo;
-            this.pictureBox3.Location = new System.Drawing.Point(441, 34);
+            this.pictureBox3.Location = new System.Drawing.Point(930, 22);
             this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(461, 91);
+            this.pictureBox3.Size = new System.Drawing.Size(312, 72);
             this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pictureBox3.TabIndex = 51;
             this.pictureBox3.TabStop = false;
@@ -225,9 +225,9 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ButtonFace;
-            this.BackgroundImage = global::Sieu_Thi_Mini_C_.Properties.Resources.hinhnen;
+            this.BackgroundImage = global::Sieu_Thi_Mini_C_.Properties.Resources.the__1_;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.ClientSize = new System.Drawing.Size(1267, 782);
+            this.ClientSize = new System.Drawing.Size(1535, 782);
             this.Controls.Add(this.pictureBox3);
             this.Controls.Add(this.btn_dangxuat);
             this.Controls.Add(this.btnBaocao);

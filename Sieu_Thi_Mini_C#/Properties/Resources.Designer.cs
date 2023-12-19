@@ -113,6 +113,26 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Free_Simple_Modern_Circle_Design_Studio_Logo__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Free Simple Modern Circle Design Studio Logo (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Free_Simple_Modern_Circle_Design_Studio_Logo__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("Free Simple Modern Circle Design Studio Logo (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap hinhnen {
             get {
                 object obj = ResourceManager.GetObject("hinhnen", resourceCulture);
@@ -213,6 +233,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap OIP__6_ {
+            get {
+                object obj = ResourceManager.GetObject("OIP (6)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap OIP1 {
             get {
                 object obj = ResourceManager.GetObject("OIP1", resourceCulture);
@@ -236,6 +266,36 @@ namespace Sieu_Thi_Mini_C_.Properties {
         internal static System.Drawing.Bitmap op_top_mv_2 {
             get {
                 object obj = ResourceManager.GetObject("op_top_mv_2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the {
+            get {
+                object obj = ResourceManager.GetObject("the", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the__1_ {
+            get {
+                object obj = ResourceManager.GetObject("the (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap the__1_1 {
+            get {
+                object obj = ResourceManager.GetObject("the (1)1", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

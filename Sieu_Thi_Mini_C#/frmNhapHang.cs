@@ -79,6 +79,7 @@ namespace Sieu_Thi_Mini_C_
         {
             frmNhaCungCap frmNhaCungCap = new frmNhaCungCap();  
             frmNhaCungCap.ShowDialog();
+            
         }
 
         private void btnT_Click(object sender, EventArgs e)
@@ -90,8 +91,33 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+        private void AddAutoSTT()
+        {
 
-        
+                // Tạo cột mới
+                DataColumn column = new DataColumn();
+                column.DataType = System.Type.GetType("System.Int32");
+                column.AutoIncrement = true;
+                column.AutoIncrementSeed = 1;
+                column.AutoIncrementStep = 1;
+                column.ColumnName = "STT";
+
+                // Thêm cột mới vào DataTable
+                DataTable table = new DataTable();
+                table.Columns.Add(column);
+
+                // Gán giá trị cho cột mới
+                for (int i = 0; i < table.Rows.Count; i++)
+                {
+                    table.Rows[i]["STT"] = i + 1;
+                }
+
+            // Hiển thị DataTable trên DataGridView
+            dgv_thongtin.Rows[1].Cells[1].Value = table;
+           
+        }
+
+
 
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
@@ -99,7 +125,14 @@ namespace Sieu_Thi_Mini_C_
             {
                 con.Open();
             }
-            string p_tenhh=txt_mathang.Text.Trim();
+            if (string.IsNullOrEmpty(txt_sl.Text))
+            {    
+                
+                MessageBox.Show("Chưa nhập số lượng!","Thông báo");
+                return;
+            }
+
+            string p_tenhh =txt_mathang.Text.Trim();
             
             string sql = "Select mahh,tenhang,xuatxu,gianhap from banghanghoa where tenhang=N'" + p_tenhh + "'";
             DataTable current_data = (DataTable)dgv_thongtin.DataSource;
@@ -112,9 +145,10 @@ namespace Sieu_Thi_Mini_C_
             dgv_thongtin.DataSource = dt;
             cmd.ExecuteNonQuery();
             cmd.Dispose();
-           
             //
            
+            //
+
             if (current_data == null)
             {
                 current_data = new DataTable();
@@ -122,18 +156,44 @@ namespace Sieu_Thi_Mini_C_
             }
             current_data.Merge(dt);
             dgv_thongtin.DataSource = current_data;
-
+            //
             dgv_thongtin.CurrentRow.Cells["soluong"].Value = txt_sl.Text.Trim();
-        
-
+     
             dgv_thongtin.Refresh();
 
+           
         }
 
         private void lst_dshh_SelectedValueChanged(object sender, EventArgs e)
         {
             txt_mathang.Text = lst_dshh.SelectedItem.ToString();
         }
-       
+
+        private void dgv_thongtin_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex == dgv_thongtin.Rows.Count - 1)
+            {
+                return;
+            }
+            if (e.ColumnIndex == dgv_thongtin.Columns["dgv_btnXoa"].Index && e.RowIndex >= 0)
+            {
+                dgv_thongtin.Rows.RemoveAt(dgv_thongtin.CurrentRow.Index);
+                return;
+            }
+           
+        }
+
+        private void txt_sl_KeyPress(object sender, KeyPressEventArgs e)
+        {
+
+            if (!char.IsDigit(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+            if (e.KeyChar == '\b')
+            {
+                e.Handled = false;
+            }
+        }
     }
 }

@@ -15,6 +15,7 @@ using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
 
+
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmHangHoa : Form
@@ -90,7 +91,7 @@ namespace Sieu_Thi_Mini_C_
             //
             DataRow dr = tb.NewRow();
             dr["mancc"] = "";
-            dr["tenncc"] = "---- Chon nha cung cap ----";
+            dr["tenncc"] = "---- Chọn nhà cung cấp ----";
             tb.Rows.InsertAt(dr, 0);
             //hien thi tb vao combobox
             cbo_nhacc.DataSource = tb;
@@ -131,6 +132,16 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnThem_Click(object sender, EventArgs e)
         {
+            //kiem tra trang thai nhap du lieu
+
+            if (string.IsNullOrEmpty(txtMahh.Text) || string.IsNullOrEmpty(txtTenhh.Text) || string.IsNullOrEmpty(cbo_nhomhang.Text) 
+                || string.IsNullOrEmpty(txtXuatxu.Text) || string.IsNullOrEmpty(txtGianhap.Text) || string.IsNullOrEmpty(txtGiaban.Text)
+                || string.IsNullOrEmpty(txtDvt.Text) || cbo_nhacc.Text== "---- Chọn nhà cung cấp ----" || string.IsNullOrEmpty(txt_mavach.Text)
+                || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(cbo_trangthai.Text) || string.IsNullOrEmpty(txtVAT.Text)) 
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!","Thông báo");
+                return;
+            }
             //lay du lieu tu control dua vao bien
             string p_mahh = txtMahh.Text.Trim();
             string p_tenhh = txtTenhh.Text.Trim();
@@ -146,12 +157,12 @@ namespace Sieu_Thi_Mini_C_
 
            
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
-            int p_trangthaiban = int.Parse(txtTrangthai.Text.Trim());
+            int p_trangthaiban = int.Parse(cbo_trangthai.Text.Trim());
             float p_vat = float.Parse(txtVAT.Text.Trim());
             //
             if (Check(p_mahh))
             {
-                MessageBox.Show("Mã hàng hóa đã tồn tại !");
+                MessageBox.Show("Mã hàng hóa đã tồn tại !", "Thông báo");
                 txtMahh.Focus();
                 return;
             }
@@ -182,7 +193,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Thêm mới thành công!");
+            MessageBox.Show("Thêm mới thành công!", "Thông báo");
             load_dgv();
             txtMahh.Enabled = true;
         }
@@ -201,7 +212,7 @@ namespace Sieu_Thi_Mini_C_
             txt_mavach.Text = dgv_thongtin.Rows[i].Cells[8].Value.ToString();
            
             txtSoluong.Text = dgv_thongtin.Rows[i].Cells[9].Value.ToString();
-            txtTrangthai.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
+            cbo_trangthai.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
             txtVAT.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();    
             txtMahh.Enabled = false;
         }
@@ -213,6 +224,15 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            //kiem tra xem da nhap du du lieu vao chua
+            if (string.IsNullOrEmpty(txtMahh.Text) || string.IsNullOrEmpty(txtTenhh.Text) || string.IsNullOrEmpty(cbo_nhomhang.Text)
+               || string.IsNullOrEmpty(txtXuatxu.Text) || string.IsNullOrEmpty(txtGianhap.Text) || string.IsNullOrEmpty(txtGiaban.Text)
+               || string.IsNullOrEmpty(txtDvt.Text) || cbo_nhacc.Text == "---- Chọn nhà cung cấp ----" || string.IsNullOrEmpty(txt_mavach.Text)
+               || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(cbo_trangthai.Text) || string.IsNullOrEmpty(txtVAT.Text))
+            {
+                MessageBox.Show("Chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
 
             //b1 lay du lieu tu cac control dua vao bien
             string p_mahh = txtMahh.Text.Trim();
@@ -229,7 +249,7 @@ namespace Sieu_Thi_Mini_C_
 
 
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
-            bool p_trangthaiban = bool.Parse(txtTrangthai.Text.Trim());
+            bool p_trangthaiban = bool.Parse(cbo_trangthai.Text.Trim());
             float p_vat = float.Parse(txtVAT.Text.Trim());
 
             //b2 ket noi den database
@@ -263,7 +283,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Sửa hoàn tất !");
+            MessageBox.Show("Sửa hoàn tất !","Thông báo");
             txtMahh.Enabled = false;
             load_dgv();
         }
@@ -293,6 +313,8 @@ namespace Sieu_Thi_Mini_C_
         {
             btnThem.Enabled = true;
             txtMahh.Enabled = true;
+            
+
             foreach (Control control in this.Controls)
             {
                 if (control is TextBox)
@@ -300,6 +322,8 @@ namespace Sieu_Thi_Mini_C_
                     (control as TextBox).Text = string.Empty;
                 }
             }
+            cbo_nhacc.Text = "---- Chọn nhà cung cấp ----";
+            cbo_nhomhang.Text = null;
            
         }
 

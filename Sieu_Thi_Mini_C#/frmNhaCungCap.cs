@@ -75,6 +75,14 @@ namespace Sieu_Thi_Mini_C_
         }
         private void btnThem_Click_1(object sender, EventArgs e)
         {
+            //kiem tra day du du lieu
+            if (string.IsNullOrEmpty(txtMancc.Text) || string.IsNullOrEmpty(txtTenncc.Text) || string.IsNullOrEmpty(txtDiachi.Text)
+              || string.IsNullOrEmpty(txtSdt.Text) )
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
+
             //Lay du lieu tu cac control dua vao bien
             string p_mancc = txtMancc.Text.Trim();
             string p_tenncc = txtTenncc.Text.Trim();
@@ -83,7 +91,7 @@ namespace Sieu_Thi_Mini_C_
 
             if (Check(p_mancc))
             {
-                MessageBox.Show("Mã nhà cung cấp đã tồn tại !");
+                MessageBox.Show("Mã nhà cung cấp đã tồn tại !", "Thông báo");
                 txtMancc.Focus();
                 return;
             }
@@ -108,6 +116,12 @@ namespace Sieu_Thi_Mini_C_
         }
         private void btnSua_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(txtMancc.Text) || string.IsNullOrEmpty(txtTenncc.Text) || string.IsNullOrEmpty(txtDiachi.Text)
+             || string.IsNullOrEmpty(txtSdt.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
             //b1 lay du lieu tu cac control dua vao bien
 
             string p_mancc = txtMancc.Text.Trim();
@@ -127,7 +141,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Sửa hoàn tất !");
+            MessageBox.Show("Sửa hoàn tất !","Thông báo");
             txtMancc.Enabled = false;
             load_dgv();
 
@@ -150,7 +164,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();//giaiphong bo nho
             con.Close();//ngatketnoi
-            MessageBox.Show("Xoa thanh cong !");
+            MessageBox.Show("Xoa thanh cong !","Thông báo");
             load_dgv();
         }
 

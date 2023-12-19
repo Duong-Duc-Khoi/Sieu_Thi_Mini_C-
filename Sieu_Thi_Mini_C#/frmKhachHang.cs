@@ -79,6 +79,14 @@ namespace Sieu_Thi_Mini_C_
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            //kiem tra day du du lieu
+            if (string.IsNullOrEmpty(txtMakh.Text) || string.IsNullOrEmpty(txtTenkh.Text) || string.IsNullOrEmpty(txtCccd.Text)
+              || string.IsNullOrEmpty(txtSdt.Text) || string.IsNullOrEmpty(txtDiachi.Text) || string.IsNullOrEmpty(txtDiem.Text)
+              || string.IsNullOrEmpty(txtNamganbo.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
             //laay du lieu tu control dua vao bien
             string p_makh = txtMakh.Text.Trim();
             string p_tenkh = txtTenkh.Text.Trim();
@@ -92,7 +100,7 @@ namespace Sieu_Thi_Mini_C_
             //
             if (Check(p_makh))
             {
-                MessageBox.Show("Mã khách hàng đã tồn tại !");
+                MessageBox.Show("Mã khách hàng đã tồn tại !", "Thông báo");
                 txtMakh.Focus();
                 return;
             }
@@ -116,7 +124,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Thêm mới thành công!");
+            MessageBox.Show("Thêm mới thành công!", "Thông báo");
             load_dgv();
             txtMakh.Enabled = true;
 
@@ -125,6 +133,14 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnSua_Click(object sender, EventArgs e)
         {
+            //kiem tra day du du lieu
+            if (string.IsNullOrEmpty(txtMakh.Text) || string.IsNullOrEmpty(txtTenkh.Text) || string.IsNullOrEmpty(txtCccd.Text)
+              || string.IsNullOrEmpty(txtSdt.Text) || string.IsNullOrEmpty(txtDiachi.Text) || string.IsNullOrEmpty(txtDiem.Text)
+              || string.IsNullOrEmpty(txtNamganbo.Text))
+            {
+                MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thông báo");
+                return;
+            }
             //b1 lay du lieu tu cac control dua vao bien
             string p_makh = txtMakh.Text.Trim();
             string p_tenkh = txtTenkh.Text.Trim();
@@ -160,7 +176,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-            MessageBox.Show("Sửa hoàn tất !");
+            MessageBox.Show("Sửa hoàn tất !", "Thông báo");
             txtMakh.Enabled = false;
             load_dgv();
         }
@@ -182,7 +198,7 @@ namespace Sieu_Thi_Mini_C_
             cmd.ExecuteNonQuery();
             cmd.Dispose();//giaiphong bo nho
             con.Close();//ngatketnoi
-            MessageBox.Show("Xoá thành công!");
+            MessageBox.Show("Xoá thành công!","Thông báo");
             load_dgv();
         }
 

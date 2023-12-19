@@ -214,5 +214,17 @@
   <ItemGroup>
     <None Include="Resources\op_top_mv_2.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the %281%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\the %281%291.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\OIP %286%29.jpg" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
