@@ -85,5 +85,55 @@ namespace Sieu_Thi_Mini_C_
         {
             this.Close();
         }
+
+        private void btnLoaiHang_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        
+
+        private void btn_xacnhan_Click(object sender, EventArgs e)
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string p_tenhh=txt_mathang.Text.Trim();
+            
+            string sql = "Select mahh,tenhang,xuatxu,gianhap from banghanghoa where tenhang=N'" + p_tenhh + "'";
+            DataTable current_data = (DataTable)dgv_thongtin.DataSource;
+            SqlCommand cmd = new SqlCommand(sql,con);
+            SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
+            dataAdapter.SelectCommand = cmd;
+            DataTable dt = new DataTable();
+            
+            dataAdapter.Fill(dt);
+            dgv_thongtin.DataSource = dt;
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+           
+            //
+           
+            if (current_data == null)
+            {
+                current_data = new DataTable();
+                
+            }
+            current_data.Merge(dt);
+            dgv_thongtin.DataSource = current_data;
+
+            dgv_thongtin.CurrentRow.Cells["soluong"].Value = txt_sl.Text.Trim();
+        
+
+            dgv_thongtin.Refresh();
+
+        }
+
+        private void lst_dshh_SelectedValueChanged(object sender, EventArgs e)
+        {
+            txt_mathang.Text = lst_dshh.SelectedItem.ToString();
+        }
+       
     }
 }

@@ -43,6 +43,7 @@ namespace Sieu_Thi_Mini_C_
             //Hien thi
             dgv_thongtin.DataSource = tb;
             dgv_thongtin.Refresh();
+
         }
 
         private void textVat_TextChanged(object sender, EventArgs e)
@@ -69,13 +70,38 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
+        private void load_cbo_ncc()
+        {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
 
+            string sql = "select* from bangnhacungcap";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            //tao doi tuong data adapter de lay du lieu
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.SelectCommand = cmd;
+            //do du lieu tu da va database
+            DataTable tb = new DataTable();
+            da.Fill(tb);
+            cmd.Dispose();
+            con.Close();
+            //
+            DataRow dr = tb.NewRow();
+            dr["mancc"] = "";
+            dr["tenncc"] = "---- Chon nha cung cap ----";
+            tb.Rows.InsertAt(dr, 0);
+            //hien thi tb vao combobox
+            cbo_nhacc.DataSource = tb;
+            cbo_nhacc.DisplayMember = "tenncc";
+            cbo_nhacc.ValueMember = "mancc";
+        }
         private void frmHangHoa_Load(object sender, EventArgs e)
         {
             load_dgv();
             this.WindowState = FormWindowState.Maximized;
-
-
+            load_cbo_ncc();
         }
 
         private void txtTrangthai_TextChanged(object sender, EventArgs e)
@@ -108,20 +134,20 @@ namespace Sieu_Thi_Mini_C_
             //lay du lieu tu control dua vao bien
             string p_mahh = txtMahh.Text.Trim();
             string p_tenhh = txtTenhh.Text.Trim();
-            string p_nhomhang = txtNH.Text.Trim();
+            string p_nhomhang = cbo_nhomhang.Text.Trim();
             string p_xuatxu = txtXuatxu.Text.Trim();
 
             int p_gianhap = int.Parse(txtGianhap.Text.Trim());
             int p_giaban = int.Parse(txtGiaban.Text.Trim());
 
             string p_dvt = txtDvt.Text.Trim();
-            string p_nhacc = txt_NCC.Text.Trim();
+            string p_nhacc = cbo_nhacc.Text.Trim();
             string p_mavach = txt_mavach.Text.Trim();
 
            
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
             int p_trangthaiban = int.Parse(txtTrangthai.Text.Trim());
-            int p_vat = int.Parse(txtVAT.Text.Trim());
+            float p_vat = float.Parse(txtVAT.Text.Trim());
             //
             if (Check(p_mahh))
             {
@@ -150,7 +176,7 @@ namespace Sieu_Thi_Mini_C_
             
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = p_soluong;
             cmd.Parameters.Add("@trangthaiban", SqlDbType.Bit).Value = p_trangthaiban;
-            cmd.Parameters.Add("@vat", SqlDbType.Int).Value = p_vat;
+            cmd.Parameters.Add("@vat", SqlDbType.Float).Value = p_vat;
            
             
             cmd.ExecuteNonQuery();
@@ -166,12 +192,12 @@ namespace Sieu_Thi_Mini_C_
             int i = e.RowIndex;
             txtMahh.Text = dgv_thongtin.Rows[i].Cells[0].Value.ToString();
             txtTenhh.Text = dgv_thongtin.Rows[i].Cells[1].Value.ToString();
-            txtNH.Text = dgv_thongtin.Rows[i].Cells[2].Value.ToString();
+            cbo_nhomhang.Text = dgv_thongtin.Rows[i].Cells[2].Value.ToString();
             txtXuatxu.Text = dgv_thongtin.Rows[i].Cells[3].Value.ToString();
             txtGianhap.Text = dgv_thongtin.Rows[i].Cells[4].Value.ToString();
             txtGiaban.Text = dgv_thongtin.Rows[i].Cells[5].Value.ToString();
             txtDvt.Text = dgv_thongtin.Rows[i].Cells[6].Value.ToString();
-            txt_NCC.Text = dgv_thongtin.Rows[i].Cells[7].Value.ToString();
+            cbo_nhacc.Text = dgv_thongtin.Rows[i].Cells[7].Value.ToString();
             txt_mavach.Text = dgv_thongtin.Rows[i].Cells[8].Value.ToString();
            
             txtSoluong.Text = dgv_thongtin.Rows[i].Cells[9].Value.ToString();
@@ -191,20 +217,20 @@ namespace Sieu_Thi_Mini_C_
             //b1 lay du lieu tu cac control dua vao bien
             string p_mahh = txtMahh.Text.Trim();
             string p_tenhh = txtTenhh.Text.Trim();
-            string p_nhomhang = txtNH.Text.Trim();
+            string p_nhomhang = cbo_nhomhang.Text.Trim();
             string p_xuatxu = txtXuatxu.Text.Trim();
 
             int p_gianhap = int.Parse(txtGianhap.Text.Trim());
             int p_giaban = int.Parse(txtGiaban.Text.Trim());
 
             string p_dvt = txtDvt.Text.Trim();
-            string p_nhacc = txt_NCC.Text.Trim();
+            string p_nhacc = cbo_nhacc.Text.Trim();
             string p_mavach = txt_mavach.Text.Trim();
 
 
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
             bool p_trangthaiban = bool.Parse(txtTrangthai.Text.Trim());
-            int p_vat = int.Parse(txtVAT.Text.Trim());
+            float p_vat = float.Parse(txtVAT.Text.Trim());
 
             //b2 ket noi den database
             if (con.State != ConnectionState.Open)
@@ -228,7 +254,7 @@ namespace Sieu_Thi_Mini_C_
 
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = p_soluong;
             cmd.Parameters.Add("@trangthaiban", SqlDbType.Bit).Value = p_trangthaiban;
-            cmd.Parameters.Add("@vat", SqlDbType.Int).Value = p_vat;
+            cmd.Parameters.Add("@vat", SqlDbType.Float).Value = p_vat;
 
 
            
@@ -481,6 +507,10 @@ namespace Sieu_Thi_Mini_C_
             if (e.KeyChar == '\b')
             {
                 e.Handled = false;
+            }
+            if(e.KeyChar == '.')
+            {
+                e.Handled=false;
             }
         }
 

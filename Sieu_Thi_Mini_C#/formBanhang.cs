@@ -72,9 +72,14 @@ namespace Sieu_Thi_Mini_C_
             {
                 con.Open();
             }
+            if (e.RowIndex == dgv_thongtin.Rows.Count-1)
+            {
+                return;
+            }
             if (e.ColumnIndex == dgv_thongtin.Columns["dgv_xoahang"].Index && e.RowIndex >=0 )
             {
                 dgv_thongtin.Rows.RemoveAt(dgv_thongtin.CurrentRow.Index);
+                return;
             }       
             if (e.ColumnIndex == dgv_thongtin.Columns["dgv_tangsl"].Index && e.RowIndex >= 0)
             {
@@ -127,11 +132,7 @@ namespace Sieu_Thi_Mini_C_
             this.Close();
         }
 
-        private void formBanhang_Load(object sender, EventArgs e)
-        {
-            this.WindowState = FormWindowState.Maximized;
-
-        }
+      
 
         private void btnHangHoa_Click(object sender, EventArgs e)
         {
@@ -151,9 +152,27 @@ namespace Sieu_Thi_Mini_C_
             frmnhaphang.ShowDialog();
         }
 
+        private void formBanhang_Load(object sender, EventArgs e)
+        {
+            this.WindowState = FormWindowState.Maximized;
+            lammoi();
+
+        }
+        DataGridView dg = new DataGridView();
+        public void lammoi()
+        {
+           
+            dg.DataSource = dgv_thongtin;
+        }
         private void btnLammoiphieu_Click(object sender, EventArgs e)
         {
+            lammoi2();
             
+        }
+        public void lammoi2()
+        {
+
+            dgv_thongtin.DataSource = dg;
         }
 
         private void btnXuatHang_Click(object sender, EventArgs e)
