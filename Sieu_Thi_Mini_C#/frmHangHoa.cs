@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;

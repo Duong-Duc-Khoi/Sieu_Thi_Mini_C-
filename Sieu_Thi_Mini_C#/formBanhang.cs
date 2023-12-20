@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
@@ -23,11 +21,22 @@ namespace Sieu_Thi_Mini_C_
     {
 
         //thietlap bien toan cuc
+        private Form mainForm;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         public formBanhang()
         {
             InitializeComponent();
         }
+
+        public formBanhang(Form form, string getRole, string taikhoan, string password)
+        {
+            InitializeComponent();
+            this.getRole = getRole;
+            this.taikhoan = taikhoan;
+            this.password = password;
+            mainForm = form;
+        }
+
         private void load_dgv()
         {
             if (con.State == ConnectionState.Closed)
@@ -48,9 +57,9 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnkiemtra_Click(object sender, EventArgs e)
         {
-            SqlConnection con= new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
+           
             string p_mavach=txt_mahh.Text.Trim();
-            string tenhang="Select tenhang,giaban from banghanghoa where mavach=N'"+p_mavach+"'";
+            string tenhang="Select tenhang,giaban from banghanghoa,vat where mavach=N'"+p_mavach+"'";
             DataTable current_data = (DataTable)dgv_thongtin.DataSource;
             SqlCommand cmd= new SqlCommand(tenhang, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
@@ -100,7 +109,7 @@ namespace Sieu_Thi_Mini_C_
                 p_soluong++;
                 
                 dgv_thongtin.CurrentRow.Cells[2].Value = p_soluong;
-                dgv_thongtin.Refresh();
+                
             }
 
             if (e.ColumnIndex == dgv_thongtin.Columns["dgv_giamsl"].Index && e.RowIndex >= 0)
@@ -112,24 +121,31 @@ namespace Sieu_Thi_Mini_C_
                     return;
                 }
                 dgv_thongtin.CurrentRow.Cells[2].Value = p_soluong;
-                dgv_thongtin.Refresh();
+                
                 
             }
-            int p_dongia = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells["dgv_dongia"].Value);
-            int p_soluongg = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells["dgv_soluong"].Value);
-            int p_thanhtien = p_dongia * p_soluongg;
-            dgv_thongtin.CurrentRow.Cells["dgv_thanhtien"].Value = p_thanhtien;
-            int sum = 0;
+            for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
+            {
+                int p_dongia = Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value);
+                int p_soluongg = Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value);
+                int p_thanhtien = p_dongia * p_soluongg;
+                dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value = p_thanhtien;
+            }
+
+
+            float sum = 0; float vat = 0;
             for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
             {
                 sum += Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value);
             }
-           // for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
-           // {
-           //     sum += Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value);
-           // }
+            for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
+            {
+                vat += (Convert.ToSingle(dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value) * Convert.ToSingle(dgv_thongtin.Rows[i].Cells["dgv_vat"].Value));
+            }
             txt_tienhang.Text = sum.ToString();
-          //  txt_thanhtoan.Text = (int.Parse(txt_vat.Text) + int.Parse(txt_tienhang.Text)).ToString();
+            txt_vat.Text = vat.ToString();
+            txt_thanhtoan.Text = (float.Parse(txt_vat.Text) + float.Parse(txt_tienhang.Text)).ToString();
+
 
 
         }
@@ -165,6 +181,9 @@ namespace Sieu_Thi_Mini_C_
         }
 
         private List<int> randomList = new List<int>();
+        private string getRole;
+        private string taikhoan;
+        private string password;
 
         private int random()
         {
@@ -184,7 +203,14 @@ namespace Sieu_Thi_Mini_C_
             int randomNumber = random();
             txt_shd.Text = randomNumber.ToString();
             //
-           
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string sql = "select tennv from bangthongtinnhanvien where username='" + taikhoan + "' and Password='" + password + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            string ten = (string)cmd.ExecuteScalar();
+            label7.Text = getRole + ":" + ten;
 
         }
         
@@ -209,7 +235,7 @@ namespace Sieu_Thi_Mini_C_
         {
             
         }
-        private void ExportExcel(DataTable tb, string sheetname)
+        private void ExportExcel(DataTable tb, string sheetname,int hd)
         {
             //Tạo các đối tượng Excel
 
@@ -237,6 +263,12 @@ namespace Sieu_Thi_Mini_C_
             head.Font.Size = "16";//cỡ chữ
             head.HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;//căn giữa
                                                                        // Tạo tiêu đề cột 
+            e_excel.Range sohd = oSheet.get_Range("A2", "E2");
+            sohd.MergeCells = true;//trộn nhiều ô thành 1 ô
+            sohd.Value2 = "HÓA ĐƠN "+hd;
+            sohd.Font.Size = "16";//cỡ chữ
+            sohd.HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;
+
             e_excel.Range cl1 = oSheet.get_Range("B3", "B3");
             cl1.Value2 = "TÊN HÀNG";//TÊN CỘT
             cl1.ColumnWidth = 25;//ĐỘ RỘNG CỘT
@@ -249,9 +281,7 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range cl4 = oSheet.get_Range("E3", "E3");
             cl4.Value2 = "THÀNH TIỀN";
             cl4.ColumnWidth = 20.0;
-            e_excel.Range cl5 = oSheet.get_Range("A3", "A3");
-            cl5.Value2 = "SỐ HĐ";
-            cl5.ColumnWidth = 20.0;
+            
 
 
             //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
@@ -275,10 +305,7 @@ namespace Sieu_Thi_Mini_C_
             {
                 DataRow dr = tb.Rows[r];
                 for (int c = 0; c < tb.Columns.Count; c++)//CHẠY CỘT
-                {
-                    if (c == 4)
-                        arr[r, c] = "'" + dr[c].ToString();
-                    else
+                {                 
                         arr[r, c] = dr[c];
                 }
             }
@@ -335,8 +362,13 @@ namespace Sieu_Thi_Mini_C_
         }
         private void button1_Click(object sender, EventArgs e)
         {
-            int randomNumber = random();
-            txt_shd.Text = randomNumber.ToString();
+            
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+            
             //
             if (con.State == ConnectionState.Closed)
             {
@@ -354,12 +386,27 @@ namespace Sieu_Thi_Mini_C_
             cmd.Dispose();
             con.Close();
             //B6 XUẤT DỮ LIỆU TỪ tb SANG file EXCEL
-            ExportExcel(tb, "BẢNG HÓA ĐƠN CHI TIẾT");
+            ExportExcel(tb, "BẢNG HÓA ĐƠN CHI TIẾT", int.Parse(txt_shd.Text));
+
+            int randomNumber = random();
+            txt_shd.Text = randomNumber.ToString();
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
 
         }
 
-        
-        
+        private void formBanhang_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            if (getRole == "Nhân viên") { mainForm.Show(); }
+        }
+
+        private void dgv_thongtin_CellValueChanged(object sender, DataGridViewCellEventArgs e)
+        {
+           
+       
+        }
     }
 
 

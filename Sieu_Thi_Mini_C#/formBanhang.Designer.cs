@@ -28,21 +28,14 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle31 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle32 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle33 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle34 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle35 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(formBanhang));
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
-            this.dgv_xoahang = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgv_tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_giamsl = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgv_soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_tangsl = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgv_dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label1 = new System.Windows.Forms.Label();
             this.txt_tiendua = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
@@ -60,12 +53,21 @@
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
-            this.btnLammoiphieu = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.btnkiemtra = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
             this.txt_shd = new System.Windows.Forms.TextBox();
+            this.dgv_xoahang = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgv_tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_giamsl = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgv_soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_tangsl = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgv_dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_thanhtien = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnLammoiphieu = new System.Windows.Forms.Button();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            this.btnkiemtra = new System.Windows.Forms.Button();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -93,7 +95,8 @@
             this.dgv_soluong,
             this.dgv_tangsl,
             this.dgv_dongia,
-            this.dgv_thanhtien});
+            this.dgv_thanhtien,
+            this.dgv_vat});
             this.dgv_thongtin.Location = new System.Drawing.Point(177, 160);
             this.dgv_thongtin.Margin = new System.Windows.Forms.Padding(4);
             this.dgv_thongtin.Name = "dgv_thongtin";
@@ -102,83 +105,7 @@
             this.dgv_thongtin.Size = new System.Drawing.Size(809, 487);
             this.dgv_thongtin.TabIndex = 1;
             this.dgv_thongtin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellClick);
-            // 
-            // dgv_xoahang
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_xoahang.HeaderText = "Xóa";
-            this.dgv_xoahang.MinimumWidth = 6;
-            this.dgv_xoahang.Name = "dgv_xoahang";
-            this.dgv_xoahang.Text = "x";
-            this.dgv_xoahang.ToolTipText = "x";
-            this.dgv_xoahang.Width = 50;
-            // 
-            // dgv_tenhh
-            // 
-            this.dgv_tenhh.DataPropertyName = "tenhang";
-            this.dgv_tenhh.HeaderText = "Tên hàng hóa";
-            this.dgv_tenhh.MinimumWidth = 6;
-            this.dgv_tenhh.Name = "dgv_tenhh";
-            this.dgv_tenhh.ReadOnly = true;
-            this.dgv_tenhh.Width = 200;
-            // 
-            // dgv_giamsl
-            // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dgv_giamsl.HeaderText = "(-)";
-            this.dgv_giamsl.MinimumWidth = 6;
-            this.dgv_giamsl.Name = "dgv_giamsl";
-            this.dgv_giamsl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgv_giamsl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.dgv_giamsl.Text = "-";
-            this.dgv_giamsl.ToolTipText = "-";
-            this.dgv_giamsl.UseColumnTextForButtonValue = true;
-            this.dgv_giamsl.Width = 50;
-            // 
-            // dgv_soluong
-            // 
-            this.dgv_soluong.DataPropertyName = "p_soluong";
-            dataGridViewCellStyle3.NullValue = "1";
-            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle3;
-            this.dgv_soluong.HeaderText = "SL";
-            this.dgv_soluong.MinimumWidth = 6;
-            this.dgv_soluong.Name = "dgv_soluong";
-            this.dgv_soluong.Width = 125;
-            // 
-            // dgv_tangsl
-            // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle4;
-            this.dgv_tangsl.HeaderText = "(+)";
-            this.dgv_tangsl.MinimumWidth = 6;
-            this.dgv_tangsl.Name = "dgv_tangsl";
-            this.dgv_tangsl.Text = "+";
-            this.dgv_tangsl.Width = 50;
-            // 
-            // dgv_dongia
-            // 
-            this.dgv_dongia.DataPropertyName = "giaban";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle5;
-            this.dgv_dongia.HeaderText = "Đơn giá";
-            this.dgv_dongia.MinimumWidth = 6;
-            this.dgv_dongia.Name = "dgv_dongia";
-            this.dgv_dongia.ReadOnly = true;
-            this.dgv_dongia.Width = 125;
-            // 
-            // dgv_thanhtien
-            // 
-            this.dgv_thanhtien.DataPropertyName = "thanhtien";
-            this.dgv_thanhtien.HeaderText = "Thành tiền";
-            this.dgv_thanhtien.MinimumWidth = 6;
-            this.dgv_thanhtien.Name = "dgv_thanhtien";
-            this.dgv_thanhtien.ReadOnly = true;
-            this.dgv_thanhtien.Width = 150;
+            this.dgv_thongtin.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellValueChanged);
             // 
             // label1
             // 
@@ -370,6 +297,126 @@
             this.button1.TabIndex = 53;
             this.button1.Text = "IN HÓA ĐƠN";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Lavender;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(447, 26);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(477, 76);
+            this.label12.TabIndex = 55;
+            this.label12.Text = "QUẦY THU NGÂN 1\n ------------------------";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(41, 173);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(99, 22);
+            this.label6.TabIndex = 56;
+            this.label6.Text = "Số hóa đơn";
+            // 
+            // txt_shd
+            // 
+            this.txt_shd.BackColor = System.Drawing.Color.Lavender;
+            this.txt_shd.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_shd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.txt_shd.Location = new System.Drawing.Point(12, 213);
+            this.txt_shd.Name = "txt_shd";
+            this.txt_shd.ReadOnly = true;
+            this.txt_shd.Size = new System.Drawing.Size(153, 42);
+            this.txt_shd.TabIndex = 57;
+            this.txt_shd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // dgv_xoahang
+            // 
+            dataGridViewCellStyle31.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle31.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle31;
+            this.dgv_xoahang.HeaderText = "Xóa";
+            this.dgv_xoahang.MinimumWidth = 6;
+            this.dgv_xoahang.Name = "dgv_xoahang";
+            this.dgv_xoahang.Text = "x";
+            this.dgv_xoahang.ToolTipText = "x";
+            this.dgv_xoahang.Width = 50;
+            // 
+            // dgv_tenhh
+            // 
+            this.dgv_tenhh.DataPropertyName = "tenhang";
+            this.dgv_tenhh.HeaderText = "Tên hàng hóa";
+            this.dgv_tenhh.MinimumWidth = 6;
+            this.dgv_tenhh.Name = "dgv_tenhh";
+            this.dgv_tenhh.ReadOnly = true;
+            this.dgv_tenhh.Width = 200;
+            // 
+            // dgv_giamsl
+            // 
+            dataGridViewCellStyle32.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle32.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle32;
+            this.dgv_giamsl.HeaderText = "(-)";
+            this.dgv_giamsl.MinimumWidth = 6;
+            this.dgv_giamsl.Name = "dgv_giamsl";
+            this.dgv_giamsl.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgv_giamsl.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.dgv_giamsl.Text = "-";
+            this.dgv_giamsl.ToolTipText = "-";
+            this.dgv_giamsl.UseColumnTextForButtonValue = true;
+            this.dgv_giamsl.Width = 50;
+            // 
+            // dgv_soluong
+            // 
+            this.dgv_soluong.DataPropertyName = "p_soluong";
+            dataGridViewCellStyle33.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle33;
+            this.dgv_soluong.HeaderText = "SL";
+            this.dgv_soluong.MinimumWidth = 6;
+            this.dgv_soluong.Name = "dgv_soluong";
+            this.dgv_soluong.Width = 125;
+            // 
+            // dgv_tangsl
+            // 
+            dataGridViewCellStyle34.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle34.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle34;
+            this.dgv_tangsl.HeaderText = "(+)";
+            this.dgv_tangsl.MinimumWidth = 6;
+            this.dgv_tangsl.Name = "dgv_tangsl";
+            this.dgv_tangsl.Text = "+";
+            this.dgv_tangsl.Width = 50;
+            // 
+            // dgv_dongia
+            // 
+            this.dgv_dongia.DataPropertyName = "giaban";
+            dataGridViewCellStyle35.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle35;
+            this.dgv_dongia.HeaderText = "Đơn giá";
+            this.dgv_dongia.MinimumWidth = 6;
+            this.dgv_dongia.Name = "dgv_dongia";
+            this.dgv_dongia.ReadOnly = true;
+            this.dgv_dongia.Width = 125;
+            // 
+            // dgv_thanhtien
+            // 
+            this.dgv_thanhtien.DataPropertyName = "thanhtien";
+            this.dgv_thanhtien.HeaderText = "Thành tiền";
+            this.dgv_thanhtien.MinimumWidth = 6;
+            this.dgv_thanhtien.Name = "dgv_thanhtien";
+            this.dgv_thanhtien.ReadOnly = true;
+            this.dgv_thanhtien.Width = 150;
+            // 
+            // dgv_vat
+            // 
+            this.dgv_vat.DataPropertyName = "vat";
+            this.dgv_vat.HeaderText = "vat";
+            this.dgv_vat.MinimumWidth = 6;
+            this.dgv_vat.Name = "dgv_vat";
+            this.dgv_vat.Visible = false;
+            this.dgv_vat.Width = 125;
             // 
             // btnLammoiphieu
             // 
@@ -413,38 +460,15 @@
             this.btnkiemtra.UseVisualStyleBackColor = false;
             this.btnkiemtra.Click += new System.EventHandler(this.btnkiemtra_Click);
             // 
-            // label12
+            // label7
             // 
-            this.label12.BackColor = System.Drawing.Color.Lavender;
-            this.label12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(447, 26);
-            this.label12.Name = "label12";
-            this.label12.Size = new System.Drawing.Size(477, 76);
-            this.label12.TabIndex = 55;
-            this.label12.Text = "QUẦY THU NGÂN 1\n ------------------------";
-            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            // 
-            // label6
-            // 
-            this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(41, 173);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(99, 22);
-            this.label6.TabIndex = 56;
-            this.label6.Text = "Số hóa đơn";
-            // 
-            // txt_shd
-            // 
-            this.txt_shd.BackColor = System.Drawing.Color.Lavender;
-            this.txt_shd.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.txt_shd.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.txt_shd.Location = new System.Drawing.Point(12, 213);
-            this.txt_shd.Name = "txt_shd";
-            this.txt_shd.ReadOnly = true;
-            this.txt_shd.Size = new System.Drawing.Size(153, 42);
-            this.txt_shd.TabIndex = 57;
-            this.txt_shd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(646, 59);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(60, 22);
+            this.label7.TabIndex = 58;
+            this.label7.Text = "label7";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // formBanhang
             // 
@@ -452,6 +476,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1423, 993);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.txt_shd);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label12);
@@ -474,6 +499,7 @@
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "formBanhang";
+            this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formBanhang_FormClosed);
             this.Load += new System.EventHandler(this.formBanhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();
             this.grb1.ResumeLayout(false);
@@ -517,5 +543,7 @@
         private System.Windows.Forms.DataGridViewButtonColumn dgv_tangsl;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_thanhtien;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dgv_vat;
+        private System.Windows.Forms.Label label7;
     }
 }

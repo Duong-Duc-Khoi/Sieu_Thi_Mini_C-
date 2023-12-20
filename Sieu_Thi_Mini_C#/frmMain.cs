@@ -1,7 +1,10 @@
-﻿using System;
+﻿using Microsoft.Office.Interop.Excel;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Configuration;
 using System.Data;
+using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -12,13 +15,32 @@ namespace Sieu_Thi_Mini_C_
 {
     public partial class frmMain : Form
     {
+        private string getRole,taikhoan,password;
+        SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
         public frmMain()
         {
             InitializeComponent();
         }
+        private Form mainForm;
+        public frmMain(Form form,string getRole,string taikhoan,string password)
+        {
+            InitializeComponent();
+            this.getRole = getRole;
+            this.taikhoan = taikhoan;
+            this.password= password;
+            mainForm = form;
+        }
 
         private void frmMain_Load(object sender, EventArgs e)
         {
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            string sql = "select tennv from bangthongtinnhanvien where username='" + taikhoan + "' and Password='" + password + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            string ten =(string)cmd.ExecuteScalar();
+            label1.Text = getRole+":"+ten;
             this.WindowState = FormWindowState.Maximized;
 
         }
@@ -51,14 +73,20 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnKho_Click(object sender, EventArgs e)
         {
-            frmNhaCungCap nhaCungCap = new frmNhaCungCap();
-            nhaCungCap.ShowDialog();
+            frmQuanLyKhoHang quanlykhohang = new frmQuanLyKhoHang();
+            quanlykhohang.ShowDialog();
             
         }
 
         private void btnDoanhthu_Click(object sender, EventArgs e)
         {
            
+        }
+
+        private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
+        {
+            mainForm.Show();
+
         }
 
         private void btnBaocao_Click(object sender, EventArgs e)
@@ -69,9 +97,7 @@ namespace Sieu_Thi_Mini_C_
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             this.Close();
-            frmDangNhap frmDangNhap = new frmDangNhap();
-            frmDangNhap.ShowDialog();
-            frmDangNhap.Enabled = true;
+            
         }
     }
 }

@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
@@ -95,7 +93,7 @@ namespace Sieu_Thi_Mini_C_
             string p_sdt = txtSdt.Text.Trim();
          
             string p_diem = txtDiem.Text.Trim();
-            string p_ngaytao=date_ngaytao.Text.Trim();  
+            DateTime p_ngaytao=date_ngaytao.Value;  
             string p_namganbo= txtNamganbo.Text.Trim();
             //
             if (Check(p_makh))

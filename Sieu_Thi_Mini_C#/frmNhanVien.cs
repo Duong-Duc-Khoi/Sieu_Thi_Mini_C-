@@ -9,8 +9,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Data.SqlClient;
-using System.Configuration;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
@@ -98,15 +96,15 @@ namespace Sieu_Thi_Mini_C_
             string p_mnv=txtManv.Text.Trim();
             string p_tennv=txtTennv.Text.Trim();
             string p_gioitinh=cboGIoitinh.Text.Trim();
-            string p_ngaysinh=date_ngaysinh.Text.Trim();
+            DateTime p_ngaysinh = date_ngaysinh.Value;
             string p_sdt=txtSdt.Text.Trim();
             string p_diachi=txtDiachi.Text.Trim();
             string p_email=txtEmail.Text.Trim();
             string p_username=txtUsername.Text.Trim();
             string p_password=txtPassword.Text.Trim();
             string p_cboquyen=cboQuyen.Text.Trim();
-            string p_ngaybd=date_ngaybd.Text.Trim();
-            string p_ngaynv=date_ngaykt.Text.Trim();
+            DateTime p_ngaybd = date_ngaybd.Value;
+            DateTime p_ngaynv = date_ngaykt.Value;
             string p_trangthai=cbotrangthai.Text.Trim();
             int p_luong=int.Parse(txtLuong.Text.Trim());
 
@@ -137,8 +135,8 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@password", SqlDbType.NVarChar, 50).Value = p_password;
             cmd.Parameters.Add("@maquyen", SqlDbType.NVarChar, 50).Value = p_cboquyen;
 
-            cmd.Parameters.Add("@ngayvaolam", SqlDbType.NVarChar, 50).Value = p_ngaybd;
-            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.NVarChar, 50).Value = p_ngaynv;
+            cmd.Parameters.Add("@ngayvaolam", SqlDbType.Date).Value = p_ngaybd;
+            cmd.Parameters.Add("@ngaynghiviec", SqlDbType.Date).Value = p_ngaynv;
             cmd.Parameters.Add("@trangthaitaikhoan", SqlDbType.NVarChar, 50).Value = p_trangthai;
             cmd.Parameters.Add("@luong", SqlDbType.Int).Value = p_luong;
 

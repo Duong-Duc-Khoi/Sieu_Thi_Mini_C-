@@ -13,13 +13,20 @@ using System.Windows.Forms;
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmDangNhap : Form
+
     {
+        //public delegate void truyendl(string taikhoan);
+        
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);//khai báo biến kết nối con
         public frmDangNhap()
         {
             InitializeComponent();
         }
 
+        private void loaddata(string tennv)
+        {
+
+        }
         private void frmDangNhap_Load(object sender, EventArgs e)
         {
 
@@ -27,7 +34,7 @@ namespace Sieu_Thi_Mini_C_
 
         private void txtMatkhau_TextChanged(object sender, EventArgs e)
         {
-
+            txtMatkhau.PasswordChar = '*';
         }
 
         private void label1_Click(object sender, EventArgs e)
@@ -40,7 +47,8 @@ namespace Sieu_Thi_Mini_C_
             //kết nối sql và lấy quyền 
             string taikhoan = txtTaikhoan.Text.Trim();
             string password = txtMatkhau.Text.Trim();
-            string sql = "Select count(*) from NhanVien where UserName='" + taikhoan + "' and Password='" + password + "'";//lệnh sql lấy dữ liệu về quyền tk trong sql
+            string sql = "select maquyen from bangthongtinnhanvien where  username='" + taikhoan + "' and Password='" + password + "'"; ;//lệnh sql lấy dữ liệu về quyền tk trong sql
+            
             if (con.State != ConnectionState.Open)
             {
                 con.Open();
@@ -57,11 +65,13 @@ namespace Sieu_Thi_Mini_C_
             else
 //kiem tra xem phải là tk admin ko?
             {
-               
-                    if (txtTaikhoan.Text == "admin" && txtMatkhau.Text == "123")
+                SqlCommand nv = new SqlCommand(sql, con);//khai bao biến lệnh sql(sql command)
+                string getRole = (string)nv.ExecuteScalar();
+
+                if (getRole=="Admin")
                     {
                         MessageBox.Show("Ban dang nhap vao tai khoan Admin", "Thong bao ", MessageBoxButtons.OK);
-                        frmMain a1 = new frmMain();//khai báo biến a1 kiểu frmMain
+                        frmMain a1 = new frmMain(this,getRole,taikhoan,password);//khai báo biến a1 kiểu frmMain
                         a1.Show();//hiện form main
                         this.Hide();// ẩn form đăng nhập này đi
                     }
@@ -69,33 +79,31 @@ namespace Sieu_Thi_Mini_C_
 
                 else
                     {
-                        SqlCommand nv = new SqlCommand(sql, con);//khai bao biến lệnh sql(sql command)
-                        int getRole = (int)nv.ExecuteScalar();
-                        if (getRole == 1) {
-                            MessageBox.Show("Ban dang nhap vao tai khoan Nhân Vien", "Thong bao ", MessageBoxButtons.OK);
+                       
+                        if (getRole == "Nhân viên") {
+                            MessageBox.Show("Ban dang nhap vao tai khoan Nhan Vien", "Thong bao ", MessageBoxButtons.OK);
 
-                            frmBanHang bh = new frmBanHang();//khai báo biến bh là frmBanHang                     
+                            formBanhang bh = new formBanhang(this,getRole,taikhoan,password);//khai báo biến bh là frmBanHang                     
                             bh.Show();
                             this.Hide();//ẩn form này đi
 
                         }
-                        else
-                        {
-                            string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
-                            MessageBox.Show((t), "Thông báo", MessageBoxButtons.OK);
+                        else if (getRole == "Thủ kho")
+                    {
+                        MessageBox.Show("Ban dang nhap vao tai khoan Thu Kho", "Thong bao ", MessageBoxButtons.OK);
+
+                        frmQuanLyKhoHang ql = new frmQuanLyKhoHang(this,getRole, taikhoan, password);//khai báo biến bh là frmBanHang                     
+                        ql.Show();
+                        this.Hide();//ẩn form này đi
+                       
                         }
-
+                    else
+                    {
+                        string t = "Username hoặc password sai !,Bạn vui lòng kiểm tra lại ";
+                        MessageBox.Show((t), "Thông báo", MessageBoxButtons.OK);
                     }
-                
 
-                                  
-
-
-
-
-
-
-
+                    }                                            
                 }
                 }
                 }

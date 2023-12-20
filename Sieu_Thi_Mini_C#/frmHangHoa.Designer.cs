@@ -648,6 +648,7 @@
             // 
             // cbo_trangthai
             // 
+            this.cbo_trangthai.DisplayMember = "TRUE,FALSE";
             this.cbo_trangthai.FormattingEnabled = true;
             this.cbo_trangthai.Items.AddRange(new object[] {
             "TRUE",
@@ -656,6 +657,7 @@
             this.cbo_trangthai.Name = "cbo_trangthai";
             this.cbo_trangthai.Size = new System.Drawing.Size(173, 26);
             this.cbo_trangthai.TabIndex = 55;
+            this.cbo_trangthai.ValueMember = "1,0";
             // 
             // btn_timkiem
             // 
