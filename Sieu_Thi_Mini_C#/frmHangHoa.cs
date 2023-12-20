@@ -543,6 +543,51 @@ namespace Sieu_Thi_Mini_C_
             frmNhapHang frmNhapHang = new frmNhapHang();
                 frmNhapHang.ShowDialog();
         }
+
+        private void btn_timkiem_Click(object sender, EventArgs e)
+        {
+            //b1 Lay du lieu tu cac control dua vao bien
+            string p_mahh = txtMahh.Text.Trim();
+            string p_tenhh = txtTenhh.Text.Trim();
+            string p_nhomhang = cbo_nhomhang.Text.Trim();
+            string p_xuatxu = txtXuatxu.Text.Trim();
+
+           
+
+            string p_dvt = txtDvt.Text.Trim();
+            string p_nhacc = cbo_nhacc.Text.Trim();
+            string p_mavach = txt_mavach.Text.Trim();
+
+
+            //int p_soluong = int.Parse(txtSoluong.Text.Trim());
+            //int p_trangthaiban = int.Parse(cbo_trangthai.Text.Trim());
+           // float p_vat = float.Parse(txtVAT.Text.Trim());
+
+            //B2 ket noi den db
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }
+            //b3 Tao doi tuong command de lay du lieu tu bang nxb
+            string sql = "select * from banghanghoa where mahh like N'%" + p_mahh + "%' and tenhang like N'%" + p_tenhh + "%' " +
+                "and nhomhang like N'%" + p_nhomhang + "%' and xuatxu like N'%" + p_xuatxu + "%' " +
+               // "and gianhap like N'%" + p_gianhap + "%' and giaban like N'%" + p_giaban + "%'" +  
+                "and donvitinh like N'%" + p_dvt + "%'  and nhacungcap like N'%" + p_nhacc + "%'  " +
+                "and mavach like N'%" + p_mavach  + "%' ";
+            SqlCommand cmd = new SqlCommand(sql,con);
+
+            //b4 tao doi tuong dataAdapter de lay ket qua tu command
+            SqlDataAdapter da = new SqlDataAdapter(cmd);
+            da.SelectCommand = cmd;
+            //b5 do du lieu tu dataAdapter vao datatable
+            DataTable datatb = new DataTable();
+            da.Fill(datatb);
+            cmd.Dispose();
+            con.Close();
+            //b6 hien thi datatable len datagridview
+            dgv_thongtin.DataSource = datatb;
+            dgv_thongtin.Refresh();
+        }
     }
 
 }

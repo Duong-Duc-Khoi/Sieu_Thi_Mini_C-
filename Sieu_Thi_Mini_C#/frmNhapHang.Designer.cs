@@ -76,6 +76,7 @@
             // 
             // grb1
             // 
+            this.grb1.BackColor = System.Drawing.Color.Lavender;
             this.grb1.Controls.Add(this.pictureBox1);
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnXuatHang);
@@ -83,7 +84,7 @@
             this.grb1.Controls.Add(this.btnLoaiHang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
             this.grb1.Controls.Add(this.btnHangHoa);
-            this.grb1.Location = new System.Drawing.Point(14, 28);
+            this.grb1.Location = new System.Drawing.Point(13, 23);
             this.grb1.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.grb1.Name = "grb1";
             this.grb1.Padding = new System.Windows.Forms.Padding(4, 2, 4, 2);

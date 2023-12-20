@@ -436,7 +436,7 @@
             this.label12.BackColor = System.Drawing.Color.Lavender;
             this.label12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label12.Location = new System.Drawing.Point(526, 28);
+            this.label12.Location = new System.Drawing.Point(576, 28);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(477, 76);
             this.label12.TabIndex = 55;

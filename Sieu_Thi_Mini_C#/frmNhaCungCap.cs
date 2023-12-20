@@ -11,6 +11,8 @@ using System.Data.SqlClient;
 using System.Configuration;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
+using System.Drawing.Drawing2D;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 
 namespace Sieu_Thi_Mini_C_
@@ -173,7 +175,7 @@ namespace Sieu_Thi_Mini_C_
             load_dgv();
             txtMancc.Enabled = true;
             this.WindowState = FormWindowState.Maximized;
-
+           
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -230,5 +232,7 @@ namespace Sieu_Thi_Mini_C_
                 e.Handled = false;
             }
         }
+        
+
     }
 }
