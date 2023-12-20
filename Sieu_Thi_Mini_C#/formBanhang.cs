@@ -59,7 +59,7 @@ namespace Sieu_Thi_Mini_C_
         {
            
             string p_mavach=txt_mahh.Text.Trim();
-            string tenhang="Select tenhang,giaban from banghanghoa,vat where mavach=N'"+p_mavach+"'";
+            string tenhang="Select tenhang,giaban,vat from banghanghoa where mavach=N'"+p_mavach+"'";
             DataTable current_data = (DataTable)dgv_thongtin.DataSource;
             SqlCommand cmd= new SqlCommand(tenhang, con);
             SqlDataAdapter da = new SqlDataAdapter(cmd);
