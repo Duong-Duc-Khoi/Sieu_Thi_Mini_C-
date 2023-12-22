@@ -85,7 +85,7 @@ namespace Sieu_Thi_Mini_C_
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)
         {
-            mainForm.Show();
+        //    mainForm.Show();
 
         }
 
