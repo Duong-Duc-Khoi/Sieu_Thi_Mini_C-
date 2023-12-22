@@ -188,57 +188,55 @@ namespace Sieu_Thi_Mini_C_
             cl2.ColumnWidth = 25.0;
             e_excel.Range cl3 = oSheet.get_Range("C3", "C3");
             cl3.Value2 = "GIỚI TÍNH";
-            cl3.ColumnWidth = 20.0;
+            cl3.ColumnWidth = 8.0;
 
             Microsoft.Office.Interop.Excel.Range cl4 = oSheet.get_Range("D3", "D3");
             cl4.Value2 = "NGÀY SINH";
-            cl4.ColumnWidth = 15.0;
+            cl4.ColumnWidth = 10.0;
             Microsoft.Office.Interop.Excel.Range cl4_1 = oSheet.get_Range("D4", "D1000");
             cl4_1.Columns.NumberFormat = "dd/mm/yyyy";
-
-
-            cl4.ColumnWidth = 25.0;
+            cl4.ColumnWidth = 15.0;
             e_excel.Range cl5 = oSheet.get_Range("E3", "E3");
             cl5.Value2 = "SĐT";
-            cl5.ColumnWidth = 40.0;
+            cl5.ColumnWidth = 15.0;
             e_excel.Range cl6 = oSheet.get_Range("F3", "F3");
             cl6.Value2 = "ĐỊA CHỈ";
-            cl6.ColumnWidth = 40.0;
+            cl6.ColumnWidth = 20.0;
 
             e_excel.Range cl7 = oSheet.get_Range("G3", "G3");
             cl7.Value2 = "EMAIL";//TÊN CỘT
-            cl7.ColumnWidth = 40;//ĐỘ RỘNG CỘT
+            cl7.ColumnWidth = 25;//ĐỘ RỘNG CỘT
 
             e_excel.Range cl8 = oSheet.get_Range("H3", "H3");
             cl8.Value2 = "USERNAME";
-            cl8.ColumnWidth = 25.0;
+            cl8.ColumnWidth = 15.0;
 
             e_excel.Range cl9 = oSheet.get_Range("I3", "I3");
             cl9.Value2 = "PASSWORD";
-            cl9.ColumnWidth = 20.0;
+            cl9.ColumnWidth = 15.0;
             e_excel.Range cl10 = oSheet.get_Range("J3", "J3");
             cl10.Value2 = "CHỨC VỤ";
-            cl10.ColumnWidth = 25.0;
+            cl10.ColumnWidth = 15.0;
             //
             Microsoft.Office.Interop.Excel.Range cl11 = oSheet.get_Range("K3", "K3");
             cl11.Value2 = "NGÀY VÀO LÀM ";
-            cl11.ColumnWidth = 30.0;
+            cl11.ColumnWidth = 15.0;
             Microsoft.Office.Interop.Excel.Range cl11_1 = oSheet.get_Range("K4", "K1000");
             cl11_1.Columns.NumberFormat = "dd/mm/yyyy";
             //
             Microsoft.Office.Interop.Excel.Range cl12= oSheet.get_Range("L3", "L3");
             cl12.Value2 = "NGÀY NGHỈ VIỆC";
-            cl12.ColumnWidth = 30.0;
+            cl12.ColumnWidth = 15.0;
             Microsoft.Office.Interop.Excel.Range cl12_1 = oSheet.get_Range("L4", "L1000");
             cl12_1.Columns.NumberFormat = "dd/mm/yyyy";
 
             //
             e_excel.Range cl13 = oSheet.get_Range("M3", "M3");
-            cl13.Value2 = "TRẠNG THÁI TÀI KHOẢN";
-            cl13.ColumnWidth = 60.0;
+            cl13.Value2 = "TT TÀI KHOẢN";
+            cl13.ColumnWidth = 15.0;
             e_excel.Range cl14 = oSheet.get_Range("N3", "N3");
             cl14.Value2 = "LƯƠNG";
-            cl14.ColumnWidth = 40.0;
+            cl14.ColumnWidth = 15.0;
 
             //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
             //cl6.Value2 = "NGÀY THI";
@@ -287,7 +285,8 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range c3 = (e_excel.Range)oSheet.Cells[rowEnd, columnStart];
             e_excel.Range c4 = oSheet.get_Range(c1, c3);
             oSheet.get_Range(c3, c4).HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;
-
+            //
+            oSheet.get_Range(c1, c2).HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;
         }
 
         private void btnThongke_Click(object sender, EventArgs e)

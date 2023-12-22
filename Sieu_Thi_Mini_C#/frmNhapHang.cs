@@ -34,8 +34,8 @@ namespace Sieu_Thi_Mini_C_
             this.Close();
         }
 
-       
 
+       
         private void frmNhapHang_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;
@@ -50,6 +50,8 @@ namespace Sieu_Thi_Mini_C_
             {
                 cbo_nhomhang.Items.Add(row["nhomhang"].ToString());
             }
+            //
+           
         }
 
         private void cbo_nhomhang_SelectedIndexChanged(object sender, EventArgs e)
@@ -65,10 +67,8 @@ namespace Sieu_Thi_Mini_C_
                 lst_dshh.Items.Add(row[0]);
             lst_dshh.Refresh();
             
-
-
         }
-
+      
         private void btnHangHoa_Click(object sender, EventArgs e)
         {
             frmHangHoa frmHangHoa = new frmHangHoa();
@@ -91,34 +91,7 @@ namespace Sieu_Thi_Mini_C_
         {
 
         }
-        private void AddAutoSTT()
-        {
-
-                // Tạo cột mới
-                DataColumn column = new DataColumn();
-                column.DataType = System.Type.GetType("System.Int32");
-                column.AutoIncrement = true;
-                column.AutoIncrementSeed = 1;
-                column.AutoIncrementStep = 1;
-                column.ColumnName = "STT";
-
-                // Thêm cột mới vào DataTable
-                DataTable table = new DataTable();
-                table.Columns.Add(column);
-
-                // Gán giá trị cho cột mới
-                for (int i = 0; i < table.Rows.Count; i++)
-                {
-                    table.Rows[i]["STT"] = i + 1;
-                }
-
-            // Hiển thị DataTable trên DataGridView
-            dgv_thongtin.Rows[1].Cells[1].Value = table;
-           
-        }
-
-
-
+       
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             if (con.State == ConnectionState.Closed)

@@ -83,6 +83,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analytics_21 {
+            get {
+                object obj = ResourceManager.GetObject("analytics-21", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_don_gian_dep_110637684 {
             get {
                 object obj = ResourceManager.GetObject("background-don-gian-dep_110637684", resourceCulture);

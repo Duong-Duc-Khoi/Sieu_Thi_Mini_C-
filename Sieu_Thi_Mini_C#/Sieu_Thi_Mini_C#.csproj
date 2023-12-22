@@ -108,6 +108,12 @@
     <Compile Include="frmQuanLyKhoHang.Designer.cs">
       <DependentUpon>frmQuanLyKhoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_trahang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_trahang.Designer.cs">
+      <DependentUpon>frm_trahang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="formBanhang.resx">
@@ -136,6 +142,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyKhoHang.resx">
       <DependentUpon>frmQuanLyKhoHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frm_trahang.resx">
+      <DependentUpon>frm_trahang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -225,6 +234,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\OIP %286%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics-21.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

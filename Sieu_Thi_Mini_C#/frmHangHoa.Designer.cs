@@ -597,7 +597,7 @@
             this.btnLammoi.Location = new System.Drawing.Point(781, 107);
             this.btnLammoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnLammoi.Name = "btnLammoi";
-            this.btnLammoi.Size = new System.Drawing.Size(119, 50);
+            this.btnLammoi.Size = new System.Drawing.Size(109, 50);
             this.btnLammoi.TabIndex = 11;
             this.btnLammoi.Text = "Làm Mới";
             this.btnLammoi.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
