@@ -17,18 +17,18 @@ using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 
 namespace Sieu_Thi_Mini_C_
 {
-    public partial class formBanhang : Form
+    public partial class frmBanhang : Form
     {
 
         //thietlap bien toan cuc
         private Form mainForm;
         SqlConnection con = new SqlConnection(ConfigurationManager.ConnectionStrings["conn"].ConnectionString);
-        public formBanhang()
+        public frmBanhang()
         {
             InitializeComponent();
         }
 
-        public formBanhang(Form form, string getRole, string taikhoan, string password)
+        public frmBanhang(Form form, string getRole, string taikhoan, string password)
         {
             InitializeComponent();
             this.getRole = getRole;

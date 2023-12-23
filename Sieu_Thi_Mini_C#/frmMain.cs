@@ -54,13 +54,13 @@ namespace Sieu_Thi_Mini_C_
         {
             if (getRole == "Admin")
             {
-            formBanhang formBanhang = new formBanhang(this, getRole, taikhoan, password);
+            frmBanhang formBanhang = new frmBanhang(this, getRole, taikhoan, password);
             formBanhang.Show();
             this.Hide();
             }
             else
             {
-            formBanhang formBanhang = new formBanhang();
+            frmBanhang formBanhang = new frmBanhang();
             formBanhang.Show();
             }
           

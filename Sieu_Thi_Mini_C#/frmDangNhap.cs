@@ -83,7 +83,7 @@ namespace Sieu_Thi_Mini_C_
                         if (getRole == "Nhân viên") {
                             MessageBox.Show("Ban dang nhap vao tai khoan Nhan Vien", "Thong bao ", MessageBoxButtons.OK);
 
-                            formBanhang bh = new formBanhang(this,getRole,taikhoan,password);//khai báo biến bh là frmBanHang                     
+                            frmBanhang bh = new frmBanhang(this,getRole,taikhoan,password);//khai báo biến bh là frmBanHang                     
                             bh.Show();
                             this.Hide();//ẩn form này đi
 
