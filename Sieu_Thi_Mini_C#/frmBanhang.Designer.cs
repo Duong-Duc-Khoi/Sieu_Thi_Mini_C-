@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle9 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle10 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanhang));
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
@@ -119,9 +119,9 @@
             // 
             // dgv_xoahang
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle6.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle6;
             this.dgv_xoahang.HeaderText = "Xóa";
             this.dgv_xoahang.MinimumWidth = 6;
             this.dgv_xoahang.Name = "dgv_xoahang";
@@ -148,9 +148,9 @@
             // 
             // dgv_giamsl
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle7;
             this.dgv_giamsl.HeaderText = "(-)";
             this.dgv_giamsl.MinimumWidth = 6;
             this.dgv_giamsl.Name = "dgv_giamsl";
@@ -164,8 +164,8 @@
             // dgv_soluong
             // 
             this.dgv_soluong.DataPropertyName = "p_soluong";
-            dataGridViewCellStyle13.NullValue = "1";
-            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle8.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle8;
             this.dgv_soluong.HeaderText = "SL";
             this.dgv_soluong.MinimumWidth = 6;
             this.dgv_soluong.Name = "dgv_soluong";
@@ -173,9 +173,9 @@
             // 
             // dgv_tangsl
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle9.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle9;
             this.dgv_tangsl.HeaderText = "(+)";
             this.dgv_tangsl.MinimumWidth = 6;
             this.dgv_tangsl.Name = "dgv_tangsl";
@@ -185,8 +185,8 @@
             // dgv_dongia
             // 
             this.dgv_dongia.DataPropertyName = "giaban";
-            dataGridViewCellStyle15.NullValue = "0";
-            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle10.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle10;
             this.dgv_dongia.HeaderText = "Đơn giá";
             this.dgv_dongia.MinimumWidth = 6;
             this.dgv_dongia.Name = "dgv_dongia";
@@ -541,14 +541,13 @@
             // btnkiemtra
             // 
             this.btnkiemtra.Anchor = System.Windows.Forms.AnchorStyles.Left;
-            this.btnkiemtra.AutoEllipsis = true;
             this.btnkiemtra.AutoSize = true;
             this.btnkiemtra.BackColor = System.Drawing.Color.Lavender;
             this.btnkiemtra.BackgroundImage = global::Sieu_Thi_Mini_C_.Properties.Resources.analytics_2;
             this.btnkiemtra.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom;
             this.btnkiemtra.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnkiemtra.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnkiemtra.Location = new System.Drawing.Point(793, 165);
+            this.btnkiemtra.Location = new System.Drawing.Point(777, 157);
             this.btnkiemtra.Margin = new System.Windows.Forms.Padding(4);
             this.btnkiemtra.Name = "btnkiemtra";
             this.btnkiemtra.Size = new System.Drawing.Size(206, 36);
@@ -556,12 +555,12 @@
             this.btnkiemtra.Text = "Kiểm tra\r\n";
             this.btnkiemtra.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnkiemtra.TextImageRelation = System.Windows.Forms.TextImageRelation.TextBeforeImage;
-            this.btnkiemtra.UseCompatibleTextRendering = true;
+            this.btnkiemtra.UseMnemonic = false;
             this.btnkiemtra.UseVisualStyleBackColor = false;
             this.btnkiemtra.UseWaitCursor = true;
             this.btnkiemtra.Click += new System.EventHandler(this.btnkiemtra_Click);
             // 
-            // formBanhang
+            // frmBanhang
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
@@ -594,7 +593,7 @@
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.Margin = new System.Windows.Forms.Padding(4);
-            this.Name = "formBanhang";
+            this.Name = "frmBanhang";
             this.FormClosed += new System.Windows.Forms.FormClosedEventHandler(this.formBanhang_FormClosed);
             this.Load += new System.EventHandler(this.formBanhang_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).EndInit();

@@ -201,7 +201,7 @@ namespace Sieu_Thi_Mini_C_
         private string password;
 
 
-        int shd = 01;
+       
         private void load_cbo_tenhang()
         {
             if (con.State == ConnectionState.Closed)
@@ -229,7 +229,8 @@ namespace Sieu_Thi_Mini_C_
             cbo_nhomhang.DisplayMember = "tenhang";
             cbo_nhomhang.ValueMember = "mahh";
         }
-       
+
+        static int shd = 01;
         private void formBanhang_Load(object sender, EventArgs e)
         {
             this.WindowState = FormWindowState.Maximized;

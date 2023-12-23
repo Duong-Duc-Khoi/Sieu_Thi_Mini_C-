@@ -95,7 +95,7 @@ namespace Sieu_Thi_Mini_C_
             for (int i = 0; i < dgv_thongtin.Rows.Count - 1; i++)
             {
                 string tenhang = dgv_thongtin.Rows[i].Cells["dgv_tenhh"].Value.ToString();
-               int soluong = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value.ToString());
+                int soluong = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value.ToString());
                 int giaban = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value.ToString());
                 string mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
                 string lydotrahang = dgv_thongtin.Rows[i].Cells["dgv_lydo"].Value.ToString();
