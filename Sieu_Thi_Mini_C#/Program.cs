@@ -16,7 +16,7 @@ namespace Sieu_Thi_Mini_C_
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frm_trahang());
+            Application.Run(new frmDangNhap());
         }
     }
 }

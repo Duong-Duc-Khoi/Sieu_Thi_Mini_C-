@@ -165,18 +165,32 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnHangHoa_Click(object sender, EventArgs e)
         {
+            if (getRole == "Nhân viên")
+            {
+                MessageBox.Show("Bạn không đủ quyền");
+                    return;
+            }
             frmHangHoa frmHangHoa = new frmHangHoa();
             frmHangHoa.ShowDialog();
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
+            if (getRole == "Nhân viên")
+            {
+                MessageBox.Show("Bạn không đủ quyền");
+                    return;
+            }
             frmNhaCungCap frmncc = new frmNhaCungCap();
             frmncc.ShowDialog();
         }
 
         private void btnNhapHang_Click(object sender, EventArgs e)
-        {
+        {   if(getRole=="Nhân viên")
+            {
+                MessageBox.Show("Bạn không đủ quyền");
+                    return;
+            }
             frmNhapHang frmnhaphang = new frmNhapHang();
             frmnhaphang.ShowDialog();
         }
@@ -448,7 +462,7 @@ namespace Sieu_Thi_Mini_C_
         private void formBanhang_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (getRole == "Nhân viên") { mainForm.Show(); }
-
+            mainForm.Show();
         }
 
         private void dgv_thongtin_CellValueChanged(object sender, DataGridViewCellEventArgs e)

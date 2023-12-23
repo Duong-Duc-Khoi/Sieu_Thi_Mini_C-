@@ -52,8 +52,17 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnBanhang_Click(object sender, EventArgs e)
         {
+            if (getRole == "Admin")
+            {
+            formBanhang formBanhang = new formBanhang(this, getRole, taikhoan, password);
+            formBanhang.Show();
+            this.Hide();
+            }
+            else
+            {
             formBanhang formBanhang = new formBanhang();
-            formBanhang.ShowDialog();
+            formBanhang.Show();
+            }
           
         }
 

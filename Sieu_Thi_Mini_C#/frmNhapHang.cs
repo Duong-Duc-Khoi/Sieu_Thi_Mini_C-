@@ -73,13 +73,14 @@ namespace Sieu_Thi_Mini_C_
         {
             frmHangHoa frmHangHoa = new frmHangHoa();
             frmHangHoa.ShowDialog();
+            this.Close();
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
         {
             frmNhaCungCap frmNhaCungCap = new frmNhaCungCap();  
             frmNhaCungCap.ShowDialog();
-            
+            this.Close();
         }
 
         private void btnT_Click(object sender, EventArgs e)

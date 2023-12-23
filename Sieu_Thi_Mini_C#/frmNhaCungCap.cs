@@ -191,7 +191,7 @@ namespace Sieu_Thi_Mini_C_
         {
             frmHangHoa frmHangHoa = new frmHangHoa();
             frmHangHoa.ShowDialog();
-
+            this.Close();
         }
 
         private void btnNhaCungCap_Click(object sender, EventArgs e)
@@ -203,6 +203,7 @@ namespace Sieu_Thi_Mini_C_
         {
             frmNhapHang frmNhapHang = new frmNhapHang();
             frmNhapHang.ShowDialog();
+            this.Close();
         }
 
         private void btnT_Click(object sender, EventArgs e)
