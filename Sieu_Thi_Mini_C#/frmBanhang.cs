@@ -167,7 +167,7 @@ namespace Sieu_Thi_Mini_C_
         {
             if (getRole == "Nhân viên")
             {
-                MessageBox.Show("Bạn không đủ quyền");
+                MessageBox.Show("Bạn không đủ quyền","Thông báo");
                     return;
             }
             frmHangHoa frmHangHoa = new frmHangHoa();
@@ -178,7 +178,7 @@ namespace Sieu_Thi_Mini_C_
         {
             if (getRole == "Nhân viên")
             {
-                MessageBox.Show("Bạn không đủ quyền");
+                MessageBox.Show("Bạn không đủ quyền","Thông báo");
                     return;
             }
             frmNhaCungCap frmncc = new frmNhaCungCap();
@@ -188,7 +188,7 @@ namespace Sieu_Thi_Mini_C_
         private void btnNhapHang_Click(object sender, EventArgs e)
         {   if(getRole=="Nhân viên")
             {
-                MessageBox.Show("Bạn không đủ quyền");
+                MessageBox.Show("Bạn không đủ quyền","Thông báo");
                     return;
             }
             frmNhapHang frmnhaphang = new frmNhapHang();
@@ -222,7 +222,7 @@ namespace Sieu_Thi_Mini_C_
             //
             DataRow dr = tb.NewRow();
             dr["mahh"] = "";
-            dr["tenhang"] = "---- Chọn tên hàng ----";
+            dr["tenhang"] = "------- Chọn tên hàng -------";
             tb.Rows.InsertAt(dr, 0);
             //hien thi tb vao combobox
             cbo_nhomhang.DataSource = tb;
@@ -326,7 +326,8 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnXuatHang_Click(object sender, EventArgs e)
         {
-
+            frm_trahang frm_Trahang = new frm_trahang();
+            frm_Trahang.ShowDialog(this);
         }
 
         private void txt_thanhtoan_TextChanged(object sender, EventArgs e)
@@ -475,7 +476,7 @@ namespace Sieu_Thi_Mini_C_
             {
                 con.Open();
             }
-            string sql = "Insert banghoadonchitiet values ( @sohd,@tenhh, @soluong, @dongia, @thanhtien )";
+            string sql = "Insert banghoadonchitiet1 values ( @sohd,@tenhh, @soluong, @dongia, @thanhtien )";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.Add("@sohd", SqlDbType.NVarChar, 50).Value = p_shd;
@@ -493,13 +494,13 @@ namespace Sieu_Thi_Mini_C_
 
         private void btn_inhoadon_Click(object sender, EventArgs e)
         {
-
+            string p_shd = txt_shd.Text.Trim();
             //
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
-            string sql = "select * from banghoadonchitiet";
+            string sql = "select sohd, tenhh, soluong, dongia, thanhtien from banghoadonchitiet1 where sohd = '"+p_shd+"' ";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             //b4 tao doi tuong dataAdapter de lay ket qua tu command

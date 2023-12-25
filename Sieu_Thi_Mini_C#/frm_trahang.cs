@@ -188,5 +188,31 @@ namespace Sieu_Thi_Mini_C_
             
             //
         }
+
+        private void btnHangHoa_Click(object sender, EventArgs e)
+        {
+            frmHangHoa frmHangHoa   = new frmHangHoa();
+            frmHangHoa.ShowDialog();
+            this.Close();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+            frmNhaCungCap frm= new frmNhaCungCap();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnNhapHang_Click(object sender, EventArgs e)
+        {
+            frmNhapHang frm= new frmNhapHang();
+            frm.ShowDialog();
+            this.Close();
+        }
+
+        private void btnT_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
     }
 }

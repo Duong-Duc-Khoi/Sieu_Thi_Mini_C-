@@ -238,5 +238,11 @@
   <ItemGroup>
     <None Include="Resources\analytics-21.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analytics-22.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Free Simple Modern Circle Design Studio Logo %281%292.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

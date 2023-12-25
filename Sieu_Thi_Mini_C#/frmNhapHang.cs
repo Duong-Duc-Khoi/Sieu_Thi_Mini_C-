@@ -90,7 +90,9 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnLoaiHang_Click(object sender, EventArgs e)
         {
-
+            frm_trahang frm_Trahang = new frm_trahang();    
+            frm_Trahang.ShowDialog();
+            this.Close();
         }
        
         private void btn_xacnhan_Click(object sender, EventArgs e)

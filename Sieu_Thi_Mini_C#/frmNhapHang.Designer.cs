@@ -35,7 +35,7 @@
             this.btnT = new System.Windows.Forms.Button();
             this.btnXuatHang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
-            this.btnLoaiHang = new System.Windows.Forms.Button();
+            this.btnTraHang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -81,7 +81,7 @@
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
-            this.grb1.Controls.Add(this.btnLoaiHang);
+            this.grb1.Controls.Add(this.btnTraHang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
             this.grb1.Controls.Add(this.btnHangHoa);
             this.grb1.Location = new System.Drawing.Point(13, 23);
@@ -117,7 +117,7 @@
             // 
             // btnXuatHang
             // 
-            this.btnXuatHang.Location = new System.Drawing.Point(44, 562);
+            this.btnXuatHang.Location = new System.Drawing.Point(44, 567);
             this.btnXuatHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnXuatHang.Name = "btnXuatHang";
             this.btnXuatHang.Size = new System.Drawing.Size(198, 61);
@@ -127,7 +127,7 @@
             // 
             // btnNhapHang
             // 
-            this.btnNhapHang.Location = new System.Drawing.Point(44, 469);
+            this.btnNhapHang.Location = new System.Drawing.Point(44, 386);
             this.btnNhapHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(198, 61);
@@ -135,16 +135,16 @@
             this.btnNhapHang.Text = "Nhập Hàng";
             this.btnNhapHang.UseVisualStyleBackColor = true;
             // 
-            // btnLoaiHang
+            // btnTraHang
             // 
-            this.btnLoaiHang.Location = new System.Drawing.Point(44, 380);
-            this.btnLoaiHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnLoaiHang.Name = "btnLoaiHang";
-            this.btnLoaiHang.Size = new System.Drawing.Size(198, 61);
-            this.btnLoaiHang.TabIndex = 44;
-            this.btnLoaiHang.Text = "Loại Hàng";
-            this.btnLoaiHang.UseVisualStyleBackColor = true;
-            this.btnLoaiHang.Click += new System.EventHandler(this.btnLoaiHang_Click);
+            this.btnTraHang.Location = new System.Drawing.Point(44, 485);
+            this.btnTraHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
+            this.btnTraHang.Name = "btnTraHang";
+            this.btnTraHang.Size = new System.Drawing.Size(198, 61);
+            this.btnTraHang.TabIndex = 44;
+            this.btnTraHang.Text = "Trả Hàng";
+            this.btnTraHang.UseVisualStyleBackColor = true;
+            this.btnTraHang.Click += new System.EventHandler(this.btnLoaiHang_Click);
             // 
             // btnNhaCungCap
             // 
@@ -497,7 +497,7 @@
         private System.Windows.Forms.Button btnT;
         private System.Windows.Forms.Button btnXuatHang;
         private System.Windows.Forms.Button btnNhapHang;
-        private System.Windows.Forms.Button btnLoaiHang;
+        private System.Windows.Forms.Button btnTraHang;
         private System.Windows.Forms.Button btnNhaCungCap;
         private System.Windows.Forms.Button btnHangHoa;
         private System.Windows.Forms.Button btnThoat;

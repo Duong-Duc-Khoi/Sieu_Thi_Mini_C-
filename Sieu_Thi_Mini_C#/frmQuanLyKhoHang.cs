@@ -76,8 +76,20 @@ namespace Sieu_Thi_Mini_C_
             string sql = "select tennv from bangthongtinnhanvien where username='" + taikhoan + "' and Password='" + password + "'";
             SqlCommand cmd = new SqlCommand(sql, con);
             string ten = (string)cmd.ExecuteScalar();
-            label1.Text = getRole + ":" + ten;
+            label2.Text = getRole + ":" + ten;
 
+        }
+
+        private void label12_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnTraHang_Click(object sender, EventArgs e)
+        {
+            frm_trahang frm_Trahang = new frm_trahang();
+            frm_Trahang.ShowDialog();
+            this.Close();
         }
     }
 }

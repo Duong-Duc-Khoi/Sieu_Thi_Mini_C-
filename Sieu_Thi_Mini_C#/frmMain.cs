@@ -85,6 +85,7 @@ namespace Sieu_Thi_Mini_C_
             frmQuanLyKhoHang quanlykhohang = new frmQuanLyKhoHang();
             quanlykhohang.ShowDialog();
             
+            
         }
 
         private void btnDoanhthu_Click(object sender, EventArgs e)
@@ -106,6 +107,8 @@ namespace Sieu_Thi_Mini_C_
         private void btn_dangxuat_Click(object sender, EventArgs e)
         {
             this.Close();
+            frmDangNhap frmDangNhap = new frmDangNhap();
+            frmDangNhap.ShowDialog();
             
         }
     }

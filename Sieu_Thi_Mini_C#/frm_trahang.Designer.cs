@@ -28,9 +28,16 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_trahang));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
+            this.dgv_btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
+            this.dgv_mahh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_tientralai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dgv_lydo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.label12 = new System.Windows.Forms.Label();
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -46,13 +53,6 @@
             this.btnLammoiphieu = new System.Windows.Forms.Button();
             this.txt_matrahang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
-            this.dgv_btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
-            this.dgv_mahh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_soluong = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_dongia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_tientralai = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dgv_lydo = new System.Windows.Forms.DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -78,6 +78,62 @@
             this.dgv_thongtin.Size = new System.Drawing.Size(852, 525);
             this.dgv_thongtin.TabIndex = 1;
             this.dgv_thongtin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellClick);
+            // 
+            // dgv_btnXoa
+            // 
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "x";
+            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle4;
+            this.dgv_btnXoa.HeaderText = "Xoá";
+            this.dgv_btnXoa.MinimumWidth = 6;
+            this.dgv_btnXoa.Name = "dgv_btnXoa";
+            this.dgv_btnXoa.Width = 50;
+            // 
+            // dgv_mahh
+            // 
+            this.dgv_mahh.DataPropertyName = "mahh";
+            this.dgv_mahh.HeaderText = "Mã HH";
+            this.dgv_mahh.MinimumWidth = 6;
+            this.dgv_mahh.Name = "dgv_mahh";
+            this.dgv_mahh.Width = 125;
+            // 
+            // dgv_tenhh
+            // 
+            this.dgv_tenhh.DataPropertyName = "tenhang";
+            this.dgv_tenhh.HeaderText = "Tên hàng";
+            this.dgv_tenhh.MinimumWidth = 6;
+            this.dgv_tenhh.Name = "dgv_tenhh";
+            this.dgv_tenhh.Width = 125;
+            // 
+            // dgv_soluong
+            // 
+            this.dgv_soluong.DataPropertyName = "soluong";
+            this.dgv_soluong.HeaderText = "SL trả";
+            this.dgv_soluong.MinimumWidth = 6;
+            this.dgv_soluong.Name = "dgv_soluong";
+            this.dgv_soluong.Width = 125;
+            // 
+            // dgv_dongia
+            // 
+            this.dgv_dongia.DataPropertyName = "giaban";
+            this.dgv_dongia.HeaderText = "Đơn giá";
+            this.dgv_dongia.MinimumWidth = 6;
+            this.dgv_dongia.Name = "dgv_dongia";
+            this.dgv_dongia.Width = 80;
+            // 
+            // dgv_tientralai
+            // 
+            this.dgv_tientralai.HeaderText = "Tiền trả lại";
+            this.dgv_tientralai.MinimumWidth = 6;
+            this.dgv_tientralai.Name = "dgv_tientralai";
+            this.dgv_tientralai.Width = 80;
+            // 
+            // dgv_lydo
+            // 
+            this.dgv_lydo.HeaderText = "Lý do trả hàng";
+            this.dgv_lydo.MinimumWidth = 6;
+            this.dgv_lydo.Name = "dgv_lydo";
+            this.dgv_lydo.Width = 200;
             // 
             // label12
             // 
@@ -130,6 +186,7 @@
             this.btnT.TabIndex = 47;
             this.btnT.Text = "Thoát";
             this.btnT.UseVisualStyleBackColor = true;
+            this.btnT.Click += new System.EventHandler(this.btnT_Click);
             // 
             // btnXuatHang
             // 
@@ -150,6 +207,7 @@
             this.btnNhapHang.TabIndex = 45;
             this.btnNhapHang.Text = "Nhập Hàng";
             this.btnNhapHang.UseVisualStyleBackColor = true;
+            this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
             // btnLoaiHang
             // 
@@ -158,7 +216,7 @@
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(198, 61);
             this.btnLoaiHang.TabIndex = 44;
-            this.btnLoaiHang.Text = "Loại Hàng";
+            this.btnLoaiHang.Text = "Trả hàng";
             this.btnLoaiHang.UseVisualStyleBackColor = true;
             // 
             // btnNhaCungCap
@@ -170,6 +228,7 @@
             this.btnNhaCungCap.TabIndex = 43;
             this.btnNhaCungCap.Text = "Nhà Cung Cấp";
             this.btnNhaCungCap.UseVisualStyleBackColor = true;
+            this.btnNhaCungCap.Click += new System.EventHandler(this.btnNhaCungCap_Click);
             // 
             // btnHangHoa
             // 
@@ -180,6 +239,7 @@
             this.btnHangHoa.TabIndex = 42;
             this.btnHangHoa.Text = "Hàng Hóa";
             this.btnHangHoa.UseVisualStyleBackColor = true;
+            this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
             // 
             // groupBox3
             // 
@@ -251,62 +311,6 @@
             this.label6.Size = new System.Drawing.Size(139, 25);
             this.label6.TabIndex = 63;
             this.label6.Text = "Mã trả hàng";
-            // 
-            // dgv_btnXoa
-            // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "x";
-            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle1;
-            this.dgv_btnXoa.HeaderText = "Xoá";
-            this.dgv_btnXoa.MinimumWidth = 6;
-            this.dgv_btnXoa.Name = "dgv_btnXoa";
-            this.dgv_btnXoa.Width = 50;
-            // 
-            // dgv_mahh
-            // 
-            this.dgv_mahh.DataPropertyName = "mahh";
-            this.dgv_mahh.HeaderText = "Mã HH";
-            this.dgv_mahh.MinimumWidth = 6;
-            this.dgv_mahh.Name = "dgv_mahh";
-            this.dgv_mahh.Width = 125;
-            // 
-            // dgv_tenhh
-            // 
-            this.dgv_tenhh.DataPropertyName = "tenhang";
-            this.dgv_tenhh.HeaderText = "Tên hàng";
-            this.dgv_tenhh.MinimumWidth = 6;
-            this.dgv_tenhh.Name = "dgv_tenhh";
-            this.dgv_tenhh.Width = 125;
-            // 
-            // dgv_soluong
-            // 
-            this.dgv_soluong.DataPropertyName = "soluong";
-            this.dgv_soluong.HeaderText = "SL trả";
-            this.dgv_soluong.MinimumWidth = 6;
-            this.dgv_soluong.Name = "dgv_soluong";
-            this.dgv_soluong.Width = 125;
-            // 
-            // dgv_dongia
-            // 
-            this.dgv_dongia.DataPropertyName = "giaban";
-            this.dgv_dongia.HeaderText = "Đơn giá";
-            this.dgv_dongia.MinimumWidth = 6;
-            this.dgv_dongia.Name = "dgv_dongia";
-            this.dgv_dongia.Width = 80;
-            // 
-            // dgv_tientralai
-            // 
-            this.dgv_tientralai.HeaderText = "Tiền trả lại";
-            this.dgv_tientralai.MinimumWidth = 6;
-            this.dgv_tientralai.Name = "dgv_tientralai";
-            this.dgv_tientralai.Width = 80;
-            // 
-            // dgv_lydo
-            // 
-            this.dgv_lydo.HeaderText = "Lý do trả hàng";
-            this.dgv_lydo.MinimumWidth = 6;
-            this.dgv_lydo.Name = "dgv_lydo";
-            this.dgv_lydo.Width = 200;
             // 
             // frm_trahang
             // 

@@ -93,6 +93,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap analytics_22 {
+            get {
+                object obj = ResourceManager.GetObject("analytics-22", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap background_don_gian_dep_110637684 {
             get {
                 object obj = ResourceManager.GetObject("background-don-gian-dep_110637684", resourceCulture);
@@ -136,6 +146,16 @@ namespace Sieu_Thi_Mini_C_.Properties {
         internal static System.Drawing.Bitmap Free_Simple_Modern_Circle_Design_Studio_Logo__1_1 {
             get {
                 object obj = ResourceManager.GetObject("Free Simple Modern Circle Design Studio Logo (1)1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Free_Simple_Modern_Circle_Design_Studio_Logo__1_2 {
+            get {
+                object obj = ResourceManager.GetObject("Free Simple Modern Circle Design Studio Logo (1)2", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -588,6 +588,13 @@ namespace Sieu_Thi_Mini_C_
             dgv_thongtin.DataSource = datatb;
             dgv_thongtin.Refresh();
         }
+
+        private void btnLoaiHang_Click(object sender, EventArgs e)
+        {
+            frm_trahang frm_Trahang = new frm_trahang();
+            frm_Trahang.ShowDialog();
+            this.Close();
+        }
     }
 
 }
