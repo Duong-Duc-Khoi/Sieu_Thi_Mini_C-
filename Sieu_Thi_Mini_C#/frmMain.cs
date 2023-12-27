@@ -90,7 +90,8 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnDoanhthu_Click(object sender, EventArgs e)
         {
-           
+           frm_Doanhthu frm_Doanhthu = new frm_Doanhthu();
+            frm_Doanhthu.ShowDialog();
         }
 
         private void frmMain_FormClosed(object sender, FormClosedEventArgs e)

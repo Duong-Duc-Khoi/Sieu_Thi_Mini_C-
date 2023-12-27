@@ -33,6 +33,9 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Guna.UI2, Version=2.0.4.6, Culture=neutral, PublicKeyToken=8b9d14aa5142e261, processorArchitecture=MSIL">
+      <HintPath>..\packages\Guna.UI2.WinForms.2.0.4.6\lib\net48\Guna.UI2.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.Office.Interop.Excel, Version=15.0.0.0, Culture=neutral, PublicKeyToken=71e9bce111e9429c, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <EmbedInteropTypes>True</EmbedInteropTypes>
@@ -43,6 +46,10 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Configuration.Install" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -52,6 +59,12 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="ZedGraph">
+      <HintPath>D:\zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.dll</HintPath>
+    </Reference>
+    <Reference Include="ZedGraph.Web">
+      <HintPath>D:\zedgraph_dll_v515\zedgraph_dll_v5.1.5\ZedGraph.Web.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="frmBanhang.cs">
@@ -108,6 +121,12 @@
     <Compile Include="frmQuanLyKhoHang.Designer.cs">
       <DependentUpon>frmQuanLyKhoHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="frm_Doanhthu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frm_Doanhthu.Designer.cs">
+      <DependentUpon>frm_Doanhthu.cs</DependentUpon>
+    </Compile>
     <Compile Include="frm_trahang.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -143,6 +162,9 @@
     <EmbeddedResource Include="frmQuanLyKhoHang.resx">
       <DependentUpon>frmQuanLyKhoHang.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frm_Doanhthu.resx">
+      <DependentUpon>frm_Doanhthu.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frm_trahang.resx">
       <DependentUpon>frm_trahang.cs</DependentUpon>
     </EmbeddedResource>
@@ -156,6 +178,7 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
