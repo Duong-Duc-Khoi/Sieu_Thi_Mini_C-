@@ -135,7 +135,7 @@ namespace Sieu_Thi_Mini_C_
             if (string.IsNullOrEmpty(txtMahh.Text) || string.IsNullOrEmpty(txtTenhh.Text) || string.IsNullOrEmpty(cbo_nhomhang.Text) 
                 || string.IsNullOrEmpty(txtXuatxu.Text) || string.IsNullOrEmpty(txtGianhap.Text) || string.IsNullOrEmpty(txtGiaban.Text)
                 || string.IsNullOrEmpty(txtDvt.Text) || cbo_nhacc.Text== "---- Chọn nhà cung cấp ----" || string.IsNullOrEmpty(txt_mavach.Text)
-                || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(cbo_trangthai.Text) || string.IsNullOrEmpty(txtVAT.Text)) 
+                || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(txtVAT.Text)) 
             {
                 MessageBox.Show("Chưa nhập đủ thông tin!","Thông báo");
                 return;
@@ -155,8 +155,10 @@ namespace Sieu_Thi_Mini_C_
 
            
             int p_soluong = int.Parse(txtSoluong.Text.Trim());
-            int p_trangthaiban = int.Parse(cbo_trangthai.Text.Trim());
             float p_vat = float.Parse(txtVAT.Text.Trim());
+
+            DateTime p_nsx = date_nsx.Value;
+            DateTime p_hsd = date_hsd.Value;
             //
             if (Check(p_mahh))
             {
@@ -170,7 +172,7 @@ namespace Sieu_Thi_Mini_C_
                 con.Open();
             }
             //b2 toi doi tuong cmd thuc hien truy van
-            string sql = "Insert banghanghoa values (@mahh,@tenhang,@nhomhang,@xuatxu,@gianhap,@giaban,@donvitinh,@nhacungcap,@mavach,@soluong,@trangthaiban,@vat)";
+            string sql = "Insert banghanghoa values (@mahh,@tenhang,@nhomhang,@xuatxu,@gianhap,@giaban,@donvitinh,@nhacungcap,@mavach,@soluong,@vat, @NSX, @HSD)";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@mahh", SqlDbType.NVarChar, 50).Value = p_mahh;
             cmd.Parameters.Add("@tenhang", SqlDbType.NVarChar, 50).Value = p_tenhh;
@@ -184,10 +186,11 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@mavach", SqlDbType.NVarChar, 50).Value = p_mavach;
             
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = p_soluong;
-            cmd.Parameters.Add("@trangthaiban", SqlDbType.Bit).Value = p_trangthaiban;
             cmd.Parameters.Add("@vat", SqlDbType.Float).Value = p_vat;
-           
-            
+
+            cmd.Parameters.Add("@NSX", SqlDbType.Date).Value = p_nsx;
+            cmd.Parameters.Add("@HSD", SqlDbType.Date).Value = p_hsd;
+
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
@@ -210,8 +213,10 @@ namespace Sieu_Thi_Mini_C_
             txt_mavach.Text = dgv_thongtin.Rows[i].Cells[8].Value.ToString();
            
             txtSoluong.Text = dgv_thongtin.Rows[i].Cells[9].Value.ToString();
-            cbo_trangthai.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
-            txtVAT.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();    
+           
+            txtVAT.Text = dgv_thongtin.Rows[i].Cells[10].Value.ToString();
+            date_nsx.Text = dgv_thongtin.Rows[i].Cells[11].Value.ToString();
+            date_hsd.Text = dgv_thongtin.Rows[i].Cells[12].Value.ToString();
             txtMahh.Enabled = false;
         }
 
@@ -226,7 +231,7 @@ namespace Sieu_Thi_Mini_C_
             if (string.IsNullOrEmpty(txtMahh.Text) || string.IsNullOrEmpty(txtTenhh.Text) || string.IsNullOrEmpty(cbo_nhomhang.Text)
                || string.IsNullOrEmpty(txtXuatxu.Text) || string.IsNullOrEmpty(txtGianhap.Text) || string.IsNullOrEmpty(txtGiaban.Text)
                || string.IsNullOrEmpty(txtDvt.Text) || cbo_nhacc.Text == "---- Chọn nhà cung cấp ----" || string.IsNullOrEmpty(txt_mavach.Text)
-               || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(cbo_trangthai.Text) || string.IsNullOrEmpty(txtVAT.Text))
+               || string.IsNullOrEmpty(txtSoluong.Text) || string.IsNullOrEmpty(txtVAT.Text))
             {
                 MessageBox.Show("Chưa nhập đủ thông tin!", "Thông báo");
                 return;
@@ -237,18 +242,16 @@ namespace Sieu_Thi_Mini_C_
             string p_tenhh = txtTenhh.Text.Trim();
             string p_nhomhang = cbo_nhomhang.Text.Trim();
             string p_xuatxu = txtXuatxu.Text.Trim();
-
             int p_gianhap = int.Parse(txtGianhap.Text.Trim());
             int p_giaban = int.Parse(txtGiaban.Text.Trim());
-
             string p_dvt = txtDvt.Text.Trim();
             string p_nhacc = cbo_nhacc.Text.Trim();
             string p_mavach = txt_mavach.Text.Trim();
-
-
-            int p_soluong = int.Parse(txtSoluong.Text.Trim());
-            bool p_trangthaiban = bool.Parse(cbo_trangthai.Text.Trim());
+            int p_soluong = int.Parse(txtSoluong.Text.Trim());   
             float p_vat = float.Parse(txtVAT.Text.Trim());
+            DateTime p_nsx = date_nsx.Value;
+            DateTime p_hsd = date_hsd.Value;
+
 
             //b2 ket noi den database
             if (con.State != ConnectionState.Open)
@@ -257,7 +260,7 @@ namespace Sieu_Thi_Mini_C_
             }
 
             //b3 tao doi tuong cmd de thuc hien sua du lieu
-            string sql = "Update banghanghoa set tenhang=@tenhang,nhomhang=@nhomhang,xuatxu=@xuatxu,gianhap=@gianhap,giaban=@giaban,donvitinh=@donvitinh,nhacungcap=@nhacungcap,mavach=@mavach,soluong=@soluong,trangthaiban=@trangthaiban,vat=@vat where mahh='"+p_mahh+"'";
+            string sql = "Update banghanghoa set tenhang=@tenhang,nhomhang=@nhomhang,xuatxu=@xuatxu,gianhap=@gianhap,giaban=@giaban,donvitinh=@donvitinh,nhacungcap=@nhacungcap,mavach=@mavach,soluong=@soluong,vat=@vat, NSX=@NSX ,HSD=@HSD where mahh='"+p_mahh+"'";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@mahh", SqlDbType.NVarChar, 50).Value = p_mahh;
             cmd.Parameters.Add("@tenhang", SqlDbType.NVarChar, 50).Value = p_tenhh;
@@ -271,11 +274,13 @@ namespace Sieu_Thi_Mini_C_
             cmd.Parameters.Add("@mavach", SqlDbType.NVarChar, 50).Value = p_mavach;
 
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = p_soluong;
-            cmd.Parameters.Add("@trangthaiban", SqlDbType.Bit).Value = p_trangthaiban;
+          
             cmd.Parameters.Add("@vat", SqlDbType.Float).Value = p_vat;
+            cmd.Parameters.Add("@NSX", SqlDbType.Date).Value = p_nsx;
+            cmd.Parameters.Add("@HSD", SqlDbType.Date).Value = p_hsd;
 
 
-           
+
             //
 
             cmd.ExecuteNonQuery();
@@ -412,12 +417,16 @@ namespace Sieu_Thi_Mini_C_
             e_excel.Range cl10 = oSheet.get_Range("J3", "J3");
             cl10.Value2 = "SỐ LƯỢNG";
             cl10.ColumnWidth = 30.0;
-            e_excel.Range cl11 = oSheet.get_Range("K3", "K3");
-            cl11.Value2 = "TRẠNG THÁI BÁN";
-            cl11.ColumnWidth = 20.0;
-            e_excel.Range cl12 = oSheet.get_Range("L3", "L3");
+            
+            e_excel.Range cl12 = oSheet.get_Range("K3", "K3");
             cl12.Value2 = "VAT";
             cl12.ColumnWidth = 20.0;
+            e_excel.Range cl13 = oSheet.get_Range("L3", "L3");
+            cl13.Value2 = "NSX";
+            cl13.ColumnWidth = 20.0;
+            e_excel.Range cl11 = oSheet.get_Range("M3", "M3");
+            cl11.Value2 = "HSD";
+            cl11.ColumnWidth = 20.0;
 
 
             //Microsoft.Office.Interop.Excel.Range cl6 = oSheet.get_Range("F3", "F3");
@@ -426,7 +435,7 @@ namespace Sieu_Thi_Mini_C_
             //Microsoft.Office.Interop.Excel.Range cl6_1 = oSheet.get_Range("F4", "F1000");
             //cl6_1.Columns.NumberFormat = "dd/mm/yyyy";
 
-            e_excel.Range rowHead = oSheet.get_Range("A3", "L3");
+            e_excel.Range rowHead = oSheet.get_Range("A3", "M3");
             rowHead.Font.Bold = true;
             // Kẻ viền
             rowHead.Borders.LineStyle = e_excel.Constants.xlSolid;

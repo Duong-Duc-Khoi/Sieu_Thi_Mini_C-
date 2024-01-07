@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanhang));
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
@@ -73,10 +73,9 @@
             this.cbo_nhomhang = new System.Windows.Forms.ComboBox();
             this.btnLammoiphieu = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txt_tenkh = new System.Windows.Forms.TextBox();
             this.label10 = new System.Windows.Forms.Label();
             this.btn_mavach = new Guna.UI2.WinForms.Guna2Button();
-            this.btn_kh = new Guna.UI2.WinForms.Guna2Button();
             this.txt_shd = new Guna.UI2.WinForms.Guna2TextBox();
             this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
@@ -95,7 +94,6 @@
             this.txt_mahh.Name = "txt_mahh";
             this.txt_mahh.Size = new System.Drawing.Size(405, 30);
             this.txt_mahh.TabIndex = 10;
-            this.txt_mahh.TextChanged += new System.EventHandler(this.txt_mahh_TextChanged);
             // 
             // dgv_thongtin
             // 
@@ -118,13 +116,12 @@
             this.dgv_thongtin.Size = new System.Drawing.Size(937, 407);
             this.dgv_thongtin.TabIndex = 1;
             this.dgv_thongtin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellClick);
-            this.dgv_thongtin.CellValueChanged += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellValueChanged);
             // 
             // dgv_xoahang
             // 
-            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle11.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle11;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_xoahang.HeaderText = "Xóa";
             this.dgv_xoahang.MinimumWidth = 6;
             this.dgv_xoahang.Name = "dgv_xoahang";
@@ -151,9 +148,9 @@
             // 
             // dgv_giamsl
             // 
-            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle12.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle12;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgv_giamsl.HeaderText = "(-)";
             this.dgv_giamsl.MinimumWidth = 6;
             this.dgv_giamsl.Name = "dgv_giamsl";
@@ -167,8 +164,8 @@
             // dgv_soluong
             // 
             this.dgv_soluong.DataPropertyName = "p_soluong";
-            dataGridViewCellStyle13.NullValue = "1";
-            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle13;
+            dataGridViewCellStyle3.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_soluong.HeaderText = "SL";
             this.dgv_soluong.MinimumWidth = 6;
             this.dgv_soluong.Name = "dgv_soluong";
@@ -176,9 +173,9 @@
             // 
             // dgv_tangsl
             // 
-            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle14.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle14;
+            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle4.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle4;
             this.dgv_tangsl.HeaderText = "(+)";
             this.dgv_tangsl.MinimumWidth = 6;
             this.dgv_tangsl.Name = "dgv_tangsl";
@@ -188,8 +185,8 @@
             // dgv_dongia
             // 
             this.dgv_dongia.DataPropertyName = "giaban";
-            dataGridViewCellStyle15.NullValue = "0";
-            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle15;
+            dataGridViewCellStyle5.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle5;
             this.dgv_dongia.HeaderText = "Đơn giá";
             this.dgv_dongia.MinimumWidth = 6;
             this.dgv_dongia.Name = "dgv_dongia";
@@ -271,7 +268,6 @@
             this.txt_tienhang.ReadOnly = true;
             this.txt_tienhang.Size = new System.Drawing.Size(200, 35);
             this.txt_tienhang.TabIndex = 44;
-            this.txt_tienhang.TextChanged += new System.EventHandler(this.txt_tienhang_TextChanged);
             // 
             // label4
             // 
@@ -318,7 +314,6 @@
             this.txt_thanhtoan.ReadOnly = true;
             this.txt_thanhtoan.Size = new System.Drawing.Size(200, 35);
             this.txt_thanhtoan.TabIndex = 48;
-            this.txt_thanhtoan.TextChanged += new System.EventHandler(this.txt_thanhtoan_TextChanged);
             // 
             // grb1
             // 
@@ -428,7 +423,6 @@
             this.label7.TabIndex = 58;
             this.label7.Text = "label7";
             this.label7.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label7.Click += new System.EventHandler(this.label7_Click);
             // 
             // btn_luu
             // 
@@ -490,7 +484,6 @@
             this.cbo_nhomhang.Name = "cbo_nhomhang";
             this.cbo_nhomhang.Size = new System.Drawing.Size(210, 28);
             this.cbo_nhomhang.TabIndex = 49;
-            this.cbo_nhomhang.SelectedIndexChanged += new System.EventHandler(this.cbo_nhomhang_SelectedIndexChanged);
             this.cbo_nhomhang.SelectedValueChanged += new System.EventHandler(this.cbo_nhomhang_SelectedValueChanged);
             // 
             // btnLammoiphieu
@@ -518,18 +511,17 @@
             this.pictureBox1.TabIndex = 50;
             this.pictureBox1.TabStop = false;
             // 
-            // textBox1
+            // txt_tenkh
             // 
-            this.textBox1.AcceptsReturn = true;
-            this.textBox1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.textBox1.Location = new System.Drawing.Point(418, 145);
-            this.textBox1.Margin = new System.Windows.Forms.Padding(4);
-            this.textBox1.MaximumSize = new System.Drawing.Size(824, 50);
-            this.textBox1.MinimumSize = new System.Drawing.Size(200, 30);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(405, 30);
-            this.textBox1.TabIndex = 10;
-            this.textBox1.TextChanged += new System.EventHandler(this.txt_mahh_TextChanged);
+            this.txt_tenkh.AcceptsReturn = true;
+            this.txt_tenkh.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.txt_tenkh.Location = new System.Drawing.Point(418, 145);
+            this.txt_tenkh.Margin = new System.Windows.Forms.Padding(4);
+            this.txt_tenkh.MaximumSize = new System.Drawing.Size(824, 50);
+            this.txt_tenkh.MinimumSize = new System.Drawing.Size(200, 30);
+            this.txt_tenkh.Name = "txt_tenkh";
+            this.txt_tenkh.Size = new System.Drawing.Size(405, 30);
+            this.txt_tenkh.TabIndex = 10;
             // 
             // label10
             // 
@@ -558,33 +550,12 @@
             this.btn_mavach.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.analytics_2;
             this.btn_mavach.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
             this.btn_mavach.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_mavach.Location = new System.Drawing.Point(832, 200);
+            this.btn_mavach.Location = new System.Drawing.Point(832, 195);
             this.btn_mavach.Name = "btn_mavach";
             this.btn_mavach.Size = new System.Drawing.Size(151, 40);
             this.btn_mavach.TabIndex = 62;
             this.btn_mavach.Text = "Search     ";
             this.btn_mavach.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
-            // btn_kh
-            // 
-            this.btn_kh.BackColor = System.Drawing.Color.Transparent;
-            this.btn_kh.BorderRadius = 20;
-            this.btn_kh.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.btn_kh.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.btn_kh.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.btn_kh.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.btn_kh.FillColor = System.Drawing.Color.Lavender;
-            this.btn_kh.Font = new System.Drawing.Font("Times New Roman", 12F);
-            this.btn_kh.ForeColor = System.Drawing.Color.Black;
-            this.btn_kh.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.analytics_2;
-            this.btn_kh.ImageAlign = System.Windows.Forms.HorizontalAlignment.Right;
-            this.btn_kh.ImageSize = new System.Drawing.Size(30, 30);
-            this.btn_kh.Location = new System.Drawing.Point(830, 139);
-            this.btn_kh.Name = "btn_kh";
-            this.btn_kh.Size = new System.Drawing.Size(151, 40);
-            this.btn_kh.TabIndex = 62;
-            this.btn_kh.Text = "Search     ";
-            this.btn_kh.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
             // txt_shd
             // 
@@ -601,13 +572,13 @@
             this.txt_shd.Font = new System.Drawing.Font("Times New Roman", 13.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.txt_shd.ForeColor = System.Drawing.Color.Black;
             this.txt_shd.HoverState.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(94)))), ((int)(((byte)(148)))), ((int)(((byte)(255)))));
-            this.txt_shd.Location = new System.Drawing.Point(79, 170);
+            this.txt_shd.Location = new System.Drawing.Point(67, 170);
             this.txt_shd.Margin = new System.Windows.Forms.Padding(4, 5, 4, 5);
             this.txt_shd.Name = "txt_shd";
             this.txt_shd.PasswordChar = '\0';
             this.txt_shd.PlaceholderText = "";
             this.txt_shd.SelectedText = "";
-            this.txt_shd.Size = new System.Drawing.Size(76, 39);
+            this.txt_shd.Size = new System.Drawing.Size(108, 39);
             this.txt_shd.TabIndex = 63;
             this.txt_shd.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -631,7 +602,6 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.ClientSize = new System.Drawing.Size(1583, 993);
             this.Controls.Add(this.txt_shd);
-            this.Controls.Add(this.btn_kh);
             this.Controls.Add(this.btn_mavach);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.cbo_nhomhang);
@@ -655,7 +625,7 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.dgv_thongtin);
             this.Controls.Add(this.txt_tiendua);
-            this.Controls.Add(this.textBox1);
+            this.Controls.Add(this.txt_tenkh);
             this.Controls.Add(this.txt_mahh);
             this.Controls.Add(this.label8);
             this.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -711,10 +681,9 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_thanhtien;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_vat;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txt_tenkh;
         private System.Windows.Forms.Label label10;
         private Guna.UI2.WinForms.Guna2Button btn_mavach;
-        private Guna.UI2.WinForms.Guna2Button btn_kh;
         private Guna.UI2.WinForms.Guna2TextBox txt_shd;
         private System.Windows.Forms.Label label12;
     }

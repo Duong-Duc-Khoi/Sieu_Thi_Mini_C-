@@ -9,7 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using ZedGraph;
+//using ZedGraph;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 
 namespace Sieu_Thi_Mini_C_
