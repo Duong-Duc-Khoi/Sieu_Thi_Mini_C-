@@ -233,7 +233,12 @@ namespace Sieu_Thi_Mini_C_
                 e.Handled = false;
             }
         }
-        
 
+        private void btnLoaiHang_Click(object sender, EventArgs e)
+        {
+            frm_trahang frmLoai = new frm_trahang();
+            frmLoai.ShowDialog();
+            this.Close();
+        }
     }
 }

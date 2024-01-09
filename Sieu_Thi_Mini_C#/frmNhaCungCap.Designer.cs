@@ -130,8 +130,9 @@
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(198, 64);
             this.btnLoaiHang.TabIndex = 44;
-            this.btnLoaiHang.Text = "Loại Hàng";
+            this.btnLoaiHang.Text = "Trả Hàng";
             this.btnLoaiHang.UseVisualStyleBackColor = true;
+            this.btnLoaiHang.Click += new System.EventHandler(this.btnLoaiHang_Click);
             // 
             // btnNhaCungCap
             // 

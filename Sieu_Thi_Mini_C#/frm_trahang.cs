@@ -23,7 +23,6 @@ namespace Sieu_Thi_Mini_C_
         {
             InitializeComponent();
         }
-        //
         private void load_lst_tenhang()
         {
             if (con.State == ConnectionState.Closed)
@@ -63,19 +62,20 @@ namespace Sieu_Thi_Mini_C_
             load_lst_tenhang();
            
         }
-        private void luu(string p_matrahang, string mahh,string tenhang, int soluong,string lydotrahang )
+        private void luu(string p_matrahang, string mahh,string tenhang, int soluong,int tientralai,string lydotrahang )
         {
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
-            string sql = "Insert bangphieutrahangchitiet values ( @matrahang,@mahh,@tenhh, @soluong, @lydotrahang )";
+            string sql = "Insert bangphieutrahangchitiet values ( @matrahang,@mahh,@tenhh, @soluong,@tientralai, @lydotrahang )";
             SqlCommand cmd = new SqlCommand(sql, con);
 
             cmd.Parameters.Add("@matrahang", SqlDbType.NVarChar, 50).Value = p_matrahang;
             cmd.Parameters.Add("@mahh", SqlDbType.NVarChar, 50).Value = mahh;
             cmd.Parameters.Add("@tenhh", SqlDbType.NVarChar, 50).Value = tenhang;
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = soluong;
+            cmd.Parameters.Add("@tientralai",SqlDbType.Int).Value= tientralai;
             cmd.Parameters.Add("@lydotrahang", SqlDbType.NVarChar, 200).Value = lydotrahang;
        
             cmd.ExecuteNonQuery();
@@ -88,10 +88,6 @@ namespace Sieu_Thi_Mini_C_
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             string p_matrahang = txt_matrahang.Text.Trim();
-            //int soluong=int.Parse(p)
-            //int thanhtien =int.Parse( txt_thanhtoan.Text.Trim()); 
-            //
-            
             for (int i = 0; i < dgv_thongtin.Rows.Count - 1; i++)
             {
                 string tenhang = dgv_thongtin.Rows[i].Cells["dgv_tenhh"].Value.ToString();
@@ -99,14 +95,11 @@ namespace Sieu_Thi_Mini_C_
                 int giaban = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value.ToString());
                 string mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
                 string lydotrahang = dgv_thongtin.Rows[i].Cells["dgv_lydo"].Value.ToString();
+                int tientralai =int.Parse( dgv_thongtin.Rows[i].Cells["dgv_tientralai"].Value.ToString());
                 //
-                luu(p_matrahang,mahh,tenhang, soluong, lydotrahang);
+                luu(p_matrahang,mahh,tenhang, soluong,tientralai, lydotrahang);
             }
             MessageBox.Show("Save", "Thông báo");
-            //
-            
-
-
         }
 
         private void lst_dshh_SelectedValueChanged(object sender, EventArgs e)
@@ -128,21 +121,12 @@ namespace Sieu_Thi_Mini_C_
             dataAdapter.Fill(dt);
             dgv_thongtin.DataSource = dt;
             cmd.ExecuteNonQuery();
-            // cmd.Dispose();
-            //
-
-            //
-
             if (current_data == null)
             {
                 current_data = new DataTable();
-
             }
             current_data.Merge(dt);
             dgv_thongtin.DataSource = current_data;
-            //
-
-
             dgv_thongtin.Refresh();
         }
 
@@ -162,8 +146,6 @@ namespace Sieu_Thi_Mini_C_
                 dgv_thongtin.Rows.RemoveAt(dgv_thongtin.CurrentRow.Index);
                 return;
             }
-           
-            //
             for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
             {
                 int p_dongia = Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value);
@@ -184,9 +166,8 @@ namespace Sieu_Thi_Mini_C_
                 // ...
               
             }
+            txt_matrahang.Text = null;
             frm_trahang_Load(sender, e);
-            
-            //
         }
 
         private void btnHangHoa_Click(object sender, EventArgs e)

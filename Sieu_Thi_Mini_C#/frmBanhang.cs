@@ -15,6 +15,8 @@ using e_excel = Microsoft.Office.Interop.Excel;
 using static System.Windows.Forms.VisualStyles.VisualStyleElement;
 using System.Web.UI.WebControls;
 using System.Data.Common;
+using static System.ComponentModel.Design.ObjectSelectorEditor;
+using System.Diagnostics;
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmBanhang : Form
@@ -108,7 +110,7 @@ namespace Sieu_Thi_Mini_C_
             {
                 int p_soluong = Convert.ToInt32(dgv_thongtin.CurrentRow.Cells[2].Value);
                 p_soluong--;
-                if (p_soluong == 0)
+                if (p_soluong <= 0)
                 {
                     return;
                 }
@@ -123,8 +125,6 @@ namespace Sieu_Thi_Mini_C_
                 int p_thanhtien = p_dongia * p_soluongg;
                 dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value = p_thanhtien;
             }
-
-
             float sum = 0; float vat = 0;
             for (int i = 0; i < dgv_thongtin.Rows.Count; ++i)
             {
@@ -197,36 +197,12 @@ namespace Sieu_Thi_Mini_C_
             //
             DataRow dr = tb.NewRow();
             dr["mahh"] = "";
-            dr["tenhang"] = "------- Chọn tên hàng -------";
+            dr["tenhang"] = "------- Chọn tên hàng hóa -------";
             tb.Rows.InsertAt(dr, 0);
             //hien thi tb vao combobox
             cbo_nhomhang.DataSource = tb;
             cbo_nhomhang.DisplayMember = "tenhang";
             cbo_nhomhang.ValueMember = "mahh";
-        }
-        public void Kiemtrashd(int shd)
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-            //b3 tao doi tuong command de kiem tra
-            string sql = "select distinct sohd from banghoadonchitiet ";
-            SqlCommand cmd = new SqlCommand(sql, con);
-            //tao doi tuong data adapter de lay du lieu
-            SqlDataAdapter da = new SqlDataAdapter(cmd);
-            da.SelectCommand = cmd;
-            //do du lieu tu da va database
-            DataTable tb = new DataTable();
-            da.Fill(tb);
-            // DataTable.Compute("MAX(sohd)");
-            foreach (DataColumn column in tb.Columns)
-            {
-                Console.WriteLine(column.ColumnName);
-            }
-            int max = (int)tb.Compute("MAX[]", "");  
-            cmd.Dispose();
-            con.Close();     
         }
       
         private void formBanhang_Load(object sender, EventArgs e)
@@ -238,21 +214,11 @@ namespace Sieu_Thi_Mini_C_
                {
                    con.Open();
                }
-               //b3 tao doi tuong command de kiem tra
-               string hd = "select distinct sohd from banghoadonchitiet ";
-               SqlCommand cmdd = new SqlCommand(hd, con);
-               //tao doi tuong data adapter de lay du lieu
-               SqlDataAdapter da = new SqlDataAdapter(cmdd);
-               da.SelectCommand = cmdd;
-               //do du lieu tu da vao database
-               DataTable tb = new DataTable();
-               da.Fill(tb);
-            // DataTable.Compute("MAX(sohd)");
-            
-           
-             int max = Convert.ToInt32(tb.Compute("MAX(sohd)", ""));
-              int shd = max +1;
-           
+            //b3 tao doi tuong command de kiem tra
+               string hd = "SELECT MAX(sohd) FROM banghoadonchitiet ";
+                SqlCommand cmdd = new SqlCommand(hd, con);
+            int max = Convert.ToInt32(cmdd.ExecuteScalar());     
+            int shd = max +1;          
                cmdd.Dispose();
                con.Close();
                txt_shd.Text = shd.ToString();
@@ -278,55 +244,37 @@ namespace Sieu_Thi_Mini_C_
             cbo_nhomhang.DropDownStyle = ComboBoxStyle.DropDownList;
 
         }
-        DataSet Dataset=null;
         private void cbo_nhomhang_SelectedValueChanged(object sender, EventArgs e)
         {
-            //
-         
-            //
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
-            string p_tenhh = cbo_nhomhang.SelectedValue.ToString();         
-                string sql = "Select mahh,tenhang,giaban,vat from banghanghoa where mahh=N'" + p_tenhh + "'";
+            string p_mahh = cbo_nhomhang.SelectedValue.ToString();         
+                string sql = "Select mahh,tenhang,giaban,vat from banghanghoa where mahh=N'" + p_mahh + "'";
                 DataTable current_data = (DataTable)dgv_thongtin.DataSource;
                 SqlCommand cmd = new SqlCommand(sql, con);
                 SqlDataAdapter dataAdapter = new SqlDataAdapter(cmd);
                dataAdapter.SelectCommand = cmd;
                 DataTable dt = new DataTable();
                dataAdapter.Fill(dt);
-               dgv_thongtin.DataSource = dt;
+             //  dgv_thongtin.DataSource = dt;
                 cmd.ExecuteNonQuery();
-                cmd.Dispose();
-            //
-
+            for (int i = 0; i < dgv_thongtin.RowCount - 1; i++)
+            {
+                if (p_mahh == dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString())
+                {
+                    MessageBox.Show("Bạn đã nhập mặt hàng này, vui lòng không chọn lại", "Thông báo");
+                    return;
+                }
+            }
             if (current_data == null)
             {
                 current_data = new DataTable();
             }
             current_data.Merge(dt);
             dgv_thongtin.DataSource = current_data;
-
-            for (int i = 0; i < dgv_thongtin.RowCount -1; i++)
-            {
-                if (p_tenhh == dgv_thongtin.Rows[i].Cells["dgv_tenhh"].Value.ToString())
-                {
-                    MessageBox.Show("Bạn đã nhập mặt hàng này, vui lòng không chọn lại", "Thông báo");
-                    return;
-                }
-            }
-            
-            
-         /*   if (current_data == null)
-                {
-                    current_data = new DataTable();
-
-                }
-                current_data.Merge(dt);
-                dgv_thongtin.DataSource = current_data;
-         */
-    
+           
         }
         private void timer1_Tick(object sender, EventArgs e)
         {
@@ -479,47 +427,51 @@ namespace Sieu_Thi_Mini_C_
             oSheet.get_Range(c1, c2).HorizontalAlignment = e_excel.XlHAlign.xlHAlignCenter;
 
         }
-        private void LoadData()
-        {
-            if (con.State == ConnectionState.Closed)
-            {
-                con.Open();
-            }
-
-        }
-  
         private void formBanhang_FormClosed(object sender, FormClosedEventArgs e)
         {
             if (getRole == "Nhân viên") { mainForm.Show(); }
             mainForm.Show();
         }
-        private void luu(string p_shd, string tenhang, int sl, int dongia, int thanhtien, string ngay)
+        private void capnhatsoluong(string p_mahh, int soluongmoi)
         {
-            
-
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
-           
+            string p_soluong = "Select soluong from banghanghoa where mahh='" + p_mahh + "' ";
+            string sql = " Update banghanghoa set soluong=@soluong where mahh='" + p_mahh + "'";
+            SqlCommand cmd = new SqlCommand(sql, con);
+            SqlCommand sl = new SqlCommand(p_soluong, con);
+            // int soluongcu = Convert.ToInt32(sl.ExecuteScalar());
+            int soluongcu = (int)sl.ExecuteScalar();
+            if (soluongcu == 0)
+            {
+                MessageBox.Show("Hàng trong kho đã hết, vui lòng nhập thêm hàng !");
+                return;
+            }
+            int soluong = soluongcu - soluongmoi;
+            cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = soluong;
+            cmd.ExecuteNonQuery();
+            cmd.Dispose();
+            con.Close();
+        }
+        private void luu(string p_shd, string tenhang, int sl, int dongia, int thanhtien, string ngay)
+        {  
+            if (con.State == ConnectionState.Closed)
+            {
+                con.Open();
+            }         
             string p_ngay = DateTime.Now.ToString("yyyy-MM-dd");
-           // string p_ngay = "2023-12-26";
-
             string sql = "Insert banghoadonchitiet values ( @sohd,@tenhh, @soluong, @dongia, @thanhtien, '"+p_ngay+"' )";
             SqlCommand cmd = new SqlCommand(sql, con);
-
-            cmd.Parameters.Add("@sohd", SqlDbType.NVarChar, 50).Value = p_shd;
+            cmd.Parameters.Add("@sohd", SqlDbType.Int).Value = p_shd;
             cmd.Parameters.Add("@tenhh", SqlDbType.NVarChar, 50).Value = tenhang;
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = sl;
             cmd.Parameters.Add("@dongia", SqlDbType.Int).Value = dongia;
             cmd.Parameters.Add("@thanhtien", SqlDbType.Int).Value = thanhtien;
-           // cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = ngay;
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
-
-           //  int randomNumber = random();
-           // txt_shd.Text = randomNumber.ToString();
         }
 
         private void btn_inhoadon_Click(object sender, EventArgs e)
@@ -543,48 +495,11 @@ namespace Sieu_Thi_Mini_C_
             con.Close();
             //B6 XUẤT DỮ LIỆU TỪ tb SANG file EXCEL
             ExportExcel(tb, "BẢNG HÓA ĐƠN CHI TIẾT");
-
-           // int randomNumber = random();
-            //txt_shd.Text = randomNumber.ToString();
         }
 
         
         List<int> list_thanhtien = new List<int>();
 
-        /*  private void xulybanghoadonngay()
-          {
-              if (con.State == ConnectionState.Closed)
-              {
-                  con.Open();
-              }
-              string p_ngay = DateTime.Now.ToString("dd/MM");
-              float thanhtien = float.Parse(txt_thanhtoan.Text.Trim());
-
-            // float p_doanhthungay=float.Parse(txt_thanhtoan.Text.Trim());
-              string doanhthungay = "Select doanhthungay from bangdoanhthutheongay where ngay='" + p_ngay + "";
-              SqlCommand dthu= new SqlCommand(doanhthungay, con);
-              float doanhthu=(float)dthu.ExecuteScalar();
-              doanhthu = doanhthu + thanhtien;
-             if (p_ngay== DateTime.Now.ToString("dd/MM"))
-              {
-                  string sql = "Update bangdoanhthutheongay set (@ngayy, @doanhthungay)";
-                  SqlCommand cmd = new SqlCommand(sql, con);
-                  cmd.Parameters.Add("@ngay", SqlDbType.NVarChar, 50).Value = p_ngay;
-                  cmd.Parameters.Add("@doanhthungay", SqlDbType.Float).Value = doanhthungay;
-                  cmd.ExecuteNonQuery();
-              }
-             else
-              {
-
-                  string sql = "Insert bangdoanhthutheongay values (@ngayy, @doanhthungay)";
-                  SqlCommand cmd = new SqlCommand(sql, con);
-                  cmd.Parameters.Add("@ngay", SqlDbType.NVarChar, 50).Value = p_ngay;
-                  cmd.Parameters.Add("@doanhthungay", SqlDbType.Float).Value = doanhthu;
-                  cmd.ExecuteNonQuery();
-              }
-
-     }
-        */
         //
 
         private void xulybanghoadonngay()
@@ -601,10 +516,11 @@ namespace Sieu_Thi_Mini_C_
             string doanhthungay = "SELECT SUM(thanhtien) FROM banghoadonchitiet WHERE ngay = '" + p_ngay + "' GROUP BY ngay";
 
             SqlCommand dthu = new SqlCommand(doanhthungay, con);
-            int doanhthu = (int)dthu.ExecuteScalar();
+            int doanhthucu = (int)dthu.ExecuteScalar();
+            int doanhthumoi = doanhthucu+ Convert.ToInt32(txt_thanhtoan.Text);
             string ngaycu = "Select ngay from bangdoanhthutheongay ";
             SqlCommand sqlCommand= new SqlCommand(ngaycu, con);
-          //  txt_test.Text = ngaycu;
+            //txt_test.Text = ngaycu;
             //string ngaymoi = (string)sqlCommand.ExecuteScalar();
             SqlDataAdapter sqlDataAdapter= new SqlDataAdapter(sqlCommand);
             DataTable dataTable= new DataTable();
@@ -615,21 +531,20 @@ namespace Sieu_Thi_Mini_C_
                 string ngaymoi = row["ngay"].ToString();
               
                 // Sử dụng biến date ở đây
-                if (ngaymoi == DateTime.Now.ToString("yyyy-MM-dd"))
+                if (ngaymoi == p_ngay)
                 {
-                    string sql = "Update bangdoanhthutheongay set ( ngay=@ngay, doanhthungay=@doanhthungay) where ngay='" + p_ngay + "'";
+                    string sql = "Update bangdoanhthutheongay set ( doanhthungay=@doanhthungay) where ngay='" + p_ngay + "'";
                     SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = p_ngay;
-                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthu;
+                  // cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = p_ngay;
+                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthumoi;
                     cmd.ExecuteNonQuery();
                 }
-                else
+                
                 {
-
                     string sql = "Insert bangdoanhthutheongay values (@ngay, @doanhthungay)";
                     SqlCommand cmd = new SqlCommand(sql, con);
                     cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = p_ngay;
-                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthu;
+                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthumoi;
                     cmd.ExecuteNonQuery();
                 }
             }
@@ -653,6 +568,13 @@ namespace Sieu_Thi_Mini_C_
                 //
                 luu(p_shd, tenhang, sl, dongia, thanhtien, ngay);
             }
+            for (int i = 0; i < dgv_thongtin.RowCount - 1; i++)
+            {
+                string p_mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
+                int soluongmoi = Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value);
+                capnhatsoluong(p_mahh, soluongmoi);
+            }
+         //   MessageBox.Show("Cap nhat thanh cong!", "Thong bao");
             MessageBox.Show("Save","Thông báo");
             //
               xulybanghoadonngay(); 

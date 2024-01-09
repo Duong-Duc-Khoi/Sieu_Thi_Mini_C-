@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_trahang));
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
             this.dgv_btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -49,10 +49,10 @@
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.lst_dshh = new System.Windows.Forms.ListBox();
-            this.btn_xacnhan = new System.Windows.Forms.Button();
             this.btnLammoiphieu = new System.Windows.Forms.Button();
             this.txt_matrahang = new System.Windows.Forms.TextBox();
             this.label6 = new System.Windows.Forms.Label();
+            this.btn_xacnhan = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
@@ -81,9 +81,9 @@
             // 
             // dgv_btnXoa
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "x";
-            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle3.NullValue = "x";
+            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle3;
             this.dgv_btnXoa.HeaderText = "Xoá";
             this.dgv_btnXoa.MinimumWidth = 6;
             this.dgv_btnXoa.Name = "dgv_btnXoa";
@@ -258,23 +258,12 @@
             this.lst_dshh.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.lst_dshh.FormattingEnabled = true;
             this.lst_dshh.ItemHeight = 20;
-            this.lst_dshh.Location = new System.Drawing.Point(24, 47);
+            this.lst_dshh.Location = new System.Drawing.Point(24, 39);
             this.lst_dshh.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.lst_dshh.Name = "lst_dshh";
             this.lst_dshh.Size = new System.Drawing.Size(252, 464);
             this.lst_dshh.TabIndex = 0;
             this.lst_dshh.SelectedValueChanged += new System.EventHandler(this.lst_dshh_SelectedValueChanged);
-            // 
-            // btn_xacnhan
-            // 
-            this.btn_xacnhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btn_xacnhan.Location = new System.Drawing.Point(677, 724);
-            this.btn_xacnhan.Name = "btn_xacnhan";
-            this.btn_xacnhan.Size = new System.Drawing.Size(112, 44);
-            this.btn_xacnhan.TabIndex = 60;
-            this.btn_xacnhan.Text = "Xác nhận";
-            this.btn_xacnhan.UseVisualStyleBackColor = true;
-            this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
             // 
             // btnLammoiphieu
             // 
@@ -311,6 +300,17 @@
             this.label6.Size = new System.Drawing.Size(139, 25);
             this.label6.TabIndex = 63;
             this.label6.Text = "Mã trả hàng";
+            // 
+            // btn_xacnhan
+            // 
+            this.btn_xacnhan.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btn_xacnhan.Location = new System.Drawing.Point(677, 724);
+            this.btn_xacnhan.Name = "btn_xacnhan";
+            this.btn_xacnhan.Size = new System.Drawing.Size(112, 44);
+            this.btn_xacnhan.TabIndex = 60;
+            this.btn_xacnhan.Text = "Xác nhận";
+            this.btn_xacnhan.UseVisualStyleBackColor = true;
+            this.btn_xacnhan.Click += new System.EventHandler(this.btn_xacnhan_Click);
             // 
             // frm_trahang
             // 
@@ -353,7 +353,6 @@
         private System.Windows.Forms.Button btnHangHoa;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ListBox lst_dshh;
-        private System.Windows.Forms.Button btn_xacnhan;
         private System.Windows.Forms.Button btnLammoiphieu;
         private System.Windows.Forms.TextBox txt_matrahang;
         private System.Windows.Forms.Label label6;
@@ -364,5 +363,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_dongia;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_tientralai;
         private System.Windows.Forms.DataGridViewTextBoxColumn dgv_lydo;
+        private System.Windows.Forms.Button btn_xacnhan;
     }
 }
