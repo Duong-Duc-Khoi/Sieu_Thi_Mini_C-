@@ -17,7 +17,7 @@ using System.Web.UI.WebControls;
 using System.Data.Common;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Diagnostics;
-using ZedGraph;
+
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmBanhang : Form

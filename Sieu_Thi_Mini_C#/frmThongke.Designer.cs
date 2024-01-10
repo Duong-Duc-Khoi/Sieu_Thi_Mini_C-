@@ -126,7 +126,7 @@
             this.label1.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label1.Location = new System.Drawing.Point(30, 65);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(193, 22);
+            this.label1.Size = new System.Drawing.Size(153, 19);
             this.label1.TabIndex = 57;
             this.label1.Text = "Mặt hàng bán chạy nhất";
             // 
@@ -136,7 +136,7 @@
             this.label2.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label2.Location = new System.Drawing.Point(30, 194);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(271, 22);
+            this.label2.Size = new System.Drawing.Size(215, 19);
             this.label2.TabIndex = 57;
             this.label2.Text = "Mặt hàng sắp hết (Tồn kho < 50) ";
             // 
@@ -146,7 +146,7 @@
             this.label3.Font = new System.Drawing.Font("Times New Roman", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label3.Location = new System.Drawing.Point(30, 132);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(168, 22);
+            this.label3.Size = new System.Drawing.Size(132, 19);
             this.label3.TabIndex = 57;
             this.label3.Text = "Mặt hàng bán ít nhất";
             // 
@@ -169,24 +169,24 @@
             // lst_danhsach
             // 
             this.lst_danhsach.FormattingEnabled = true;
-            this.lst_danhsach.ItemHeight = 22;
+            this.lst_danhsach.ItemHeight = 19;
             this.lst_danhsach.Location = new System.Drawing.Point(34, 228);
             this.lst_danhsach.Name = "lst_danhsach";
-            this.lst_danhsach.Size = new System.Drawing.Size(435, 290);
+            this.lst_danhsach.Size = new System.Drawing.Size(435, 289);
             this.lst_danhsach.TabIndex = 59;
             // 
             // txt_banit
             // 
-            this.txt_banit.Location = new System.Drawing.Point(229, 131);
+            this.txt_banit.Location = new System.Drawing.Point(229, 132);
             this.txt_banit.Name = "txt_banit";
-            this.txt_banit.Size = new System.Drawing.Size(240, 30);
+            this.txt_banit.Size = new System.Drawing.Size(240, 26);
             this.txt_banit.TabIndex = 58;
             // 
             // txt_banchay
             // 
             this.txt_banchay.Location = new System.Drawing.Point(229, 65);
             this.txt_banchay.Name = "txt_banchay";
-            this.txt_banchay.Size = new System.Drawing.Size(240, 30);
+            this.txt_banchay.Size = new System.Drawing.Size(240, 26);
             this.txt_banchay.TabIndex = 58;
             // 
             // label4
@@ -214,7 +214,7 @@
             // 
             // frmThongke
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 19F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1316, 798);
             this.Controls.Add(this.btnT);

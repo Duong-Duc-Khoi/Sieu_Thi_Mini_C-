@@ -55,10 +55,58 @@ namespace Sieu_Thi_Mini_C_
         private void thongkecoban()
         {
             string date = DateTime.Now.ToString("yyyy-MM-dd");
-           
-            txt_banchay.Text = dgv_thongtin.Rows[0].Cells["tenhh"].Value.ToString();
-            int i = dgv_thongtin.Rows.Count - 2;
-            txt_banit.Text= dgv_thongtin.Rows[i].Cells["tenhh"].Value.ToString();
+            // Khai báo biến để lưu giữ số lượng bán cao nhất và tên hàng hóa tương ứng
+            int maxsoluongban = int.MinValue;
+            string tenhhmax = "";
+
+            // Duyệt qua tất cả các dòng trong bảng hàng hoá
+            foreach (DataGridViewRow row in dgv_thongtin.Rows)
+            {
+                // Lấy giá trị số lượng bán từ cột "tenhh"
+                int soluongban = Convert.ToInt32(row.Cells["soluongban"].Value);
+
+                // So sánh và cập nhật nếu số lượng bán hiện tại lớn hơn số lượng bán cao nhất
+                if (soluongban > maxsoluongban)
+                {
+                    maxsoluongban = soluongban;
+                    tenhhmax = row.Cells["tenhh"].Value.ToString();
+                }
+            }
+
+            // Gán tên hàng hóa có số lượng bán cao nhất vào textbox
+            txt_banchay.Text = tenhhmax;
+
+            // Khai báo biến để lưu giữ số lượng bán cao nhất và tên hàng hóa tương ứng
+            int minsoluongban = int.MaxValue;
+            string tenhhmin = "";
+
+            // Duyệt qua tất cả các dòng trong bảng hàng hoá
+            foreach (DataGridViewRow row in dgv_thongtin.Rows)
+            {
+                // Lấy giá trị số lượng bán từ cột "tenhh"
+                int soluongban = Convert.ToInt32(row.Cells["soluongban"].Value);
+                if (soluongban == 0)
+                {
+                    soluongban = 1;
+                }
+                // So sánh và cập nhật nếu số lượng bán hiện tại lớn hơn số lượng bán cao nhất
+                if (soluongban < minsoluongban)
+                {
+                    minsoluongban = soluongban;
+                    tenhhmin = row.Cells["tenhh"].Value.ToString();
+                }
+            }
+
+            // Gán tên hàng hóa có số lượng bán cao nhất vào textbox
+            txt_banit.Text = tenhhmin;
+
+
+
+
+
+
+
+
             //
             if (con.State == ConnectionState.Closed)
             {
