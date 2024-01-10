@@ -33,6 +33,7 @@
             System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.chartDoanhthu = new System.Windows.Forms.DataVisualization.Charting.Chart();
             this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            this.label12 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.chartDoanhthu)).BeginInit();
             this.SuspendLayout();
             // 
@@ -46,7 +47,7 @@
             this.chartDoanhthu.Legends.Add(legend1);
             this.chartDoanhthu.Location = new System.Drawing.Point(61, 61);
             this.chartDoanhthu.Name = "chartDoanhthu";
-            this.chartDoanhthu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.Pastel;
+            this.chartDoanhthu.Palette = System.Windows.Forms.DataVisualization.Charting.ChartColorPalette.None;
             series1.BorderColor = System.Drawing.Color.Lavender;
             series1.ChartArea = "ChartArea1";
             series1.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -76,11 +77,24 @@
             this.guna2Button1.Text = "Cập nhật";
             this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
             // 
+            // label12
+            // 
+            this.label12.BackColor = System.Drawing.Color.Lavender;
+            this.label12.Font = new System.Drawing.Font("Times New Roman", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.label12.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.label12.Location = new System.Drawing.Point(293, 713);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(708, 76);
+            this.label12.TabIndex = 58;
+            this.label12.Text = "BIỂU ĐỒ THỐNG KÊ DOANH THU\r\n ------------------------";
+            this.label12.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
+            // 
             // frm_Doanhthu
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(12F, 25F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1428, 798);
+            this.Controls.Add(this.label12);
             this.Controls.Add(this.guna2Button1);
             this.Controls.Add(this.chartDoanhthu);
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
@@ -97,5 +111,6 @@
 
         private System.Windows.Forms.DataVisualization.Charting.Chart chartDoanhthu;
         private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private System.Windows.Forms.Label label12;
     }
 }

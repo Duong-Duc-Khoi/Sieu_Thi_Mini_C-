@@ -30,12 +30,11 @@
         {
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.btnXuatHang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
+            this.btnT = new System.Windows.Forms.Button();
             this.btnTraHang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
-            this.btnT = new System.Windows.Forms.Button();
             this.label12 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
@@ -49,8 +48,8 @@
             // 
             this.grb1.BackColor = System.Drawing.Color.Lavender;
             this.grb1.Controls.Add(this.pictureBox3);
-            this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
+            this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnTraHang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
             this.grb1.Controls.Add(this.btnHangHoa);
@@ -74,16 +73,6 @@
             this.pictureBox3.TabIndex = 52;
             this.pictureBox3.TabStop = false;
             // 
-            // btnXuatHang
-            // 
-            this.btnXuatHang.Location = new System.Drawing.Point(55, 640);
-            this.btnXuatHang.Margin = new System.Windows.Forms.Padding(6);
-            this.btnXuatHang.Name = "btnXuatHang";
-            this.btnXuatHang.Size = new System.Drawing.Size(234, 78);
-            this.btnXuatHang.TabIndex = 46;
-            this.btnXuatHang.Text = "Xuất Hàng";
-            this.btnXuatHang.UseVisualStyleBackColor = true;
-            // 
             // btnNhapHang
             // 
             this.btnNhapHang.Location = new System.Drawing.Point(55, 394);
@@ -94,6 +83,17 @@
             this.btnNhapHang.Text = "Nhập Hàng";
             this.btnNhapHang.UseVisualStyleBackColor = true;
             this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
+            // 
+            // btnT
+            // 
+            this.btnT.Location = new System.Drawing.Point(55, 642);
+            this.btnT.Margin = new System.Windows.Forms.Padding(6);
+            this.btnT.Name = "btnT";
+            this.btnT.Size = new System.Drawing.Size(234, 79);
+            this.btnT.TabIndex = 47;
+            this.btnT.Text = "Thoát";
+            this.btnT.UseVisualStyleBackColor = true;
+            this.btnT.Click += new System.EventHandler(this.btnT_Click);
             // 
             // btnTraHang
             // 
@@ -128,17 +128,6 @@
             this.btnHangHoa.UseVisualStyleBackColor = true;
             this.btnHangHoa.Click += new System.EventHandler(this.btnHangHoa_Click);
             // 
-            // btnT
-            // 
-            this.btnT.Location = new System.Drawing.Point(1287, 745);
-            this.btnT.Margin = new System.Windows.Forms.Padding(6);
-            this.btnT.Name = "btnT";
-            this.btnT.Size = new System.Drawing.Size(96, 42);
-            this.btnT.TabIndex = 47;
-            this.btnT.Text = "Thoát";
-            this.btnT.UseVisualStyleBackColor = true;
-            this.btnT.Click += new System.EventHandler(this.btnT_Click);
-            // 
             // label12
             // 
             this.label12.BackColor = System.Drawing.Color.Lavender;
@@ -164,7 +153,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources._081219469dc9f4d880e5126bfdccd755;
+            this.pictureBox1.Image = global::Sieu_Thi_Mini_C_.Properties.Resources.hinhnen;
             this.pictureBox1.Location = new System.Drawing.Point(420, 182);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(869, 605);
@@ -191,7 +180,6 @@
             this.ClientSize = new System.Drawing.Size(1393, 1055);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.btnT);
             this.Controls.Add(this.grb1);
             this.Controls.Add(this.pictureBox1);
             this.Controls.Add(this.label12);
@@ -214,7 +202,6 @@
         private System.Windows.Forms.GroupBox grb1;
         private System.Windows.Forms.PictureBox pictureBox3;
         private System.Windows.Forms.Button btnT;
-        private System.Windows.Forms.Button btnXuatHang;
         private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.Button btnTraHang;
         private System.Windows.Forms.Button btnNhaCungCap;

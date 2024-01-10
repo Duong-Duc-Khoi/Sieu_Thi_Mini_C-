@@ -52,13 +52,25 @@
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.btnT = new System.Windows.Forms.Button();
-            this.btnXuatHang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnTrahang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
+            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.Nhomhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.mavach = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.HSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.cbo_nhomhang = new System.Windows.Forms.ComboBox();
             this.cbo_nhacc = new System.Windows.Forms.ComboBox();
             this.label12 = new System.Windows.Forms.Label();
@@ -73,19 +85,6 @@
             this.label13 = new System.Windows.Forms.Label();
             this.date_nsx = new System.Windows.Forms.DateTimePicker();
             this.date_hsd = new System.Windows.Forms.DateTimePicker();
-            this.MaNCC = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Tenhh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nhomhang = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.SDT = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.gianhap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.giaban = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.donvitinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.nhacungcap = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.mavach = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dinhmuc = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.vat = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.NSX = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.HSD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.grb1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgv_thongtin)).BeginInit();
@@ -306,7 +305,6 @@
             this.grb1.BackColor = System.Drawing.Color.Lavender;
             this.grb1.Controls.Add(this.pictureBox3);
             this.grb1.Controls.Add(this.btnT);
-            this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
             this.grb1.Controls.Add(this.btnTrahang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
@@ -341,19 +339,9 @@
             this.btnT.UseVisualStyleBackColor = true;
             this.btnT.Click += new System.EventHandler(this.btnT_Click);
             // 
-            // btnXuatHang
-            // 
-            this.btnXuatHang.Location = new System.Drawing.Point(40, 394);
-            this.btnXuatHang.Margin = new System.Windows.Forms.Padding(4);
-            this.btnXuatHang.Name = "btnXuatHang";
-            this.btnXuatHang.Size = new System.Drawing.Size(198, 61);
-            this.btnXuatHang.TabIndex = 46;
-            this.btnXuatHang.Text = "Xuất Hàng";
-            this.btnXuatHang.UseVisualStyleBackColor = true;
-            // 
             // btnNhapHang
             // 
-            this.btnNhapHang.Location = new System.Drawing.Point(40, 300);
+            this.btnNhapHang.Location = new System.Drawing.Point(40, 367);
             this.btnNhapHang.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(198, 61);
@@ -364,7 +352,7 @@
             // 
             // btnTrahang
             // 
-            this.btnTrahang.Location = new System.Drawing.Point(40, 500);
+            this.btnTrahang.Location = new System.Drawing.Point(40, 487);
             this.btnTrahang.Margin = new System.Windows.Forms.Padding(4);
             this.btnTrahang.Name = "btnTrahang";
             this.btnTrahang.Size = new System.Drawing.Size(198, 61);
@@ -375,7 +363,7 @@
             // 
             // btnNhaCungCap
             // 
-            this.btnNhaCungCap.Location = new System.Drawing.Point(40, 202);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(40, 240);
             this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(198, 61);
@@ -420,6 +408,110 @@
             this.dgv_thongtin.Size = new System.Drawing.Size(1079, 332);
             this.dgv_thongtin.TabIndex = 42;
             this.dgv_thongtin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellClick);
+            // 
+            // MaNCC
+            // 
+            this.MaNCC.DataPropertyName = "mahh";
+            this.MaNCC.HeaderText = "Mã HH";
+            this.MaNCC.MinimumWidth = 6;
+            this.MaNCC.Name = "MaNCC";
+            this.MaNCC.Width = 125;
+            // 
+            // Tenhh
+            // 
+            this.Tenhh.DataPropertyName = "tenhang";
+            this.Tenhh.HeaderText = "Tên HH";
+            this.Tenhh.MinimumWidth = 6;
+            this.Tenhh.Name = "Tenhh";
+            this.Tenhh.Width = 125;
+            // 
+            // Nhomhang
+            // 
+            this.Nhomhang.DataPropertyName = "nhomhang";
+            this.Nhomhang.HeaderText = "Nhóm hàng";
+            this.Nhomhang.MinimumWidth = 6;
+            this.Nhomhang.Name = "Nhomhang";
+            this.Nhomhang.Width = 125;
+            // 
+            // SDT
+            // 
+            this.SDT.DataPropertyName = "xuatxu";
+            this.SDT.HeaderText = "Xuất xứ";
+            this.SDT.MinimumWidth = 6;
+            this.SDT.Name = "SDT";
+            this.SDT.Width = 125;
+            // 
+            // gianhap
+            // 
+            this.gianhap.DataPropertyName = "gianhap";
+            this.gianhap.HeaderText = "Giá nhập";
+            this.gianhap.MinimumWidth = 6;
+            this.gianhap.Name = "gianhap";
+            this.gianhap.Width = 125;
+            // 
+            // giaban
+            // 
+            this.giaban.DataPropertyName = "giaban";
+            this.giaban.HeaderText = "Giá bán";
+            this.giaban.MinimumWidth = 6;
+            this.giaban.Name = "giaban";
+            this.giaban.Width = 125;
+            // 
+            // donvitinh
+            // 
+            this.donvitinh.DataPropertyName = "donvitinh";
+            this.donvitinh.HeaderText = "Đơn vị tính";
+            this.donvitinh.MinimumWidth = 6;
+            this.donvitinh.Name = "donvitinh";
+            this.donvitinh.Width = 125;
+            // 
+            // nhacungcap
+            // 
+            this.nhacungcap.DataPropertyName = "nhacungcap";
+            this.nhacungcap.HeaderText = "Nhà cung cấp";
+            this.nhacungcap.MinimumWidth = 6;
+            this.nhacungcap.Name = "nhacungcap";
+            this.nhacungcap.Width = 125;
+            // 
+            // mavach
+            // 
+            this.mavach.DataPropertyName = "mavach";
+            this.mavach.HeaderText = "Mã vạch";
+            this.mavach.MinimumWidth = 6;
+            this.mavach.Name = "mavach";
+            this.mavach.Width = 125;
+            // 
+            // dinhmuc
+            // 
+            this.dinhmuc.DataPropertyName = "soluong";
+            this.dinhmuc.HeaderText = "Số lượng";
+            this.dinhmuc.MinimumWidth = 6;
+            this.dinhmuc.Name = "dinhmuc";
+            this.dinhmuc.Width = 125;
+            // 
+            // vat
+            // 
+            this.vat.DataPropertyName = "vat";
+            this.vat.HeaderText = "VAT";
+            this.vat.MinimumWidth = 6;
+            this.vat.Name = "vat";
+            this.vat.Width = 125;
+            // 
+            // NSX
+            // 
+            this.NSX.DataPropertyName = "NSX";
+            this.NSX.HeaderText = "NSX";
+            this.NSX.MinimumWidth = 6;
+            this.NSX.Name = "NSX";
+            this.NSX.Width = 125;
+            // 
+            // HSD
+            // 
+            this.HSD.DataPropertyName = "HSD";
+            this.HSD.HeaderText = "HSD";
+            this.HSD.MinimumWidth = 6;
+            this.HSD.Name = "HSD";
+            this.HSD.Width = 125;
             // 
             // cbo_nhomhang
             // 
@@ -595,110 +687,6 @@
             this.date_hsd.Size = new System.Drawing.Size(173, 24);
             this.date_hsd.TabIndex = 57;
             // 
-            // MaNCC
-            // 
-            this.MaNCC.DataPropertyName = "mahh";
-            this.MaNCC.HeaderText = "Mã HH";
-            this.MaNCC.MinimumWidth = 6;
-            this.MaNCC.Name = "MaNCC";
-            this.MaNCC.Width = 125;
-            // 
-            // Tenhh
-            // 
-            this.Tenhh.DataPropertyName = "tenhang";
-            this.Tenhh.HeaderText = "Tên HH";
-            this.Tenhh.MinimumWidth = 6;
-            this.Tenhh.Name = "Tenhh";
-            this.Tenhh.Width = 125;
-            // 
-            // Nhomhang
-            // 
-            this.Nhomhang.DataPropertyName = "nhomhang";
-            this.Nhomhang.HeaderText = "Nhóm hàng";
-            this.Nhomhang.MinimumWidth = 6;
-            this.Nhomhang.Name = "Nhomhang";
-            this.Nhomhang.Width = 125;
-            // 
-            // SDT
-            // 
-            this.SDT.DataPropertyName = "xuatxu";
-            this.SDT.HeaderText = "Xuất xứ";
-            this.SDT.MinimumWidth = 6;
-            this.SDT.Name = "SDT";
-            this.SDT.Width = 125;
-            // 
-            // gianhap
-            // 
-            this.gianhap.DataPropertyName = "gianhap";
-            this.gianhap.HeaderText = "Giá nhập";
-            this.gianhap.MinimumWidth = 6;
-            this.gianhap.Name = "gianhap";
-            this.gianhap.Width = 125;
-            // 
-            // giaban
-            // 
-            this.giaban.DataPropertyName = "giaban";
-            this.giaban.HeaderText = "Giá bán";
-            this.giaban.MinimumWidth = 6;
-            this.giaban.Name = "giaban";
-            this.giaban.Width = 125;
-            // 
-            // donvitinh
-            // 
-            this.donvitinh.DataPropertyName = "donvitinh";
-            this.donvitinh.HeaderText = "Đơn vị tính";
-            this.donvitinh.MinimumWidth = 6;
-            this.donvitinh.Name = "donvitinh";
-            this.donvitinh.Width = 125;
-            // 
-            // nhacungcap
-            // 
-            this.nhacungcap.DataPropertyName = "nhacungcap";
-            this.nhacungcap.HeaderText = "Nhà cung cấp";
-            this.nhacungcap.MinimumWidth = 6;
-            this.nhacungcap.Name = "nhacungcap";
-            this.nhacungcap.Width = 125;
-            // 
-            // mavach
-            // 
-            this.mavach.DataPropertyName = "mavach";
-            this.mavach.HeaderText = "Mã vạch";
-            this.mavach.MinimumWidth = 6;
-            this.mavach.Name = "mavach";
-            this.mavach.Width = 125;
-            // 
-            // dinhmuc
-            // 
-            this.dinhmuc.DataPropertyName = "soluong";
-            this.dinhmuc.HeaderText = "Số lượng";
-            this.dinhmuc.MinimumWidth = 6;
-            this.dinhmuc.Name = "dinhmuc";
-            this.dinhmuc.Width = 125;
-            // 
-            // vat
-            // 
-            this.vat.DataPropertyName = "vat";
-            this.vat.HeaderText = "VAT";
-            this.vat.MinimumWidth = 6;
-            this.vat.Name = "vat";
-            this.vat.Width = 125;
-            // 
-            // NSX
-            // 
-            this.NSX.DataPropertyName = "NSX";
-            this.NSX.HeaderText = "NSX";
-            this.NSX.MinimumWidth = 6;
-            this.NSX.Name = "NSX";
-            this.NSX.Width = 125;
-            // 
-            // HSD
-            // 
-            this.HSD.DataPropertyName = "HSD";
-            this.HSD.HeaderText = "HSD";
-            this.HSD.MinimumWidth = 6;
-            this.HSD.Name = "HSD";
-            this.HSD.Width = 125;
-            // 
             // frmHangHoa
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 18F);
@@ -785,7 +773,6 @@
         private System.Windows.Forms.GroupBox grb1;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button btnT;
-        private System.Windows.Forms.Button btnXuatHang;
         private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.Button btnTrahang;
         private System.Windows.Forms.Button btnNhaCungCap;

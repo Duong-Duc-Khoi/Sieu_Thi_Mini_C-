@@ -29,11 +29,11 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle11 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle12 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmBanhang));
             this.txt_mahh = new System.Windows.Forms.TextBox();
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
@@ -59,7 +59,6 @@
             this.btnT = new System.Windows.Forms.Button();
             this.btnTrahang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
-            this.btnXuathang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
             this.btnHangHoa = new System.Windows.Forms.Button();
             this.btn_inhoadon = new System.Windows.Forms.Button();
@@ -119,9 +118,9 @@
             // 
             // dgv_xoahang
             // 
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.NullValue = "X";
-            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle11.NullValue = "X";
+            this.dgv_xoahang.DefaultCellStyle = dataGridViewCellStyle11;
             this.dgv_xoahang.HeaderText = "Xóa";
             this.dgv_xoahang.MinimumWidth = 6;
             this.dgv_xoahang.Name = "dgv_xoahang";
@@ -148,9 +147,9 @@
             // 
             // dgv_giamsl
             // 
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.NullValue = "-";
-            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle12.NullValue = "-";
+            this.dgv_giamsl.DefaultCellStyle = dataGridViewCellStyle12;
             this.dgv_giamsl.HeaderText = "(-)";
             this.dgv_giamsl.MinimumWidth = 6;
             this.dgv_giamsl.Name = "dgv_giamsl";
@@ -164,8 +163,8 @@
             // dgv_soluong
             // 
             this.dgv_soluong.DataPropertyName = "p_soluong";
-            dataGridViewCellStyle3.NullValue = "1";
-            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle13.NullValue = "1";
+            this.dgv_soluong.DefaultCellStyle = dataGridViewCellStyle13;
             this.dgv_soluong.HeaderText = "SL";
             this.dgv_soluong.MinimumWidth = 6;
             this.dgv_soluong.Name = "dgv_soluong";
@@ -173,9 +172,9 @@
             // 
             // dgv_tangsl
             // 
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle4.NullValue = "+";
-            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle14.NullValue = "+";
+            this.dgv_tangsl.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgv_tangsl.HeaderText = "(+)";
             this.dgv_tangsl.MinimumWidth = 6;
             this.dgv_tangsl.Name = "dgv_tangsl";
@@ -185,8 +184,8 @@
             // dgv_dongia
             // 
             this.dgv_dongia.DataPropertyName = "giaban";
-            dataGridViewCellStyle5.NullValue = "0";
-            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle15.NullValue = "0";
+            this.dgv_dongia.DefaultCellStyle = dataGridViewCellStyle15;
             this.dgv_dongia.HeaderText = "Đơn giá";
             this.dgv_dongia.MinimumWidth = 6;
             this.dgv_dongia.Name = "dgv_dongia";
@@ -322,7 +321,6 @@
             this.grb1.Controls.Add(this.btnT);
             this.grb1.Controls.Add(this.btnTrahang);
             this.grb1.Controls.Add(this.btnNhapHang);
-            this.grb1.Controls.Add(this.btnXuathang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
             this.grb1.Controls.Add(this.btnHangHoa);
             this.grb1.Location = new System.Drawing.Point(1269, 115);
@@ -344,7 +342,7 @@
             // 
             // btnTrahang
             // 
-            this.btnTrahang.Location = new System.Drawing.Point(43, 403);
+            this.btnTrahang.Location = new System.Drawing.Point(43, 380);
             this.btnTrahang.Name = "btnTrahang";
             this.btnTrahang.Size = new System.Drawing.Size(176, 54);
             this.btnTrahang.TabIndex = 46;
@@ -354,7 +352,7 @@
             // 
             // btnNhapHang
             // 
-            this.btnNhapHang.Location = new System.Drawing.Point(43, 243);
+            this.btnNhapHang.Location = new System.Drawing.Point(43, 279);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(176, 54);
             this.btnNhapHang.TabIndex = 45;
@@ -362,18 +360,9 @@
             this.btnNhapHang.UseVisualStyleBackColor = true;
             this.btnNhapHang.Click += new System.EventHandler(this.btnNhapHang_Click);
             // 
-            // btnXuathang
-            // 
-            this.btnXuathang.Location = new System.Drawing.Point(43, 323);
-            this.btnXuathang.Name = "btnXuathang";
-            this.btnXuathang.Size = new System.Drawing.Size(176, 54);
-            this.btnXuathang.TabIndex = 44;
-            this.btnXuathang.Text = "Xuất Hàng";
-            this.btnXuathang.UseVisualStyleBackColor = true;
-            // 
             // btnNhaCungCap
             // 
-            this.btnNhaCungCap.Location = new System.Drawing.Point(43, 149);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(43, 169);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(176, 54);
             this.btnNhaCungCap.TabIndex = 43;
@@ -659,7 +648,6 @@
         private System.Windows.Forms.Button btnT;
         private System.Windows.Forms.Button btnTrahang;
         private System.Windows.Forms.Button btnNhapHang;
-        private System.Windows.Forms.Button btnXuathang;
         private System.Windows.Forms.Button btnNhaCungCap;
         private System.Windows.Forms.Button btnHangHoa;
         private System.Windows.Forms.Button btn_inhoadon;

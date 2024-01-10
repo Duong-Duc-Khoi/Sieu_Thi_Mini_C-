@@ -17,6 +17,7 @@ using System.Web.UI.WebControls;
 using System.Data.Common;
 using static System.ComponentModel.Design.ObjectSelectorEditor;
 using System.Diagnostics;
+using ZedGraph;
 namespace Sieu_Thi_Mini_C_
 {
     public partial class frmBanhang : Form
@@ -215,15 +216,15 @@ namespace Sieu_Thi_Mini_C_
                    con.Open();
                }
             //b3 tao doi tuong command de kiem tra
-               string hd = "SELECT MAX(sohd) FROM banghoadonchitiet ";
-                SqlCommand cmdd = new SqlCommand(hd, con);
-            int max = Convert.ToInt32(cmdd.ExecuteScalar());     
-            int shd = max +1;          
+              string hd = "SELECT MAX(sohd) FROM banghoadonchitiet ";
+                 SqlCommand cmdd = new SqlCommand(hd, con);
+               int max = Convert.ToInt32(cmdd.ExecuteScalar());     
+               int shd = max +1; 
                cmdd.Dispose();
                con.Close();
-               txt_shd.Text = shd.ToString();
-           
+               txt_shd.Text=shd.ToString();
             //
+            
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
@@ -455,20 +456,21 @@ namespace Sieu_Thi_Mini_C_
             cmd.Dispose();
             con.Close();
         }
-        private void luu(string p_shd, string tenhang, int sl, int dongia, int thanhtien, string ngay)
+        private void luu(string p_shd, string tenhang, int sl, int dongia, int thanhtien, string ngay, string mahh)
         {  
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }         
             string p_ngay = DateTime.Now.ToString("yyyy-MM-dd");
-            string sql = "Insert banghoadonchitiet values ( @sohd,@tenhh, @soluong, @dongia, @thanhtien, '"+p_ngay+"' )";
+            string sql = "Insert banghoadonchitiet values ( @sohd,@tenhh, @soluong, @dongia, @thanhtien, '"+p_ngay+"',@mahh )";
             SqlCommand cmd = new SqlCommand(sql, con);
             cmd.Parameters.Add("@sohd", SqlDbType.Int).Value = p_shd;
             cmd.Parameters.Add("@tenhh", SqlDbType.NVarChar, 50).Value = tenhang;
             cmd.Parameters.Add("@soluong", SqlDbType.Int).Value = sl;
             cmd.Parameters.Add("@dongia", SqlDbType.Int).Value = dongia;
             cmd.Parameters.Add("@thanhtien", SqlDbType.Int).Value = thanhtien;
+            cmd.Parameters.Add("@mahh",SqlDbType.NVarChar,50 ).Value = mahh;
             cmd.ExecuteNonQuery();
             cmd.Dispose();
             con.Close();
@@ -504,49 +506,40 @@ namespace Sieu_Thi_Mini_C_
 
         private void xulybanghoadonngay()
         {
+            string ngay = DateTime.Now.ToString("yyyy-MM-dd");
             if (con.State == ConnectionState.Closed)
             {
                 con.Open();
             }
-            string p_ngay = DateTime.Now.ToString("yyyy-MM-dd");
-            // string p_ngay = "2023-12-27";
+            string sql = "SELECT COUNT(*) FROM bangdoanhthutheongay WHERE ngay = @ngay";
+            SqlCommand cmd= new SqlCommand(sql, con);
+            cmd.Parameters.AddWithValue("@ngay", ngay);
 
-            // float p_doanhthungay=float.Parse(txt_thanhtoan.Text.Trim());
-            //  string doanhthungay = "Select Sum(thanhtien) from banghoadonchitiet where ngay='" + p_ngay + "'";
-            string doanhthungay = "SELECT SUM(thanhtien) FROM banghoadonchitiet WHERE ngay = '" + p_ngay + "' GROUP BY ngay";
+            //
+            string doanhthungay1 = "SELECT SUM(thanhtien) FROM banghoadonchitiet WHERE ngay = '" + ngay + "' GROUP BY ngay";
 
-            SqlCommand dthu = new SqlCommand(doanhthungay, con);
+            SqlCommand dthu = new SqlCommand(doanhthungay1, con);
             int doanhthucu = (int)dthu.ExecuteScalar();
-            int doanhthumoi = doanhthucu+ Convert.ToInt32(txt_thanhtoan.Text);
-            string ngaycu = "Select ngay from bangdoanhthutheongay ";
-            SqlCommand sqlCommand= new SqlCommand(ngaycu, con);
-            //txt_test.Text = ngaycu;
-            //string ngaymoi = (string)sqlCommand.ExecuteScalar();
-            SqlDataAdapter sqlDataAdapter= new SqlDataAdapter(sqlCommand);
-            DataTable dataTable= new DataTable();
-            sqlDataAdapter.Fill(dataTable);
-            
-            foreach (DataRow row in dataTable.Rows)
+            int doanhthungay = doanhthucu + Convert.ToInt32(txt_thanhtoan.Text);
+            //
+            int dem = Convert.ToInt32(cmd.ExecuteScalar());
+           // textBox1.Text = dem.ToString();
+            if (dem > 0)
             {
-                string ngaymoi = row["ngay"].ToString();
-              
-                // Sử dụng biến date ở đây
-                if (ngaymoi == p_ngay)
-                {
-                    string sql = "Update bangdoanhthutheongay set ( doanhthungay=@doanhthungay) where ngay='" + p_ngay + "'";
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                  // cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = p_ngay;
-                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthumoi;
-                    cmd.ExecuteNonQuery();
-                }
-                
-                {
-                    string sql = "Insert bangdoanhthutheongay values (@ngay, @doanhthungay)";
-                    SqlCommand cmd = new SqlCommand(sql, con);
-                    cmd.Parameters.Add("@ngay", SqlDbType.Date).Value = p_ngay;
-                    cmd.Parameters.Add("@doanhthungay", SqlDbType.Int).Value = doanhthumoi;
-                    cmd.ExecuteNonQuery();
-                }
+                cmd.CommandText = "UPDATE bangdoanhthutheongay SET doanhthungay = @doanhthungay WHERE ngay = @date";
+                cmd.Parameters.AddWithValue("@date", ngay);
+                cmd.Parameters.AddWithValue("@doanhthungay", doanhthungay);
+                cmd.ExecuteNonQuery();
+              //  Console.WriteLine("Đã cập nhật doanh thu cho ngày " + ngay.ToString("dd/MM/yyyy"));
+            }
+            // Nếu không, thì thêm mới doanh thu
+            else
+            {
+                cmd.CommandText = "INSERT INTO bangdoanhthutheongay (ngay, doanhthungay) VALUES (@date1, @doanhthungay)";
+                cmd.Parameters.AddWithValue("@date1", ngay);
+                cmd.Parameters.AddWithValue("@doanhthungay", doanhthungay);
+                cmd.ExecuteNonQuery();
+              //  Console.WriteLine("Đã thêm mới doanh thu cho ngày " + date.ToString("dd/MM/yyyy"));
             }
 
         }
@@ -564,9 +557,10 @@ namespace Sieu_Thi_Mini_C_
                 int sl = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value.ToString());
                 int dongia = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value.ToString());
                 int thanhtien = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value.ToString());
+                string mahh= dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
                 
                 //
-                luu(p_shd, tenhang, sl, dongia, thanhtien, ngay);
+                luu(p_shd, tenhang, sl, dongia, thanhtien, ngay, mahh);
             }
             for (int i = 0; i < dgv_thongtin.RowCount - 1; i++)
             {

@@ -321,7 +321,6 @@ namespace Sieu_Thi_Mini_C_
             this.WindowState = FormWindowState.Maximized;
 
         }
-
         private void btnLammoi_Click(object sender, EventArgs e)
         {
             btnThem.Enabled = true;
@@ -336,7 +335,6 @@ namespace Sieu_Thi_Mini_C_
             cboGIoitinh.SelectedItem = null;
             cboQuyen.SelectedItem = null;
         }
-
         private void btnSua_Click(object sender, EventArgs e)
         {
             if (string.IsNullOrEmpty(txtManv.Text) || string.IsNullOrEmpty(txtTennv.Text) || string.IsNullOrEmpty(cboGIoitinh.Text)
@@ -443,9 +441,6 @@ namespace Sieu_Thi_Mini_C_
             }
         }
 
-        private void dgv_thongtin_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
+       
     }
 }

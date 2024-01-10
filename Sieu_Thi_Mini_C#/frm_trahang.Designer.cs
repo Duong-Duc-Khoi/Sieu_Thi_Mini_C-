@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frm_trahang));
             this.dgv_thongtin = new System.Windows.Forms.DataGridView();
             this.dgv_btnXoa = new System.Windows.Forms.DataGridViewButtonColumn();
@@ -42,7 +42,6 @@
             this.grb1 = new System.Windows.Forms.GroupBox();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.btnT = new System.Windows.Forms.Button();
-            this.btnXuatHang = new System.Windows.Forms.Button();
             this.btnNhapHang = new System.Windows.Forms.Button();
             this.btnLoaiHang = new System.Windows.Forms.Button();
             this.btnNhaCungCap = new System.Windows.Forms.Button();
@@ -81,9 +80,9 @@
             // 
             // dgv_btnXoa
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.NullValue = "x";
-            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.NullValue = "x";
+            this.dgv_btnXoa.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgv_btnXoa.HeaderText = "Xoá";
             this.dgv_btnXoa.MinimumWidth = 6;
             this.dgv_btnXoa.Name = "dgv_btnXoa";
@@ -152,7 +151,6 @@
             this.grb1.BackColor = System.Drawing.Color.Lavender;
             this.grb1.Controls.Add(this.pictureBox1);
             this.grb1.Controls.Add(this.btnT);
-            this.grb1.Controls.Add(this.btnXuatHang);
             this.grb1.Controls.Add(this.btnNhapHang);
             this.grb1.Controls.Add(this.btnLoaiHang);
             this.grb1.Controls.Add(this.btnNhaCungCap);
@@ -188,19 +186,9 @@
             this.btnT.UseVisualStyleBackColor = true;
             this.btnT.Click += new System.EventHandler(this.btnT_Click);
             // 
-            // btnXuatHang
-            // 
-            this.btnXuatHang.Location = new System.Drawing.Point(44, 562);
-            this.btnXuatHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
-            this.btnXuatHang.Name = "btnXuatHang";
-            this.btnXuatHang.Size = new System.Drawing.Size(198, 61);
-            this.btnXuatHang.TabIndex = 46;
-            this.btnXuatHang.Text = "Xuất Hàng";
-            this.btnXuatHang.UseVisualStyleBackColor = true;
-            // 
             // btnNhapHang
             // 
-            this.btnNhapHang.Location = new System.Drawing.Point(44, 469);
+            this.btnNhapHang.Location = new System.Drawing.Point(44, 545);
             this.btnNhapHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnNhapHang.Name = "btnNhapHang";
             this.btnNhapHang.Size = new System.Drawing.Size(198, 61);
@@ -211,7 +199,7 @@
             // 
             // btnLoaiHang
             // 
-            this.btnLoaiHang.Location = new System.Drawing.Point(44, 380);
+            this.btnLoaiHang.Location = new System.Drawing.Point(44, 439);
             this.btnLoaiHang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnLoaiHang.Name = "btnLoaiHang";
             this.btnLoaiHang.Size = new System.Drawing.Size(198, 61);
@@ -221,7 +209,7 @@
             // 
             // btnNhaCungCap
             // 
-            this.btnNhaCungCap.Location = new System.Drawing.Point(44, 295);
+            this.btnNhaCungCap.Location = new System.Drawing.Point(44, 329);
             this.btnNhaCungCap.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.btnNhaCungCap.Name = "btnNhaCungCap";
             this.btnNhaCungCap.Size = new System.Drawing.Size(198, 61);
@@ -346,7 +334,6 @@
         private System.Windows.Forms.GroupBox grb1;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnT;
-        private System.Windows.Forms.Button btnXuatHang;
         private System.Windows.Forms.Button btnNhapHang;
         private System.Windows.Forms.Button btnLoaiHang;
         private System.Windows.Forms.Button btnNhaCungCap;

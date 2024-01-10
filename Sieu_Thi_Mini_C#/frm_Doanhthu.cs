@@ -34,7 +34,7 @@ namespace Sieu_Thi_Mini_C_
                 con.Open();
             }
             string sql = "Select * from bangdoanhthutheongay";
-            // SELECT SUM(doanhthu) FROM banghoadontheongay WHERE customer_id = 1;
+             //SELECT SUM(doanhthu) FROM banghoadontheongay WHERE customer_id = 1;
             SqlCommand cmd = new SqlCommand();
             SqlDataAdapter dataAdapter = new SqlDataAdapter(sql, con);
             DataTable dt = new DataTable();
@@ -46,7 +46,7 @@ namespace Sieu_Thi_Mini_C_
 
             chartDoanhthu.ChartAreas["ChartArea1"].AxisY.Title = "Doanh thu";
             //Lấy tất cả các ngày trong SQL
-            //chartDoanhthu.ChartAreas["ChartArea1"].AxisX.Interval = 1;
+           //chartDoanhthu.ChartAreas["ChartArea1"].AxisX.Interval = 1;
             //
             //chartDoanhthu.Series["Doanh thu"].ChartType = System.Windows.Forms.DataVisualization.Charting.SeriesChartType.Line;
             for (int i = 0; i < dt.Rows.Count; i++)

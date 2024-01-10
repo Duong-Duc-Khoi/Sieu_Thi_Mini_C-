@@ -102,7 +102,9 @@ namespace Sieu_Thi_Mini_C_
 
         private void btnBaocao_Click(object sender, EventArgs e)
         {
-
+            frmThongke frmThongke = new frmThongke();
+            frmThongke.ShowDialog();
+          
         }
 
         private void btn_dangxuat_Click(object sender, EventArgs e)

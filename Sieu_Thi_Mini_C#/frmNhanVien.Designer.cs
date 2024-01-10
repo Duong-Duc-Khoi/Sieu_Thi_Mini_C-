@@ -452,7 +452,7 @@
             this.dgv_thongtin.Size = new System.Drawing.Size(1422, 269);
             this.dgv_thongtin.TabIndex = 0;
             this.dgv_thongtin.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellClick);
-            this.dgv_thongtin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellContentClick);
+          //  this.dgv_thongtin.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgv_thongtin_CellContentClick);
             // 
             // Column1
             // 
