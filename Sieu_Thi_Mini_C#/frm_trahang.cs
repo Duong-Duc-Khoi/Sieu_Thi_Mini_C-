@@ -88,19 +88,80 @@ namespace Sieu_Thi_Mini_C_
         private void btn_xacnhan_Click(object sender, EventArgs e)
         {
             string p_matrahang = txt_matrahang.Text.Trim();
+
+            // Kiểm tra mã trả hàng không trống
+            if (string.IsNullOrEmpty(p_matrahang))
+            {
+                MessageBox.Show("Mã trả hàng không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                return;
+            }
+
             for (int i = 0; i < dgv_thongtin.Rows.Count - 1; i++)
             {
                 string tenhang = dgv_thongtin.Rows[i].Cells["dgv_tenhh"].Value.ToString();
-                int soluong = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value.ToString());
+
+                // Kiểm tra số lượng không trống và là số hợp lệ
+                string soluongStr = dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value?.ToString(); // Sử dụng toán tử null-conditional (?.)
+
+                if (string.IsNullOrEmpty(soluongStr) || !int.TryParse(soluongStr, out int soluongTra))
+                {
+                    MessageBox.Show("Số lượng trả hàng không được để trống và phải là số hợp lệ.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
                 int giaban = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value.ToString());
                 string mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
-                string lydotrahang = dgv_thongtin.Rows[i].Cells["dgv_lydo"].Value.ToString();
-                int tientralai =int.Parse( dgv_thongtin.Rows[i].Cells["dgv_tientralai"].Value.ToString());
-                //
-                luu(p_matrahang,mahh,tenhang, soluong,tientralai, lydotrahang);
+
+                // Kiểm tra lý do trả hàng không trống
+                string lydotrahang = dgv_thongtin.Rows[i].Cells["dgv_lydo"].Value?.ToString(); // Sử dụng toán tử null-conditional (?.)
+                if (string.IsNullOrEmpty(lydotrahang))
+                {
+                    MessageBox.Show("Lý do trả hàng không được để trống.", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    return;
+                }
+
+                int tientralai = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_tientralai"].Value.ToString());
+
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // Kiểm tra số lượng trong kho
+                string sqlCheck = "SELECT soluong FROM banghanghoa WHERE mahh = @mahh";
+                SqlCommand cmdCheck = new SqlCommand(sqlCheck, con);
+                cmdCheck.Parameters.AddWithValue("@mahh", mahh);
+                int soluongTrongKho = Convert.ToInt32(cmdCheck.ExecuteScalar());
+
+                if (soluongTra > soluongTrongKho)
+                {
+                    MessageBox.Show($"Số lượng trả hàng cho {tenhang} vượt quá số lượng trong kho ({soluongTrongKho}).", "Cảnh báo", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                    con.Close();
+                    return; // Thoát nếu không đủ hàng trong kho
+                }
+
+                // Lưu thông tin trả hàng
+                luu(p_matrahang, mahh, tenhang, soluongTra, tientralai, lydotrahang);
+                if (con.State == ConnectionState.Closed)
+                {
+                    con.Open();
+                }
+
+                // Cập nhật số lượng trong kho
+                string sqlUpdate = "UPDATE banghanghoa SET soluong = soluong - @soluongTra WHERE mahh = @mahh";
+                SqlCommand cmdUpdate = new SqlCommand(sqlUpdate, con);
+                cmdUpdate.Parameters.AddWithValue("@soluongTra", soluongTra);
+                cmdUpdate.Parameters.AddWithValue("@mahh", mahh);
+                cmdUpdate.ExecuteNonQuery();
             }
-            MessageBox.Show("Save", "Thông báo");
+
+            con.Close();
+            MessageBox.Show("Lưu thành công!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+
+
+
 
         private void lst_dshh_SelectedValueChanged(object sender, EventArgs e)
         {

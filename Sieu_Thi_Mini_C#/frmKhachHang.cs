@@ -85,6 +85,13 @@ namespace Sieu_Thi_Mini_C_
                 MessageBox.Show("Bạn chưa nhập đủ thông tin!", "Thông báo");
                 return;
             }
+            string phoneNumber = txtSdt.Text.Trim();
+            if (phoneNumber.Length != 10 || !phoneNumber.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số!", "Thông báo");
+                txtSdt.Focus();
+                return;
+            }
             //laay du lieu tu control dua vao bien
             string p_makh = txtMakh.Text.Trim();
             string p_tenkh = txtTenkh.Text.Trim();

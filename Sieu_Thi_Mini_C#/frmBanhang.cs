@@ -543,36 +543,65 @@ namespace Sieu_Thi_Mini_C_
             }
 
         }
-     
+
         private void btn_luu_Click(object sender, EventArgs e)
         {
-             string ngay = DateTime.Now.ToString("yyyy-MM-dd");
-          //  string ngay = "2023-12-26";
+            // Kiểm tra tên khách hàng
+            if (string.IsNullOrWhiteSpace(txt_tenkh.Text))
+            {
+                MessageBox.Show("Tên khách hàng không được để trống.", "Thông báo");
+                txt_tenkh.Focus();
+                return;
+            }
+
+            // Kiểm tra nếu không có mặt hàng nào được chọn
+            if (dgv_thongtin.Rows.Count <= 1)
+            {
+                MessageBox.Show("Bạn cần thêm ít nhất một mặt hàng.", "Thông báo");
+                return;
+            }
+
+            // Kiểm tra tiền khách đưa
+            if (string.IsNullOrWhiteSpace(txt_tiendua.Text))
+            {
+                MessageBox.Show("Vui lòng nhập số tiền khách đưa.", "Thông báo");
+                txt_tiendua.Focus();
+                return;
+            }
+
+            if (!decimal.TryParse(txt_tiendua.Text, out decimal tienDua) || tienDua <= 0)
+            {
+                MessageBox.Show("Số tiền khách đưa không hợp lệ.", "Thông báo");
+                txt_tiendua.Focus();
+                return;
+            }
+
+            // Tiếp tục các thao tác lưu
+            string ngay = DateTime.Now.ToString("yyyy-MM-dd");
             string p_shd = txt_shd.Text.Trim();
-            
-            //int thanhtien =int.Parse( txt_thanhtoan.Text.Trim()); 
-            for (int i = 0; i < dgv_thongtin.Rows.Count -1 ; i++)
+
+            for (int i = 0; i < dgv_thongtin.Rows.Count - 1; i++)
             {
                 string tenhang = dgv_thongtin.Rows[i].Cells["dgv_tenhh"].Value.ToString();
                 int sl = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value.ToString());
                 int dongia = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_dongia"].Value.ToString());
                 int thanhtien = int.Parse(dgv_thongtin.Rows[i].Cells["dgv_thanhtien"].Value.ToString());
-                string mahh= dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
-                
-                //
+                string mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
+
                 luu(p_shd, tenhang, sl, dongia, thanhtien, ngay, mahh);
             }
+
             for (int i = 0; i < dgv_thongtin.RowCount - 1; i++)
             {
                 string p_mahh = dgv_thongtin.Rows[i].Cells["dgv_mahh"].Value.ToString();
                 int soluongmoi = Convert.ToInt32(dgv_thongtin.Rows[i].Cells["dgv_soluong"].Value);
                 capnhatsoluong(p_mahh, soluongmoi);
             }
-         //   MessageBox.Show("Cap nhat thanh cong!", "Thong bao");
-            MessageBox.Show("Save","Thông báo");
-            //
-              xulybanghoadonngay(); 
+
+            MessageBox.Show("Lưu thành công!", "Thông báo");
+            xulybanghoadonngay();
         }
+
         private void guna2Button1_Click(object sender, EventArgs e)
         {
             string p_mavach = txt_mahh.Text.Trim();
@@ -593,6 +622,10 @@ namespace Sieu_Thi_Mini_C_
             txt_mahh.Text = null;
         }
 
+        private void txt_tiendua_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }
 

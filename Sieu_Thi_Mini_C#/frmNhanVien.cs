@@ -12,6 +12,7 @@ using System.Windows.Forms;
 using System.Drawing.Text;
 using System.Net.NetworkInformation;
 using e_excel = Microsoft.Office.Interop.Excel;
+using System.Text.RegularExpressions;
 
 
 namespace Sieu_Thi_Mini_C_
@@ -81,6 +82,8 @@ namespace Sieu_Thi_Mini_C_
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
+            string phoneNumber = txtSdt.Text.Trim();
+            
 
             //kiem tra xem da nhap du du lieu vao chua
             if (string.IsNullOrEmpty(txtManv.Text) || string.IsNullOrEmpty(txtTennv.Text) || string.IsNullOrEmpty(cboGIoitinh.Text)
@@ -92,6 +95,32 @@ namespace Sieu_Thi_Mini_C_
                 MessageBox.Show("Chưa nhập đủ thông tin!", "Thông báo");
                 return;
             }
+            if (phoneNumber.Length != 10 || !phoneNumber.All(char.IsDigit))
+            {
+                MessageBox.Show("Số điện thoại phải có 10 chữ số!", "Thông báo");
+                txtSdt.Focus();
+                return;
+            }
+            // Kiểm tra định dạng email
+            string email = txtEmail.Text.Trim();
+            string emailPattern = @"^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$";
+            if (!Regex.IsMatch(email, emailPattern))
+            {
+                MessageBox.Show("Địa chỉ email không hợp lệ!", "Thông báo");
+                txtEmail.Focus();
+                return;
+            }
+            // Kiểm tra ngày kết thúc phải lớn hơn ngày bắt đầu
+            DateTime p_ngaybd = date_ngaybd.Value;
+            DateTime p_ngaynv = date_ngaykt.Value;
+
+            if (p_ngaynv <= p_ngaybd)
+            {
+                MessageBox.Show("Ngày kết thúc phải lớn hơn ngày bắt đầu!", "Thông báo");
+                date_ngaykt.Focus();
+                return;
+            }
+
             //lay du lieu tu control dua vao bien
             string p_mnv=txtManv.Text.Trim();
             string p_tennv=txtTennv.Text.Trim();
@@ -103,8 +132,7 @@ namespace Sieu_Thi_Mini_C_
             string p_username=txtUsername.Text.Trim();
             string p_password=txtPassword.Text.Trim();
             string p_cboquyen=cboQuyen.Text.Trim();
-            DateTime p_ngaybd = date_ngaybd.Value;
-            DateTime p_ngaynv = date_ngaykt.Value;
+           
             string p_trangthai=cbotrangthai.Text.Trim();
             int p_luong=int.Parse(txtLuong.Text.Trim());
 

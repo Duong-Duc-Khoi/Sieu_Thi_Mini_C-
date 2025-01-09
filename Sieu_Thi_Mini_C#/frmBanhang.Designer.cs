@@ -219,7 +219,7 @@
             this.label1.MaximumSize = new System.Drawing.Size(275, 34);
             this.label1.MinimumSize = new System.Drawing.Size(10, 34);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(100, 34);
+            this.label1.Size = new System.Drawing.Size(81, 34);
             this.label1.TabIndex = 2;
             this.label1.Text = "Mã vạch";
             // 
@@ -233,6 +233,7 @@
             this.txt_tiendua.Name = "txt_tiendua";
             this.txt_tiendua.Size = new System.Drawing.Size(200, 35);
             this.txt_tiendua.TabIndex = 0;
+            this.txt_tiendua.TextChanged += new System.EventHandler(this.txt_tiendua_TextChanged);
             // 
             // label2
             // 
@@ -241,7 +242,7 @@
             this.label2.MaximumSize = new System.Drawing.Size(200, 35);
             this.label2.MinimumSize = new System.Drawing.Size(20, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(130, 35);
+            this.label2.Size = new System.Drawing.Size(102, 35);
             this.label2.TabIndex = 43;
             this.label2.Text = "Tiền khách đưa";
             // 
@@ -252,7 +253,7 @@
             this.label3.MaximumSize = new System.Drawing.Size(200, 35);
             this.label3.MinimumSize = new System.Drawing.Size(20, 35);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(86, 35);
+            this.label3.Size = new System.Drawing.Size(66, 35);
             this.label3.TabIndex = 45;
             this.label3.Text = "Tiền hàng";
             // 
@@ -275,7 +276,7 @@
             this.label4.MaximumSize = new System.Drawing.Size(200, 35);
             this.label4.MinimumSize = new System.Drawing.Size(20, 35);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(84, 35);
+            this.label4.Size = new System.Drawing.Size(65, 35);
             this.label4.TabIndex = 47;
             this.label4.Text = "Tiền VAT";
             // 
@@ -298,7 +299,7 @@
             this.label5.MaximumSize = new System.Drawing.Size(200, 35);
             this.label5.MinimumSize = new System.Drawing.Size(20, 35);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(96, 35);
+            this.label5.Size = new System.Drawing.Size(76, 35);
             this.label5.TabIndex = 49;
             this.label5.Text = "Thanh toán";
             // 
@@ -398,7 +399,7 @@
             this.label6.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.label6.Location = new System.Drawing.Point(62, 140);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(125, 25);
+            this.label6.Size = new System.Drawing.Size(102, 22);
             this.label6.TabIndex = 56;
             this.label6.Text = "Số hóa đơn";
             // 
@@ -460,7 +461,7 @@
             this.label9.Location = new System.Drawing.Point(1081, 210);
             this.label9.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(106, 25);
+            this.label9.Size = new System.Drawing.Size(87, 22);
             this.label9.TabIndex = 50;
             this.label9.Text = "Tên hàng";
             // 
@@ -471,7 +472,7 @@
             this.cbo_nhomhang.Location = new System.Drawing.Point(1030, 252);
             this.cbo_nhomhang.Margin = new System.Windows.Forms.Padding(4, 2, 4, 2);
             this.cbo_nhomhang.Name = "cbo_nhomhang";
-            this.cbo_nhomhang.Size = new System.Drawing.Size(210, 28);
+            this.cbo_nhomhang.Size = new System.Drawing.Size(210, 25);
             this.cbo_nhomhang.TabIndex = 49;
             this.cbo_nhomhang.SelectedValueChanged += new System.EventHandler(this.cbo_nhomhang_SelectedValueChanged);
             // 
@@ -521,7 +522,7 @@
             this.label10.MaximumSize = new System.Drawing.Size(275, 34);
             this.label10.MinimumSize = new System.Drawing.Size(10, 34);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(92, 34);
+            this.label10.Size = new System.Drawing.Size(75, 34);
             this.label10.TabIndex = 2;
             this.label10.Text = "Tên KH";
             // 
